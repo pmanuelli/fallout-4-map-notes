@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapDroppedPinView" customModule="Fallout_Notes" customModuleProvider="target">
+            <connections>
+                <outlet property="droppedPinImageView" destination="JpD-lU-IZD" id="2X6-uG-W7L"/>
+                <outlet property="droppedPinImageViewWidthConstraint" destination="9yc-E1-tm2" id="TFS-XM-aFa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dropped_pin" translatesAutoresizingMaskIntoConstraints="NO" id="JpD-lU-IZD">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="9yc-E1-tm2"/>
+                        <constraint firstAttribute="width" secondItem="JpD-lU-IZD" secondAttribute="height" multiplier="1:1" id="MFH-IV-nSI"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="JpD-lU-IZD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NgL-xv-gf4"/>
+                <constraint firstItem="JpD-lU-IZD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W05-8o-Urc"/>
+                <constraint firstAttribute="bottom" secondItem="JpD-lU-IZD" secondAttribute="bottom" id="eOs-6x-EvI"/>
+                <constraint firstAttribute="trailing" secondItem="JpD-lU-IZD" secondAttribute="trailing" id="nXx-8y-OPM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-104.8" y="-35.982008995502248"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_dropped_pin" width="256" height="256"/>
+    </resources>
+</document>

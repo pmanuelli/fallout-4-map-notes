@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_junkyard.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,42 @@
+PODS:
+  - iOSExtensions (0.1.0):
+    - iOSExtensions/Swift (= 0.1.0)
+    - iOSExtensions/UIKit (= 0.1.0)
+  - iOSExtensions/Swift (0.1.0)
+  - iOSExtensions/UIKit (0.1.0)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+
+DEPENDENCIES:
+  - iOSExtensions (from `https://github.com/pmanuelli/ios-extensions.git`)
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+EXTERNAL SOURCES:
+  iOSExtensions:
+    :git: https://github.com/pmanuelli/ios-extensions.git
+
+CHECKOUT OPTIONS:
+  iOSExtensions:
+    :commit: de5b23437d760874a1631161ce399b002b557202
+    :git: https://github.com/pmanuelli/ios-extensions.git
+
+SPEC CHECKSUMS:
+  iOSExtensions: e61218d95b31c3e11bbee02b53e2e148005f8e41
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+
+PODFILE CHECKSUM: bde85d23fb69326e86430c626d70b1299d83c126
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_filling_station.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
