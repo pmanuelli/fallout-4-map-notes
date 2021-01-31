@@ -6,6 +6,9 @@ class MapCoordinator {
     private let navigationController: UINavigationController
     
     private var mapViewModel: MapViewModel?
+    private var mapViewController: MapViewController?
+    
+    private var locationCreationCoordinator: LocationCreationCoordinator?
     
     private let disposeBag = DisposeBag()
     
@@ -18,6 +21,7 @@ class MapCoordinator {
         let viewModel = MapViewModel()
         let viewController = MapViewController(viewModel: viewModel)
         mapViewModel = viewModel
+        mapViewController = viewController
         
         observeViewModel(viewModel)
 
@@ -26,36 +30,27 @@ class MapCoordinator {
     }
     
     private func observeViewModel(_ viewModel: MapViewModel) {
-        viewModel.output.userDidDropPin
-            .drive(onNext: { [weak self] _ in self?.startLocationIconSelection() })
+        viewModel.output.newLocationPinDrop
+            .subscribe(onNext: { [weak self] _ in self?.startLocationCreation() })
             .disposed(by: disposeBag)
     }
     
-    private func startLocationIconSelection() {
-        
-        let viewModel = LocationIconSelectionViewModel()
-        let viewController = LocationIconSelectionViewController(viewModel: viewModel)
-        
-        observeViewModel(viewModel)
-        
-        navigationController.pushViewController(viewController, animated: true)
-        navigationController.setNavigationBarHidden(false, animated: true)
+    private func startLocationCreation() {
+
+        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController)
+        locationCreationCoordinator?.start() { [weak self] in self?.onLocationSelectionCompleted($0) }
     }
     
-    private func observeViewModel(_ viewModel: LocationIconSelectionViewModel) {
-        
-        viewModel.output.userDidSelectLocationType
-            .subscribe(onSuccess: { [weak self] in self?.onUserDidSelectLocationType($0) })
-            .disposed(by: disposeBag)
-    }
-    
-    private func onUserDidSelectLocationType(_ type: LocationType) {
-        
-        navigationController.popViewController(animated: true)
-        navigationController.setNavigationBarHidden(true, animated: true)
+    private func onLocationSelectionCompleted(_ result: LocationCreationCoordinator.Result) {
         
         perform(after: 0.5) {
-            self.mapViewModel?.newLocationTypeSelected(type)
+            
+            switch result {
+            case .accept(type: let type, name: let name):
+                self.mapViewModel?.newLocationAccepted(type: type, name: name)
+            case .cancel:
+                self.mapViewModel?.newLocationCancelled()
+            }
         }
     }
 }

@@ -46,20 +46,25 @@ class MapViewController: UIViewController {
     
     private func bindViewModel() {
         
-        viewModel.output.userSelectedNewLocationType
+        viewModel.output.newLocationAccept
             .withUnretained(self)
-            .drive(onNext: { controller, type in controller.onUserSelectedNewLocationType(type) })
+            .subscribe(onNext: { controller, location in controller.acceptNewLocation(type: location.0, name: location.1) })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.newLocationCancel
+            .withUnretained(self)
+            .subscribe(onNext: { controller, _ in controller.cancelNewLocation() })
             .disposed(by: disposeBag)
     }
 
-    private func onUserSelectedNewLocationType(_ type: LocationType) {
+    private func acceptNewLocation(type: LocationType, name: String) {
         
-        DroppedPinDisappearAnimator.animate(currentDroppedPinView!) {
+        LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
             
             self.currentDroppedPinView?.removeFromSuperview()
             self.currentDroppedPinView = nil
             
-            let view = MapLocationView(image: Icons.icon(for: type), imageWidth: self.locationImageWidth, name: "Location")
+            let view = MapLocationView(image: Icons.icon(for: type), imageWidth: self.locationImageWidth, name: name)
             
             self.addLocationViewAnimated(view, at: self.currentDroppedPinLocation!)
         }
@@ -68,11 +73,20 @@ class MapViewController: UIViewController {
     private func addLocationViewAnimated(_ mapLocationView: MapLocationView, at location: CGPoint, completion: (() -> Void)? = nil) {
         addLocationView(mapLocationView, at: location)
         
-        LocationViewAppearAnimator.animate(mapLocationView, completion: completion)
+        LocationIconAppearAnimator.animate(mapLocationView, origin: .center, completion: completion)
     }
     
     private func addLocationView(_ mapLocationView: MapLocationView, at location: CGPoint) {
         mapLocationView.addAsSubview(on: mainView.mapImageView, centeringIconAt: location)
+    }
+    
+    private func cancelNewLocation() {
+        
+        LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
+            
+            self.currentDroppedPinView?.removeFromSuperview()
+            self.currentDroppedPinView = nil
+        }
     }
     
     @objc
@@ -86,10 +100,20 @@ class MapViewController: UIViewController {
         currentDroppedPinView = droppedPinView
         currentDroppedPinLocation = location
 
-        DroppedPinViewAppearAnimator.animate(droppedPinView) {
-            self.viewModel.userDidDropPin()
+        LocationIconAppearAnimator.animate(droppedPinView, origin: .bottom) {
+            self.viewModel.newLocationPinDropped()
         }
     }
+    
+//    func captureNewLocationMapSnapshot() -> UIImage {
+//        
+//        let bounds = CGRect(x: 500, y: 0, width: 500, height: 500)
+//        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+//        
+//        return renderer.image { context in
+//            self.mainView.mapImageView.layer.render(in: context.cgContext)
+//        }
+//    }
     
     
 //    private func loadInitialLocations() {

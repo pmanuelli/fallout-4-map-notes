@@ -17,9 +17,6 @@
 		E921469225C392F700CAF621 /* MapLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921469125C392F700CAF621 /* MapLocationView.xib */; };
 		E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45725C5A70F00ECD96E /* MapViewModel.swift */; };
 		E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */; };
-		E955B46025C5C77200ECD96E /* LocationViewAppearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45F25C5C77200ECD96E /* LocationViewAppearAnimator.swift */; };
-		E955B46325C5DEBC00ECD96E /* DroppedPinViewAppearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B46225C5DEBB00ECD96E /* DroppedPinViewAppearAnimator.swift */; };
-		E955B46A25C5E54200ECD96E /* DroppedPinDisappearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B46925C5E54200ECD96E /* DroppedPinDisappearAnimator.swift */; };
 		E95CF3CD25C4A491001609ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3CC25C4A491001609ED /* Colors.swift */; };
 		E95CF3D025C4A756001609ED /* GreenBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */; };
 		E95CF3D425C4AC13001609ED /* MapDroppedPinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95CF3D325C4AC13001609ED /* MapDroppedPinView.xib */; };
@@ -29,6 +26,13 @@
 		E95CF3E425C4CF97001609ED /* LocationIconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3E225C4CF97001609ED /* LocationIconSelectionViewController.swift */; };
 		E95CF3E525C4CF97001609ED /* LocationIconSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95CF3E325C4CF97001609ED /* LocationIconSelectionView.xib */; };
 		E95CF3E925C4CFD5001609ED /* LocationIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3E825C4CFD5001609ED /* LocationIconSelectionView.swift */; };
+		E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */; };
+		E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216B025C5FE3B00882A3E /* LocationCreationView.swift */; };
+		E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97216B425C5FE8F00882A3E /* LocationCreationView.xib */; };
+		E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */; };
+		E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */; };
+		E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */; };
+		E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */; };
 		E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316825C0FCE600AED8F6 /* MapViewController.swift */; };
 		E97E316B25C0FCE600AED8F6 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E316925C0FCE600AED8F6 /* MapView.xib */; };
 		E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316D25C0FCFA00AED8F6 /* MapView.swift */; };
@@ -53,9 +57,6 @@
 		E921469125C392F700CAF621 /* MapLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapLocationView.xib; sourceTree = "<group>"; };
 		E955B45725C5A70F00ECD96E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
-		E955B45F25C5C77200ECD96E /* LocationViewAppearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewAppearAnimator.swift; sourceTree = "<group>"; };
-		E955B46225C5DEBB00ECD96E /* DroppedPinViewAppearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppedPinViewAppearAnimator.swift; sourceTree = "<group>"; };
-		E955B46925C5E54200ECD96E /* DroppedPinDisappearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppedPinDisappearAnimator.swift; sourceTree = "<group>"; };
 		E95CF3CC25C4A491001609ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurEffect.swift; sourceTree = "<group>"; };
 		E95CF3D325C4AC13001609ED /* MapDroppedPinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapDroppedPinView.xib; sourceTree = "<group>"; };
@@ -65,6 +66,13 @@
 		E95CF3E225C4CF97001609ED /* LocationIconSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconSelectionViewController.swift; sourceTree = "<group>"; };
 		E95CF3E325C4CF97001609ED /* LocationIconSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationIconSelectionView.xib; sourceTree = "<group>"; };
 		E95CF3E825C4CFD5001609ED /* LocationIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconSelectionView.swift; sourceTree = "<group>"; };
+		E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewController.swift; sourceTree = "<group>"; };
+		E97216B025C5FE3B00882A3E /* LocationCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationView.swift; sourceTree = "<group>"; };
+		E97216B425C5FE8F00882A3E /* LocationCreationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCreationView.xib; sourceTree = "<group>"; };
+		E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationCoordinator.swift; sourceTree = "<group>"; };
+		E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconAppearAnimator.swift; sourceTree = "<group>"; };
+		E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconDisappearAnimator.swift; sourceTree = "<group>"; };
+		E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewModel.swift; sourceTree = "<group>"; };
 		E97E316825C0FCE600AED8F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E97E316925C0FCE600AED8F6 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		E97E316D25C0FCFA00AED8F6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -121,9 +129,8 @@
 		E955B46725C5DEF500ECD96E /* Animators */ = {
 			isa = PBXGroup;
 			children = (
-				E955B46225C5DEBB00ECD96E /* DroppedPinViewAppearAnimator.swift */,
-				E955B46925C5E54200ECD96E /* DroppedPinDisappearAnimator.swift */,
-				E955B45F25C5C77200ECD96E /* LocationViewAppearAnimator.swift */,
+				E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */,
+				E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */,
 			);
 			path = Animators;
 			sourceTree = "<group>";
@@ -151,6 +158,18 @@
 			path = LocationIconSelection;
 			sourceTree = "<group>";
 		};
+		E97216AB25C5FD7E00882A3E /* LocationCreation */ = {
+			isa = PBXGroup;
+			children = (
+				E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */,
+				E97216B025C5FE3B00882A3E /* LocationCreationView.swift */,
+				E97216B425C5FE8F00882A3E /* LocationCreationView.xib */,
+				E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */,
+				E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */,
+			);
+			path = LocationCreation;
+			sourceTree = "<group>";
+		};
 		E97E317025C0FCFE00AED8F6 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +190,7 @@
 				E95CF3CC25C4A491001609ED /* Colors.swift */,
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
+				E97216AB25C5FD7E00882A3E /* LocationCreation */,
 				E95CF3E725C4CFA0001609ED /* LocationIconSelection */,
 				E97E317025C0FCFE00AED8F6 /* Map */,
 			);
@@ -273,6 +293,7 @@
 			files = (
 				E9AAA45E25C4A252007F66F1 /* Colors.xcassets in Resources */,
 				E9B09F1825C0D687006E76B4 /* LaunchScreen.storyboard in Resources */,
+				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E9B09F1525C0D687006E76B4 /* Assets.xcassets in Resources */,
 				E919BE9025C4DEFC00D59805 /* LocationIconTableViewCell.xib in Resources */,
 				E921469225C392F700CAF621 /* MapLocationView.xib in Resources */,
@@ -333,26 +354,29 @@
 			files = (
 				E95CF3D725C4AC82001609ED /* MapDroppedPinView.swift in Sources */,
 				E95CF3E425C4CF97001609ED /* LocationIconSelectionViewController.swift in Sources */,
+				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
+				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
+				E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
 				E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */,
 				E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */,
+				E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */,
 				E95CF3D025C4A756001609ED /* GreenBlurEffect.swift in Sources */,
 				E95CF3E925C4CFD5001609ED /* LocationIconSelectionView.swift in Sources */,
 				E919BE9325C4DF1D00D59805 /* LocationIconTableViewCellViewModel.swift in Sources */,
-				E955B46325C5DEBC00ECD96E /* DroppedPinViewAppearAnimator.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
-				E955B46025C5C77200ECD96E /* LocationViewAppearAnimator.swift in Sources */,
+				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
 				E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */,
+				E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */,
 				E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */,
 				E919BE8F25C4DEFC00D59805 /* LocationIconTableViewCell.swift in Sources */,
 				E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */,
-				E955B46A25C5E54200ECD96E /* DroppedPinDisappearAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
