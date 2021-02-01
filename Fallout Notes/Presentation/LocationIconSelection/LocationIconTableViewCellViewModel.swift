@@ -7,9 +7,10 @@ class LocationIconTableViewCellViewModel {
     let type: LocationType
     let name: String
     
-    init(type: LocationType, name: String) {
+    init(type: LocationType, name: String, delegate: LocationIconTableViewCellViewModelDelegate? = nil) {
         self.type = type
         self.name = name
+        self.delegate = delegate
     }
     
     func cellSelected() {

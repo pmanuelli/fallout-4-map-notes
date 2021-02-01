@@ -16,14 +16,10 @@ class LocationIconSelectionViewModel {
     
     init() {
         
-        let viewModels = [LocationIconTableViewCellViewModel(type: .vault, name: "Vault"),
-                          LocationIconTableViewCellViewModel(type: .building, name: "Building"),
-                          LocationIconTableViewCellViewModel(type: .ruins, name: "Ruins"),
-                          LocationIconTableViewCellViewModel(type: .pondLake, name: "Pond lake"),
-                          LocationIconTableViewCellViewModel(type: .farm, name: "Farm")]
-        
-        viewModels.forEach { $0.delegate = self }
-        
+        let viewModels = LocationType.allCases.map {
+            LocationIconTableViewCellViewModel(type: $0, name: LocationTypeNames.name(for: $0), delegate: self)
+        }
+                
         cellViewModelsSubject.onNext(viewModels)
     }
 }

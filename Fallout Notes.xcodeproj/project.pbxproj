@@ -33,6 +33,7 @@
 		E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */; };
 		E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */; };
 		E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */; };
+		E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217DA25C77CB800882A3E /* LocationTypeNames.swift */; };
 		E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316825C0FCE600AED8F6 /* MapViewController.swift */; };
 		E97E316B25C0FCE600AED8F6 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E316925C0FCE600AED8F6 /* MapView.xib */; };
 		E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316D25C0FCFA00AED8F6 /* MapView.swift */; };
@@ -73,6 +74,7 @@
 		E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconAppearAnimator.swift; sourceTree = "<group>"; };
 		E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconDisappearAnimator.swift; sourceTree = "<group>"; };
 		E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewModel.swift; sourceTree = "<group>"; };
+		E97217DA25C77CB800882A3E /* LocationTypeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypeNames.swift; sourceTree = "<group>"; };
 		E97E316825C0FCE600AED8F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E97E316925C0FCE600AED8F6 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		E97E316D25C0FCFA00AED8F6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				E95CF3CC25C4A491001609ED /* Colors.swift */,
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
+				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E97216AB25C5FD7E00882A3E /* LocationCreation */,
 				E95CF3E725C4CFA0001609ED /* LocationIconSelection */,
 				E97E317025C0FCFE00AED8F6 /* Map */,
@@ -357,6 +360,7 @@
 				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
+				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,

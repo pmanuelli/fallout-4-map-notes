@@ -16,3 +16,5 @@ enum LocationType {
     case settlementSmall
     case vault
 }
+
+extension LocationType: CaseIterable { }

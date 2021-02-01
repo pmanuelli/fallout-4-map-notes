@@ -28,8 +28,20 @@ class LocationCreationViewController: UIViewController {
         setupNavigationItemButtons()
         setupIconTouch()
         
+        bindLocationType()
+        bindLocationName()
+    }
+    
+    private func bindLocationType() {
         viewModel.output.locationType
             .subscribe(onNext: { [weak self] in self?.locationTypeChanged($0) })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindLocationName() {
+        mainView.nameTextField.rx.text
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] in self?.viewModel.changeLocationName($0) })
             .disposed(by: disposeBag)
     }
     

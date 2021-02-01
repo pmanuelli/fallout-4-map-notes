@@ -82,7 +82,6 @@ class LocationCreationCoordinator {
         
         perform(after: 0.5) {
             self.locationCreationViewModel?.changeLocationType(type)
-            self.locationCreationViewModel?.locationNameChanged("ssss")
         }
     }
 }
