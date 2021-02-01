@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_vault" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-m0-XYx">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_vault" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-m0-XYx" customClass="GreenBlurImageView" customModule="Fallout_Notes" customModuleProvider="target">
                     <rect key="frame" x="25" y="0.0" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="eDy-m0-XYx" secondAttribute="height" multiplier="1:1" id="UHe-ly-FYk"/>

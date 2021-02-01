@@ -35,6 +35,13 @@ class MapViewController: UIViewController {
         bindViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let y = mainView.scrollView.contentOffset.y
+        mainView.scrollView.setContentOffset(CGPoint(x: 250, y: y), animated: false)
+    }
+    
     private func setupScrollView() {
         mainView.scrollView.delegate = self
     }

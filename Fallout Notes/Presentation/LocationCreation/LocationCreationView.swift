@@ -9,7 +9,6 @@ class LocationCreationView: UIView {
     @IBOutlet var nameTextField: UITextField!
     
     override func awakeFromNib() {
-        
-        GreenBlurEffect.apply(on: iconImageView)
+        iconImageView.image = Icons.droppedPin
     }
 }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "launch_screen_2.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

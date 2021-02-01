@@ -29,8 +29,6 @@ class MapDroppedPinView: UIView {
     
     private func setupIconImageView(width: CGFloat) {
         droppedPinImageView.image = Icons.droppedPin
-        droppedPinImageViewWidthConstraint.constant = width
-        
-        GreenBlurEffect.apply(on: droppedPinImageView)
+        droppedPinImageViewWidthConstraint.constant = width        
     }
 }

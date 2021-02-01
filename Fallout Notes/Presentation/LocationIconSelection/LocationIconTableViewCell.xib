@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" secondItem="FQX-mw-ues" secondAttribute="height" multiplier="1:1" id="ya5-Gk-DFD"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_vault" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Jw-4Zk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_vault" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Jw-4Zk" customClass="GreenBlurImageView" customModule="Fallout_Notes" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yhJ-Jw-4Zk" secondAttribute="height" multiplier="1:1" id="K2x-ce-4UN"/>

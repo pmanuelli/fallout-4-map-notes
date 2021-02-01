@@ -31,8 +31,6 @@ class MapLocationView: UIView {
     private func setupIconImageView(image: UIImage, width: CGFloat) {
         iconImageView.image = image
         iconImageViewWidthConstraint.constant = width
-        
-        GreenBlurEffect.apply(on: iconImageView)
     }
     
     private func setupNameLabel(name: String) {

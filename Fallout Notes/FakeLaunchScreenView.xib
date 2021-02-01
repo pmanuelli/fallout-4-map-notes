@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FakeLaunchScreenView" customModule="Fallout_Notes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launch_screen_8" translatesAutoresizingMaskIntoConstraints="NO" id="aw5-te-0T4">
+                    <rect key="frame" x="143" y="357" width="128" height="192"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="aw5-te-0T4" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Chi-lQ-hpK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aw5-te-0T4" secondAttribute="trailing" constant="143" id="K5g-Ws-Mo6"/>
+            </constraints>
+            <connections>
+                <outlet property="vaultBoyImageView" destination="aw5-te-0T4" id="L8v-Uk-6Bu"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="96"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="launch_screen_8" width="128" height="192"/>
+    </resources>
+</document>

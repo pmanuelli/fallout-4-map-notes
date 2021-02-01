@@ -34,6 +34,10 @@
 		E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */; };
 		E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */; };
 		E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217DA25C77CB800882A3E /* LocationTypeNames.swift */; };
+		E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */; };
+		E9721B1B25C8A6E200882A3E /* FakeLaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */; };
+		E9721B1E25C8A74400882A3E /* FakeLaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9721B1D25C8A74400882A3E /* FakeLaunchScreenView.xib */; };
+		E9721B2225C8A8BF00882A3E /* GreenBlurImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */; };
 		E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316825C0FCE600AED8F6 /* MapViewController.swift */; };
 		E97E316B25C0FCE600AED8F6 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E316925C0FCE600AED8F6 /* MapView.xib */; };
 		E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316D25C0FCFA00AED8F6 /* MapView.swift */; };
@@ -75,6 +79,10 @@
 		E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconDisappearAnimator.swift; sourceTree = "<group>"; };
 		E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewModel.swift; sourceTree = "<group>"; };
 		E97217DA25C77CB800882A3E /* LocationTypeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypeNames.swift; sourceTree = "<group>"; };
+		E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchScreenViewController.swift; sourceTree = "<group>"; };
+		E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchScreenView.swift; sourceTree = "<group>"; };
+		E9721B1D25C8A74400882A3E /* FakeLaunchScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FakeLaunchScreenView.xib; sourceTree = "<group>"; };
+		E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurImageView.swift; sourceTree = "<group>"; };
 		E97E316825C0FCE600AED8F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E97E316925C0FCE600AED8F6 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		E97E316D25C0FCFA00AED8F6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 			children = (
 				E95CF3CC25C4A491001609ED /* Colors.swift */,
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
+				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E97216AB25C5FD7E00882A3E /* LocationCreation */,
@@ -229,6 +238,9 @@
 				E9B09F1425C0D687006E76B4 /* Assets.xcassets */,
 				E9AAA45D25C4A252007F66F1 /* Colors.xcassets */,
 				E9B09F1625C0D687006E76B4 /* LaunchScreen.storyboard */,
+				E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */,
+				E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */,
+				E9721B1D25C8A74400882A3E /* FakeLaunchScreenView.xib */,
 				E9B09F1925C0D687006E76B4 /* Info.plist */,
 			);
 			path = "Fallout Notes";
@@ -295,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9AAA45E25C4A252007F66F1 /* Colors.xcassets in Resources */,
+				E9721B1E25C8A74400882A3E /* FakeLaunchScreenView.xib in Resources */,
 				E9B09F1825C0D687006E76B4 /* LaunchScreen.storyboard in Resources */,
 				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E9B09F1525C0D687006E76B4 /* Assets.xcassets in Resources */,
@@ -358,6 +371,7 @@
 				E95CF3D725C4AC82001609ED /* MapDroppedPinView.swift in Sources */,
 				E95CF3E425C4CF97001609ED /* LocationIconSelectionViewController.swift in Sources */,
 				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
+				E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
@@ -377,9 +391,11 @@
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
 				E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */,
+				E9721B2225C8A8BF00882A3E /* GreenBlurImageView.swift in Sources */,
 				E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */,
 				E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */,
 				E919BE8F25C4DEFC00D59805 /* LocationIconTableViewCell.swift in Sources */,
+				E9721B1B25C8A6E200882A3E /* FakeLaunchScreenView.swift in Sources */,
 				E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

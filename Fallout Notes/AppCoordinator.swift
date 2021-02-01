@@ -14,6 +14,17 @@ class AppCoordinator {
     }
     
     func start() {
+
         mapCoordinator.start()
+        
+        let fakeLaunchScreen = FakeLaunchScreenViewController(duration: 1)
+        fakeLaunchScreen.modalTransitionStyle = .crossDissolve
+        fakeLaunchScreen.modalPresentationStyle = .overFullScreen
+        
+        navigationController.present(fakeLaunchScreen, animated: false)
+
+        perform(after: 1) {
+            self.navigationController.dismiss(animated: true)
+        }
     }
 }
