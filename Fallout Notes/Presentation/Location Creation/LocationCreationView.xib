@@ -192,10 +192,10 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="Y93-kl-yo1" firstAttribute="trailing" secondItem="oyh-fy-f1A" secondAttribute="trailing" constant="414" id="9zj-zM-3Cb"/>
                         <constraint firstItem="Y93-kl-yo1" firstAttribute="leading" secondItem="oyh-fy-f1A" secondAttribute="leading" id="C9P-CM-6cv"/>
-                        <constraint firstItem="Y93-kl-yo1" firstAttribute="bottom" secondItem="oyh-fy-f1A" secondAttribute="bottom" constant="300" id="bPn-ZL-tFX"/>
                         <constraint firstItem="Y93-kl-yo1" firstAttribute="top" secondItem="oyh-fy-f1A" secondAttribute="top" id="eVu-Wn-fms"/>
+                        <constraint firstItem="Y93-kl-yo1" firstAttribute="bottom" secondItem="oyh-fy-f1A" secondAttribute="bottom" id="ex3-ws-s3D"/>
+                        <constraint firstItem="Y93-kl-yo1" firstAttribute="trailing" secondItem="oyh-fy-f1A" secondAttribute="trailing" id="ufS-3x-NdG"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="oyh-fy-f1A"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="Rcl-Cx-V8R"/>
