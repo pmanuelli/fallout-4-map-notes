@@ -34,6 +34,8 @@ struct LocationTypeNames {
             return "Small Settlement"
         case .vault:
             return "Vault"
+        case .water:
+            return "Water"
         }
     }
 }

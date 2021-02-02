@@ -18,7 +18,7 @@ class MapCoordinator {
     
     func start() {
         
-        let viewModel = MapViewModel()
+        let viewModel = MapViewModel(eventBus: Infrastructure.shared.eventBus)
         let viewController = MapViewController(viewModel: viewModel)
         mapViewModel = viewModel
         mapViewController = viewController
@@ -31,13 +31,13 @@ class MapCoordinator {
     
     private func observeViewModel(_ viewModel: MapViewModel) {
         viewModel.output.newLocationPinDrop
-            .subscribe(onNext: { [weak self] _ in self?.startLocationCreation() })
+            .subscribe(onNext: { [weak self] in self?.startLocationCreation(coordinates: $0) })
             .disposed(by: disposeBag)
     }
     
-    private func startLocationCreation() {
+    private func startLocationCreation(coordinates: Coordinates) {
 
-        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController)
+        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController, locationCoordinates: coordinates)
         locationCreationCoordinator?.start() { [weak self] in self?.onLocationSelectionCompleted($0) }
     }
     

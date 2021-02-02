@@ -19,6 +19,7 @@ struct Icons {
     static var satelliteArray: UIImage { iconImage(named: "sat_array") }
     static var settlementSmall: UIImage { iconImage(named: "settlement_small") }
     static var vault: UIImage { iconImage(named: "vault") }
+    static var water: UIImage { iconImage(named: "water") }
     
     static func icon(for locationType: LocationType) -> UIImage {
         switch locationType {
@@ -54,6 +55,8 @@ struct Icons {
             return Icons.settlementSmall
         case .vault:
             return Icons.vault
+        case .water:
+            return Icons.water
         }
     }
     

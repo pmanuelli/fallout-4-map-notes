@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_water.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

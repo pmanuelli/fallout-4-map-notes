@@ -5,7 +5,7 @@ class MapViewModel {
     
     struct Output {
         let userInteractionEnabled: Driver<Bool>
-        let newLocationPinDrop: Observable<Void>
+        let newLocationPinDrop: Observable<Coordinates>
         let newLocationAccept: Observable<(LocationType, String)>
         let newLocationCancel: Observable<Void>
     }
@@ -16,16 +16,29 @@ class MapViewModel {
                              newLocationCancel: newLocationCancelSubject.asObservable())
 
     private let userInteractionEnabledSubject = BehaviorSubject<Bool>(value: true)
-    private let newLocationPinDropSubject = PublishSubject<Void>()
+    private let newLocationPinDropSubject = PublishSubject<Coordinates>()
     private let newLocationAcceptSubject = PublishSubject<(LocationType, String)>()
     private let newLocationCancelSubject = PublishSubject<Void>()
 
-    func newLocationPinDropped() {
-        newLocationPinDropSubject.onNext(Void())
+    private let disposeBag = DisposeBag()
+    
+    init(eventBus: EventBusConsumer) {
+        
+        eventBus.observe()
+            .subscribe(onNext: { (event: LocationCreatedEvent) in
+                
+                self.newLocationAcceptSubject.onNext((event.location.type, event.location.name))
+                
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func newLocationPinDropped(coordinates: Coordinates) {
+        newLocationPinDropSubject.onNext(coordinates)
     }
     
     func newLocationAccepted(type: LocationType, name: String) {
-        newLocationAcceptSubject.onNext((type, name))
+//        newLocationAcceptSubject.onNext((type, name))
     }
     
     func newLocationCancelled() {

@@ -100,6 +100,7 @@ class MapViewController: UIViewController {
     private func mapDidReceiveTap(_ sender: UITapGestureRecognizer) {
         
         let location = sender.location(in: mainView.mapImageView)
+        let coordinates = convertToCoordinates(location: location, in: mainView.mapImageView)
                 
         let droppedPinView = MapDroppedPinView(imageWidth: 50)
         droppedPinView.addAsSubview(on: mainView.mapImageView, above: location)
@@ -108,8 +109,13 @@ class MapViewController: UIViewController {
         currentDroppedPinLocation = location
 
         LocationIconAppearAnimator.animate(droppedPinView, origin: .bottom) {
-            self.viewModel.newLocationPinDropped()
+            self.viewModel.newLocationPinDropped(coordinates: coordinates)
         }
+    }
+    
+    private func convertToCoordinates(location: CGPoint, in view: UIView) -> Coordinates {
+        Coordinates(x: Double(location.x / view.bounds.width),
+                    y: Double(location.y / view.bounds.height))
     }
     
 //    func captureNewLocationMapSnapshot() -> UIImage {
@@ -139,20 +145,20 @@ extension MapViewController: UIScrollViewDelegate {
     }
 }
 
-struct InGameLocationRepository {
-    
-    func findAll() -> [Location] {
-        [Location(type: .vault, name: "Vault 111", coordinates: Coordinates(x: 0.19791666666666669, y: 0.0685221329331398)),
-         Location(type: .sanctuaryHills, name: "Sanctuary Hills", coordinates: Coordinates(x: 0.2428385391831398, y: 0.0828450471162796)),
-         Location(type: .fillingStation, name: "Red Rocket truck stop", coordinates: Coordinates(x: 0.28173827876647317, y: 0.11490885416666667)),
-         Location(type: .farm, name: "Abernathy farm", coordinates: Coordinates(x: 0.250162755449613, y: 0.16503905753294626)),
-         Location(type: .settlementSmall, name: "Ranger cabin", coordinates: Coordinates(x: 0.20817056794961294, y: 0.14550780753294626)),
-         Location(type: .factory, name: "Wicked Shipping Fleet Lockup", coordinates: Coordinates(x: 0.21858723958333334, y: 0.18164062003294626)),
-         Location(type: .junkyard, name: "Robotics disposal ground", coordinates: Coordinates(x: 0.3395182266831398, y: 0.04296875)),
-         Location(type: .satelliteArray, name: "USAF Satellite Station Olivia", coordinates: Coordinates(x: 0.3819986954331398, y: 0.06835937003294627)),
-         Location(type: .quarry, name: "Thicket Excavations", coordinates: Coordinates(x: 0.3688151016831398, y: 0.10856119791666667)),
-         Location(type: .monument, name: "Museum of Freedom", coordinates: Coordinates(x: 0.32438151041666663, y: 0.14876301834980646)),
-         Location(type: .ruins, name: "Concord", coordinates: Coordinates(x: 0.31022135416666663, y: 0.14550780753294626))]
-    }
-}
+//struct InGameLocationRepository {
+//
+//    func findAll() -> [Location] {
+//        [Location(type: .vault, name: "Vault 111", coordinates: Coordinates(x: 0.19791666666666669, y: 0.0685221329331398)),
+//         Location(type: .sanctuaryHills, name: "Sanctuary Hills", coordinates: Coordinates(x: 0.2428385391831398, y: 0.0828450471162796)),
+//         Location(type: .fillingStation, name: "Red Rocket truck stop", coordinates: Coordinates(x: 0.28173827876647317, y: 0.11490885416666667)),
+//         Location(type: .farm, name: "Abernathy farm", coordinates: Coordinates(x: 0.250162755449613, y: 0.16503905753294626)),
+//         Location(type: .settlementSmall, name: "Ranger cabin", coordinates: Coordinates(x: 0.20817056794961294, y: 0.14550780753294626)),
+//         Location(type: .factory, name: "Wicked Shipping Fleet Lockup", coordinates: Coordinates(x: 0.21858723958333334, y: 0.18164062003294626)),
+//         Location(type: .junkyard, name: "Robotics disposal ground", coordinates: Coordinates(x: 0.3395182266831398, y: 0.04296875)),
+//         Location(type: .satelliteArray, name: "USAF Satellite Station Olivia", coordinates: Coordinates(x: 0.3819986954331398, y: 0.06835937003294627)),
+//         Location(type: .quarry, name: "Thicket Excavations", coordinates: Coordinates(x: 0.3688151016831398, y: 0.10856119791666667)),
+//         Location(type: .monument, name: "Museum of Freedom", coordinates: Coordinates(x: 0.32438151041666663, y: 0.14876301834980646)),
+//         Location(type: .ruins, name: "Concord", coordinates: Coordinates(x: 0.31022135416666663, y: 0.14550780753294626))]
+//    }
+//}
 
