@@ -188,6 +188,17 @@
 			path = "Location Icon Selection";
 			sourceTree = "<group>";
 		};
+		E971E81625CA123000ABA436 /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E971E81325CA113200ABA436 /* LaunchScreen.storyboard */,
+				E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */,
+				E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */,
+				E9721B1D25C8A74400882A3E /* FakeLaunchScreenView.xib */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
 		E97216AB25C5FD7E00882A3E /* Location Creation */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +274,7 @@
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
+				E971E81625CA123000ABA436 /* Launch Screen */,
 				E97216AB25C5FD7E00882A3E /* Location Creation */,
 				E95CF3E725C4CFA0001609ED /* Location Icon Selection */,
 				E97E317025C0FCFE00AED8F6 /* Map */,
@@ -299,10 +311,6 @@
 				E97E317125C0FD0400AED8F6 /* Presentation */,
 				E9B09F1425C0D687006E76B4 /* Assets.xcassets */,
 				E9AAA45D25C4A252007F66F1 /* Colors.xcassets */,
-				E971E81325CA113200ABA436 /* LaunchScreen.storyboard */,
-				E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */,
-				E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */,
-				E9721B1D25C8A74400882A3E /* FakeLaunchScreenView.xib */,
 				E9B09F1925C0D687006E76B4 /* Info.plist */,
 			);
 			path = "Fallout Notes";
