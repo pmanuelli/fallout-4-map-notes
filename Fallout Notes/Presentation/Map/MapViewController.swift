@@ -54,25 +54,27 @@ class MapViewController: UIViewController {
     private func bindViewModel() {
         
         viewModel.output.newLocationAccept
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .withUnretained(self)
-            .subscribe(onNext: { controller, location in controller.acceptNewLocation(type: location.0, name: location.1) })
+            .subscribe(onNext: { controller, viewModel in controller.acceptNewLocation(viewModel: viewModel) })
             .disposed(by: disposeBag)
         
         viewModel.output.newLocationCancel
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .withUnretained(self)
             .subscribe(onNext: { controller, _ in controller.cancelNewLocation() })
             .disposed(by: disposeBag)
     }
 
-    private func acceptNewLocation(type: LocationType, name: String) {
+    private func acceptNewLocation(viewModel: MapLocationViewModel) {
         
+        let view = MapLocationView(viewModel: viewModel, imageWidth: self.locationImageWidth)
+
         LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
             
             self.currentDroppedPinView?.removeFromSuperview()
             self.currentDroppedPinView = nil
-            
-            let view = MapLocationView(image: Icons.icon(for: type), imageWidth: self.locationImageWidth, name: name)
-            
+
             self.addLocationViewAnimated(view, at: self.currentDroppedPinLocation!)
         }
     }

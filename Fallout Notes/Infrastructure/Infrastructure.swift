@@ -10,7 +10,9 @@ class Infrastructure {
     lazy var locationIdGenerator: LocationIdGenerator = UUIDLocationIdGenerator()
     lazy var locationRepository: LocationRepository = InMemoryLocationRepository()
     
-    lazy var createLocation = CreateLocationDefault(repository: locationRepository,
-                                                    idGenerator: locationIdGenerator,
-                                                    eventBus: eventBus)
+    lazy var createLocation: CreateLocation = CreateLocationDefault(repository: locationRepository,
+                                                                    idGenerator: locationIdGenerator,
+                                                                    eventBus: eventBus)
+    
+    lazy var cancelLocationCreation: CancelLocationCreation = CancelLocationCreationDefault(eventBus: eventBus)
 }

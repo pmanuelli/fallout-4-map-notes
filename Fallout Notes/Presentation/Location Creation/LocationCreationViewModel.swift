@@ -5,7 +5,7 @@ class LocationCreationViewModel {
         
     struct Output {
         let doneButtonEnabled: Observable<Bool>
-        let doneButtonTouch: Observable<(LocationType, String)>
+        let doneButtonTouch: Observable<Void>
         let cancelButtonTouch: Observable<Void>
         let locationTypeIconTouch: Observable<Void>
         let locationType: Observable<LocationType>
@@ -22,17 +22,22 @@ class LocationCreationViewModel {
     private var locationNotes: String = ""
     
     private let doneButtonEnabledSubject = ReplaySubject<Bool>.createUnbounded()
-    private let doneButtonTouchSubject = PublishSubject<(LocationType, String)>()
+    private let doneButtonTouchSubject = PublishSubject<Void>()
     private let cancelButtonTouchSubject = PublishSubject<Void>()
     private let locationTypeIconTouchSubject = PublishSubject<Void>()
     private let locationTypeSubject = PublishSubject<LocationType>()
     
     private let locationCoordinates: Coordinates
     private let createLocation: CreateLocation
+    private let cancelLocationCreation: CancelLocationCreation
     
-    init(locationCoordinates: Coordinates, createLocation: CreateLocation) {
+    init(locationCoordinates: Coordinates,
+         createLocation: CreateLocation,
+         cancelLocationCreation: CancelLocationCreation) {
+        
         self.locationCoordinates = locationCoordinates
         self.createLocation = createLocation
+        self.cancelLocationCreation = cancelLocationCreation
         
         updateDoneButtonEnabled()
     }
@@ -44,21 +49,21 @@ class LocationCreationViewModel {
     
     @objc
     func cancelButtonTouched() {
+        cancelLocationCreation.execute()
         cancelButtonTouchSubject.onNext(())
     }
     
     @objc
     func doneButtonTouched() {
         guard let locationType = locationType else { return }
-        
-        doneButtonTouchSubject.onNext((locationType, locationName))
-        
+                
         let data = CreateLocationData(type: locationType,
                                       name: locationName,
                                       notes: locationNotes,
                                       coordinates: locationCoordinates)
         
         createLocation.execute(data: data)
+        doneButtonTouchSubject.onNext(())
     }
     
     func changeLocationType(_ type: LocationType) {

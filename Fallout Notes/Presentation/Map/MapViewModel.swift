@@ -6,7 +6,7 @@ class MapViewModel {
     struct Output {
         let userInteractionEnabled: Driver<Bool>
         let newLocationPinDrop: Observable<Coordinates>
-        let newLocationAccept: Observable<(LocationType, String)>
+        let newLocationAccept: Observable<MapLocationViewModel>
         let newLocationCancel: Observable<Void>
     }
     
@@ -17,7 +17,7 @@ class MapViewModel {
 
     private let userInteractionEnabledSubject = BehaviorSubject<Bool>(value: true)
     private let newLocationPinDropSubject = PublishSubject<Coordinates>()
-    private let newLocationAcceptSubject = PublishSubject<(LocationType, String)>()
+    private let newLocationAcceptSubject = PublishSubject<MapLocationViewModel>()
     private let newLocationCancelSubject = PublishSubject<Void>()
 
     private let disposeBag = DisposeBag()
@@ -25,11 +25,11 @@ class MapViewModel {
     init(eventBus: EventBusConsumer) {
         
         eventBus.observe()
-            .subscribe(onNext: { (event: LocationCreatedEvent) in
-                
-                self.newLocationAcceptSubject.onNext((event.location.type, event.location.name))
-                
-            })
+            .subscribe(onNext: { [weak self] (event: LocationCreatedEvent) in self?.onLocationCreated(location: event.location) })
+            .disposed(by: disposeBag)
+        
+        eventBus.observe()
+            .subscribe(onNext: { [weak self] (event: LocationCreationCancelledEvent) in self?.onLocationCreationCancelled() })
             .disposed(by: disposeBag)
     }
     
@@ -37,11 +37,12 @@ class MapViewModel {
         newLocationPinDropSubject.onNext(coordinates)
     }
     
-    func newLocationAccepted(type: LocationType, name: String) {
-//        newLocationAcceptSubject.onNext((type, name))
+    private func onLocationCreated(location: Location) {
+        let viewModel = MapLocationViewModel(type: location.type, name: location.name)
+        newLocationAcceptSubject.onNext(viewModel)
     }
     
-    func newLocationCancelled() {
+    private func onLocationCreationCancelled() {
         newLocationCancelSubject.onNext(())
     }
 }

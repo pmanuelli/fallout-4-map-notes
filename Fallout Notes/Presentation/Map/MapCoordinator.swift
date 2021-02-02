@@ -38,20 +38,11 @@ class MapCoordinator {
     private func startLocationCreation(coordinates: Coordinates) {
 
         locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController, locationCoordinates: coordinates)
-        locationCreationCoordinator?.start() { [weak self] in self?.onLocationSelectionCompleted($0) }
+        locationCreationCoordinator?.start() { [weak self] in self?.onLocationSelectionCompleted() }
     }
     
-    private func onLocationSelectionCompleted(_ result: LocationCreationCoordinator.Result) {
-        
-        perform(after: 0.5) {
-            
-            switch result {
-            case .accept(type: let type, name: let name):
-                self.mapViewModel?.newLocationAccepted(type: type, name: name)
-            case .cancel:
-                self.mapViewModel?.newLocationCancelled()
-            }
-        }
+    private func onLocationSelectionCompleted() {
+    
     }
 }
 

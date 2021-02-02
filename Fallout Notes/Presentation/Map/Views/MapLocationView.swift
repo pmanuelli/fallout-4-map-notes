@@ -6,12 +6,12 @@ class MapLocationView: UIView {
     @IBOutlet private var iconImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private var nameLabel: UILabel!
     
-    init(image: UIImage, imageWidth: CGFloat, name: String) {
+    init(viewModel: MapLocationViewModel, imageWidth: CGFloat) {
         super.init(frame: .zero)
 
         addNibAsSubview()
-        setupIconImageView(image: image, width: imageWidth)
-        setupNameLabel(name: name)
+        setupIconImageView(image: Icons.icon(for: viewModel.type), width: imageWidth)
+        setupNameLabel(name: viewModel.name)
         
         translatesAutoresizingMaskIntoConstraints = false
     }

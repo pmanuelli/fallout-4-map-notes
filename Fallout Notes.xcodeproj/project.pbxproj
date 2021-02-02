@@ -27,6 +27,8 @@
 		E95CF3E525C4CF97001609ED /* LocationIconSelectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95CF3E325C4CF97001609ED /* LocationIconSelectionView.xib */; };
 		E95CF3E925C4CFD5001609ED /* LocationIconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3E825C4CFD5001609ED /* LocationIconSelectionView.swift */; };
 		E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E971E81325CA113200ABA436 /* LaunchScreen.storyboard */; };
+		E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */; };
+		E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E81E25CA1CE900ABA436 /* MapLocationViewModel.swift */; };
 		E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */; };
 		E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216B025C5FE3B00882A3E /* LocationCreationView.swift */; };
 		E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97216B425C5FE8F00882A3E /* LocationCreationView.xib */; };
@@ -81,6 +83,8 @@
 		E95CF3E325C4CF97001609ED /* LocationIconSelectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationIconSelectionView.xib; sourceTree = "<group>"; };
 		E95CF3E825C4CFD5001609ED /* LocationIconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconSelectionView.swift; sourceTree = "<group>"; };
 		E971E81325CA113200ABA436 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelLocationCreation.swift; sourceTree = "<group>"; };
+		E971E81E25CA1CE900ABA436 /* MapLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationViewModel.swift; sourceTree = "<group>"; };
 		E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewController.swift; sourceTree = "<group>"; };
 		E97216B025C5FE3B00882A3E /* LocationCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationView.swift; sourceTree = "<group>"; };
 		E97216B425C5FE8F00882A3E /* LocationCreationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCreationView.xib; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				E95CF3D325C4AC13001609ED /* MapDroppedPinView.xib */,
 				E921468E25C392DB00CAF621 /* MapLocationView.swift */,
 				E921469125C392F700CAF621 /* MapLocationView.xib */,
+				E971E81E25CA1CE900ABA436 /* MapLocationViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E9721B2725C8D47300882A3E /* CreateLocation.swift */,
+				E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -446,10 +452,12 @@
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
+				E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
 				E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */,
+				E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
 				E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */,
 				E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */,

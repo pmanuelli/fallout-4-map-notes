@@ -3,19 +3,14 @@ import RxSwift
 import RxCocoa
 
 class LocationCreationCoordinator {
-    
-    enum Result {
-        case accept(type: LocationType, name: String)
-        case cancel
-    }
-    
+        
     private let inheritedNavigationController: UINavigationController
     private let locationCoordinates: Coordinates
     
     private let navigationController = UINavigationController()
     private var locationCreationViewModel: LocationCreationViewModel?
         
-    private var completion: ((Result) -> Void)?
+    private var completion: (() -> Void)?
     
     private let disposeBag = DisposeBag()
     
@@ -24,12 +19,13 @@ class LocationCreationCoordinator {
         self.locationCoordinates = locationCoordinates
     }
     
-    func start(_ completion: @escaping (Result) -> Void) {
+    func start(_ completion: @escaping () -> Void) {
         
         self.completion = completion
         
         let viewModel = LocationCreationViewModel(locationCoordinates: locationCoordinates,
-                                                  createLocation: Infrastructure.shared.createLocation)
+                                                  createLocation: Infrastructure.shared.createLocation,
+                                                  cancelLocationCreation: Infrastructure.shared.cancelLocationCreation)
         
         let viewController = LocationCreationViewController(viewModel: viewModel)
         
@@ -44,12 +40,12 @@ class LocationCreationCoordinator {
         
         viewModel.output.doneButtonTouch
             .withUnretained(self)
-            .subscribe(onNext: { coordinator, result in coordinator.stop(result: .accept(type: result.0, name: result.1)) })
+            .subscribe(onNext: { coordinator, _ in coordinator.stop() })
             .disposed(by: disposeBag)
         
         viewModel.output.cancelButtonTouch
             .withUnretained(self)
-            .subscribe(onNext: { coordinator, _ in coordinator.stop(result: .cancel) })
+            .subscribe(onNext: { coordinator, _ in coordinator.stop() })
             .disposed(by: disposeBag)
         
         viewModel.output.locationTypeIconTouch
@@ -58,9 +54,9 @@ class LocationCreationCoordinator {
             .disposed(by: disposeBag)
     }
     
-    private func stop(result: Result) {
+    private func stop() {
         inheritedNavigationController.dismiss(animated: true)
-        completion?(result)
+        completion?()
     }
         
     private func startLocationIconSelection() {
