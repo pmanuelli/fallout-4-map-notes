@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launch_screen_1" translatesAutoresizingMaskIntoConstraints="NO" id="aw5-te-0T4">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launch_screen_8" translatesAutoresizingMaskIntoConstraints="NO" id="aw5-te-0T4">
                     <rect key="frame" x="114" y="322.5" width="186" height="261"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -36,6 +36,6 @@
         </view>
     </objects>
     <resources>
-        <image name="launch_screen_1" width="137" height="192"/>
+        <image name="launch_screen_8" width="137" height="192"/>
     </resources>
 </document>

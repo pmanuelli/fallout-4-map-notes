@@ -45,9 +45,8 @@
 		E9721B3425C8EB5D00882A3E /* UUIDLocationIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */; };
 		E9721B3825C8EBBA00882A3E /* InMemoryLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */; };
 		E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3A25C8F07300882A3E /* Infrastructure.swift */; };
-		E9721B3F25C8F71800882A3E /* EventBusProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3E25C8F71800882A3E /* EventBusProducer.swift */; };
 		E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4125C8F75500882A3E /* RxEventBus.swift */; };
-		E9721B4625C8FAB100882A3E /* EventBusConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4525C8FAB100882A3E /* EventBusConsumer.swift */; };
+		E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4525C8FAB100882A3E /* EventBus.swift */; };
 		E9721B4A25C8FAD600882A3E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4925C8FAD600882A3E /* Event.swift */; };
 		E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97E316825C0FCE600AED8F6 /* MapViewController.swift */; };
 		E97E316B25C0FCE600AED8F6 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97E316925C0FCE600AED8F6 /* MapView.xib */; };
@@ -100,9 +99,8 @@
 		E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDLocationIdGenerator.swift; sourceTree = "<group>"; };
 		E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryLocationRepository.swift; sourceTree = "<group>"; };
 		E9721B3A25C8F07300882A3E /* Infrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
-		E9721B3E25C8F71800882A3E /* EventBusProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusProducer.swift; sourceTree = "<group>"; };
 		E9721B4125C8F75500882A3E /* RxEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEventBus.swift; sourceTree = "<group>"; };
-		E9721B4525C8FAB100882A3E /* EventBusConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusConsumer.swift; sourceTree = "<group>"; };
+		E9721B4525C8FAB100882A3E /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
 		E9721B4925C8FAD600882A3E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E97E316825C0FCE600AED8F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E97E316925C0FCE600AED8F6 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
@@ -246,8 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				E9721B4925C8FAD600882A3E /* Event.swift */,
-				E9721B4525C8FAB100882A3E /* EventBusConsumer.swift */,
-				E9721B3E25C8F71800882A3E /* EventBusProducer.swift */,
+				E9721B4525C8FAB100882A3E /* EventBus.swift */,
 			);
 			path = "Event Bus";
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */,
-				E9721B3F25C8F71800882A3E /* EventBusProducer.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
 				E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
@@ -466,7 +462,7 @@
 				E9721B4A25C8FAD600882A3E /* Event.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
-				E9721B4625C8FAB100882A3E /* EventBusConsumer.swift in Sources */,
+				E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
