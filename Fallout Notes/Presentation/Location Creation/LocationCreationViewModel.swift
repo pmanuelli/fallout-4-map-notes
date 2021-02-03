@@ -72,12 +72,12 @@ class LocationCreationViewModel {
         updateDoneButtonEnabled()
     }
     
-    func changeLocationName(_ name: String) {
+    func updateLocationName(_ name: String) {
         locationName = name
         updateDoneButtonEnabled()
     }
     
-    func changeLocationNotes(_ notes: String) {
+    func updateLocationNotes(_ notes: String) {
         locationNotes = notes
         updateDoneButtonEnabled()
     }

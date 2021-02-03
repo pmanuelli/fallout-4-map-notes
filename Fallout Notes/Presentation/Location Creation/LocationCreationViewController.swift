@@ -30,6 +30,7 @@ class LocationCreationViewController: UIViewController {
         
         bindLocationType()
         bindLocationName()
+        bindLocationNotes()
     }
     
     private func bindLocationType() {
@@ -41,7 +42,14 @@ class LocationCreationViewController: UIViewController {
     private func bindLocationName() {
         mainView.nameTextField.rx.text
             .compactMap { $0 }
-            .subscribe(onNext: { [weak self] in self?.viewModel.changeLocationName($0) })
+            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationName($0) })
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindLocationNotes() {
+        mainView.notesTextView.rx.text
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationNotes($0) })
             .disposed(by: disposeBag)
     }
     

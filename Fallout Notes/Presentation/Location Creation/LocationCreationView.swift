@@ -7,6 +7,7 @@ class LocationCreationView: UIView {
     @IBOutlet var changeIconButton: UIButton!
     
     @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var notesTextView: UITextView!
     
     override func awakeFromNib() {
         iconImageView.image = Icons.droppedPin
