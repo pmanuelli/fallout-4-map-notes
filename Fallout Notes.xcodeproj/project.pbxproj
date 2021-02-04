@@ -58,6 +58,7 @@
 		E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3425C0DA50006E76B4 /* SceneDelegate.swift */; };
 		E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */; };
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
+		E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		E9B09F3425C0DA50006E76B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +400,7 @@
 			files = (
 				E9AAA45E25C4A252007F66F1 /* Colors.xcassets in Resources */,
 				E9721B1E25C8A74400882A3E /* FakeLaunchScreenView.xib in Resources */,
+				E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */,
 				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */,
 				E9B09F1525C0D687006E76B4 /* Assets.xcassets in Resources */,
