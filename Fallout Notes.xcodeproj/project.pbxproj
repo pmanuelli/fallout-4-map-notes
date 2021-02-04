@@ -312,11 +312,28 @@
 				E95CF3DA25C4C862001609ED /* Domain */,
 				E9721B3225C8DCAF00882A3E /* Infrastructure */,
 				E97E317125C0FD0400AED8F6 /* Presentation */,
-				E9B09F1425C0D687006E76B4 /* Assets.xcassets */,
-				E9AAA45D25C4A252007F66F1 /* Colors.xcassets */,
+				E9BF3AB625CB6F8300A2B6BA /* Resources */,
 				E9B09F1925C0D687006E76B4 /* Info.plist */,
 			);
 			path = "Fallout Notes";
+			sourceTree = "<group>";
+		};
+		E9BF3AB625CB6F8300A2B6BA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E9BF3AB725CB6F9700A2B6BA /* Fonts */,
+				E9B09F1425C0D687006E76B4 /* Assets.xcassets */,
+				E9AAA45D25C4A252007F66F1 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9BF3AB725CB6F9700A2B6BA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
