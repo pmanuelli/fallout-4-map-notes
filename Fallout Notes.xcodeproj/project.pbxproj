@@ -59,6 +59,7 @@
 		E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */; };
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
 		E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */; };
+		E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
+		E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 			children = (
 				E95CF3CC25C4A491001609ED /* Colors.swift */,
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
+				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
@@ -470,6 +473,7 @@
 				E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
+				E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */,

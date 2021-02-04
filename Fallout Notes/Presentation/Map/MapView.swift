@@ -4,6 +4,8 @@ class MapView: UIView {
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var mapImageView: UIImageView!
+    @IBOutlet var createLocationButton: UIButton!
+    @IBOutlet var createLocationButtonContainer: UIView!
     
     override func awakeFromNib() {
         

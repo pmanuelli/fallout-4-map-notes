@@ -4,9 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="monofonto.ttf">
+            <string>Monofonto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,16 +40,106 @@
                         <constraint firstItem="b7h-Mm-qm3" firstAttribute="leading" secondItem="tOu-WM-5b5" secondAttribute="leading" id="yoo-RW-Xpb"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-MY-Q3M">
+                    <rect key="frame" x="101.5" y="814" width="211" height="38"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_left" translatesAutoresizingMaskIntoConstraints="NO" id="C58-lB-l91" customClass="GreenBlurImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="8" height="38"/>
+                            <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="C58-lB-l91" secondAttribute="height" multiplier="8:39" id="eNl-rB-TXv"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="layerShadowOffset">
+                                    <size key="value" width="0.0" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layerShadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_right" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-51-Yas" customClass="GreenBlurImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="203.5" y="0.0" width="7.5" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="cIS-51-Yas" secondAttribute="height" multiplier="8:39" id="KpB-oy-sg3"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layerShadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="layerShadowOffset">
+                                    <size key="value" width="0.0" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Create Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ts-e8-qbD">
+                            <rect key="frame" x="12" y="4" width="187.5" height="30"/>
+                            <fontDescription key="fontDescription" name="Monofonto-Regular" family="Monofonto" pointSize="25"/>
+                            <color key="textColor" name="green_dark"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layerShadowOpacity">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="layerShadowOffset">
+                                    <size key="value" width="0.0" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="layerShadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iND-5O-E6n">
+                            <rect key="frame" x="0.0" y="0.0" width="211" height="38"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.24313725490196078" green="0.91764705882352937" blue="0.41960784313725491" alpha="0.1516716189500763" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cIS-51-Yas" secondAttribute="trailing" id="2sV-YM-HdV"/>
+                        <constraint firstAttribute="bottom" secondItem="C58-lB-l91" secondAttribute="bottom" id="7NB-H3-e2c"/>
+                        <constraint firstItem="cIS-51-Yas" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="DJv-qu-Xop"/>
+                        <constraint firstAttribute="bottom" secondItem="6Ts-e8-qbD" secondAttribute="bottom" constant="4" id="QTq-Fl-v3L"/>
+                        <constraint firstItem="6Ts-e8-qbD" firstAttribute="leading" secondItem="C58-lB-l91" secondAttribute="trailing" constant="4" id="U5q-hJ-Hku"/>
+                        <constraint firstItem="iND-5O-E6n" firstAttribute="leading" secondItem="tzF-MY-Q3M" secondAttribute="leading" id="Us9-Jh-tKT"/>
+                        <constraint firstAttribute="bottom" secondItem="cIS-51-Yas" secondAttribute="bottom" id="ZNj-cn-Ijg"/>
+                        <constraint firstItem="C58-lB-l91" firstAttribute="leading" secondItem="tzF-MY-Q3M" secondAttribute="leading" id="Zno-ab-RsV"/>
+                        <constraint firstAttribute="trailing" secondItem="iND-5O-E6n" secondAttribute="trailing" id="f3J-FS-v4d"/>
+                        <constraint firstAttribute="bottom" secondItem="iND-5O-E6n" secondAttribute="bottom" id="keg-G0-vPT"/>
+                        <constraint firstItem="C58-lB-l91" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="mFg-d1-qir"/>
+                        <constraint firstItem="6Ts-e8-qbD" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" constant="4" id="ns0-rO-wtd"/>
+                        <constraint firstItem="iND-5O-E6n" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="xb1-DH-NX9"/>
+                        <constraint firstItem="cIS-51-Yas" firstAttribute="leading" secondItem="6Ts-e8-qbD" secondAttribute="trailing" constant="4" id="zUt-pr-ftT"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="tOu-WM-5b5" secondAttribute="bottom" id="4u3-Zu-fyl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tzF-MY-Q3M" secondAttribute="bottom" constant="10" id="SeX-Mb-QSp"/>
+                <constraint firstItem="tzF-MY-Q3M" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T5l-AF-TSM"/>
                 <constraint firstItem="tOu-WM-5b5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TAm-QE-ExO"/>
                 <constraint firstAttribute="trailing" secondItem="tOu-WM-5b5" secondAttribute="trailing" id="Yln-4D-R02"/>
                 <constraint firstItem="tOu-WM-5b5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="l4v-CQ-98I"/>
             </constraints>
             <connections>
+                <outlet property="createLocationButton" destination="iND-5O-E6n" id="ddO-g3-DZL"/>
+                <outlet property="createLocationButtonContainer" destination="tzF-MY-Q3M" id="baI-F9-Iym"/>
                 <outlet property="mapImageView" destination="b7h-Mm-qm3" id="kQl-nL-24P"/>
                 <outlet property="scrollView" destination="tOu-WM-5b5" id="xBk-ln-suk"/>
             </connections>
@@ -52,5 +148,10 @@
     </objects>
     <resources>
         <image name="base_map" width="2048" height="2048"/>
+        <image name="menu_left" width="128" height="624"/>
+        <image name="menu_right" width="128" height="624"/>
+        <namedColor name="green_dark">
+            <color red="0.3843137254901961" green="0.73725490196078436" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>
