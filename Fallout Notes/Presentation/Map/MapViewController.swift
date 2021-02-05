@@ -7,6 +7,8 @@ class MapViewController: UIViewController {
     lazy var mainView = MapView.loadNib()
     private let viewModel: MapViewModel
     
+    private lazy var mapTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mapDidReceiveTap(_:)))
+    
     private var currentDroppedPinLocation: CGPoint?
     private var currentDroppedPinView: MapDroppedPinView?
     private var currentLocationIconSelectionViewModel: LocationIconSelectionViewModel?
@@ -30,9 +32,11 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         setupScrollView()
-        setupAddLocationGesture()
+        setupCreateLocationButton()
         
         bindViewModel()
+        
+        disableAddLocationGesture()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,9 +50,16 @@ class MapViewController: UIViewController {
         mainView.scrollView.delegate = self
     }
     
-    private func setupAddLocationGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(mapDidReceiveTap(_:)))
-        mainView.mapImageView.addGestureRecognizer(tapGesture)
+    private func enableAddLocationGesture() {
+        mainView.mapImageView.addGestureRecognizer(mapTapGestureRecognizer)
+    }
+    
+    private func disableAddLocationGesture() {
+        mainView.mapImageView.removeGestureRecognizer(mapTapGestureRecognizer)
+    }
+    
+    private func setupCreateLocationButton() {
+        mainView.createLocationButton.addTarget(self, action: #selector(createLocationButtonTouched), for: .touchUpInside)
     }
     
     private func bindViewModel() {
@@ -76,6 +87,9 @@ class MapViewController: UIViewController {
             self.currentDroppedPinView = nil
 
             self.addLocationViewAnimated(view, at: self.currentDroppedPinLocation!)
+            
+            self.disableAddLocationGesture()
+            self.animateCreateLocationButtonAppear()
         }
     }
     
@@ -95,6 +109,9 @@ class MapViewController: UIViewController {
             
             self.currentDroppedPinView?.removeFromSuperview()
             self.currentDroppedPinView = nil
+            
+            self.disableAddLocationGesture()
+            self.animateCreateLocationButtonAppear()
         }
     }
     
@@ -118,6 +135,24 @@ class MapViewController: UIViewController {
     private func convertToCoordinates(location: CGPoint, in view: UIView) -> Coordinates {
         Coordinates(x: Double(location.x / view.bounds.width),
                     y: Double(location.y / view.bounds.height))
+    }
+    
+    @objc
+    private func createLocationButtonTouched() {
+        enableAddLocationGesture()
+        animateCreateLocationButtonDisappear()
+    }
+    
+    private func animateCreateLocationButtonAppear() {
+        UIView.animate(withDuration: 0.2) {
+            self.mainView.createLocationButtonContainer.alpha = 1
+        }
+    }
+    
+    private func animateCreateLocationButtonDisappear() {
+        UIView.animate(withDuration: 0.2) {
+            self.mainView.createLocationButtonContainer.alpha = 0
+        }
     }
     
 //    func captureNewLocationMapSnapshot() -> UIImage {

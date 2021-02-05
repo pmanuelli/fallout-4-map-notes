@@ -59,6 +59,7 @@
 		E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */; };
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
 		E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */; };
+		E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A78925CDEAF700B67C42 /* HUDButton.swift */; };
 		E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
+		E9C9A78925CDEAF700B67C42 /* HUDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDButton.swift; sourceTree = "<group>"; };
 		E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +282,7 @@
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
 				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
+				E9C9A78925CDEAF700B67C42 /* HUDButton.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E971E81625CA123000ABA436 /* Launch Screen */,
@@ -481,6 +484,7 @@
 				E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
 				E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */,
+				E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */,
 				E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
 				E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */,
