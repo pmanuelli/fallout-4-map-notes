@@ -60,6 +60,12 @@
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
 		E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */; };
 		E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A78925CDEAF700B67C42 /* HUDButton.swift */; };
+		E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */; };
+		E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */; };
+		E9C9A7AB25CE09DC00B67C42 /* LocationEditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C9A7A625CE09DC00B67C42 /* LocationEditionView.xib */; };
+		E9C9A7AC25CE09DC00B67C42 /* LocationEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */; };
+		E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */; };
+		E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7B325CF19B900B67C42 /* EditLocation.swift */; };
 		E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +127,12 @@
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
 		E9C9A78925CDEAF700B67C42 /* HUDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDButton.swift; sourceTree = "<group>"; };
+		E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionViewController.swift; sourceTree = "<group>"; };
+		E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionView.swift; sourceTree = "<group>"; };
+		E9C9A7A625CE09DC00B67C42 /* LocationEditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationEditionView.xib; sourceTree = "<group>"; };
+		E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionViewModel.swift; sourceTree = "<group>"; };
+		E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionCoordinator.swift; sourceTree = "<group>"; };
+		E9C9A7B325CF19B900B67C42 /* EditLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocation.swift; sourceTree = "<group>"; };
 		E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,8 +247,9 @@
 		E9721B2625C8D46000882A3E /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				E9721B2725C8D47300882A3E /* CreateLocation.swift */,
 				E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */,
+				E9721B2725C8D47300882A3E /* CreateLocation.swift */,
+				E9C9A7B325CF19B900B67C42 /* EditLocation.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -280,13 +293,14 @@
 			children = (
 				E95CF3CC25C4A491001609ED /* Colors.swift */,
 				E95CF3CF25C4A756001609ED /* GreenBlurEffect.swift */,
-				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
+				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9C9A78925CDEAF700B67C42 /* HUDButton.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E971E81625CA123000ABA436 /* Launch Screen */,
 				E97216AB25C5FD7E00882A3E /* Location Creation */,
+				E9C9A7A325CE09DC00B67C42 /* Location Edition */,
 				E95CF3E725C4CFA0001609ED /* Location Icon Selection */,
 				E97E317025C0FCFE00AED8F6 /* Map */,
 			);
@@ -342,6 +356,18 @@
 				E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E9C9A7A325CE09DC00B67C42 /* Location Edition */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */,
+				E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */,
+				E9C9A7A625CE09DC00B67C42 /* LocationEditionView.xib */,
+				E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */,
+				E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */,
+			);
+			path = "Location Edition";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +432,7 @@
 			files = (
 				E9AAA45E25C4A252007F66F1 /* Colors.xcassets in Resources */,
 				E9721B1E25C8A74400882A3E /* FakeLaunchScreenView.xib in Resources */,
+				E9C9A7AB25CE09DC00B67C42 /* LocationEditionView.xib in Resources */,
 				E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */,
 				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */,
@@ -473,13 +500,17 @@
 				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
 				E9721B3825C8EBBA00882A3E /* InMemoryLocationRepository.swift in Sources */,
 				E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */,
+				E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */,
 				E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */,
+				E9C9A7AC25CE09DC00B67C42 /* LocationEditionViewModel.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
 				E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */,
+				E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */,
+				E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
@@ -498,6 +529,7 @@
 				E9721B4A25C8FAD600882A3E /* Event.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
+				E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */,
 				E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,

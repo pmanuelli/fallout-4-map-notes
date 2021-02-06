@@ -11,7 +11,7 @@ class MapViewController: UIViewController {
     
     private var currentDroppedPinLocation: CGPoint?
     private var currentDroppedPinView: MapDroppedPinView?
-    private var currentLocationIconSelectionViewModel: LocationIconSelectionViewModel?
+    private var currentSelectedLocationView: MapLocationView?
     
     private let locationImageWidth = CGFloat(50)
     
@@ -75,11 +75,18 @@ class MapViewController: UIViewController {
             .withUnretained(self)
             .subscribe(onNext: { controller, _ in controller.cancelNewLocation() })
             .disposed(by: disposeBag)
+        
+        viewModel.output.locationEdit
+            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { controller, viewModel in controller.editCurrentSelectedLocation(viewModel: viewModel) })
+            .disposed(by: disposeBag)
     }
 
     private func acceptNewLocation(viewModel: MapLocationViewModel) {
         
-        let view = MapLocationView(viewModel: viewModel, imageWidth: self.locationImageWidth)
+        let view = MapLocationView(viewModel: viewModel, imageWidth: locationImageWidth)
+        view.delegate = self
 
         LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
             
@@ -155,6 +162,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func editCurrentSelectedLocation(viewModel: MapLocationViewModel) {
+        guard let currentSelectedLocationView = currentSelectedLocationView else { return }
+        
+        currentSelectedLocationView.viewModel = viewModel
+    }
+    
 //    func captureNewLocationMapSnapshot() -> UIImage {
 //        
 //        let bounds = CGRect(x: 500, y: 0, width: 500, height: 500)
@@ -179,6 +192,14 @@ extension MapViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         mainView.mapImageView
+    }
+}
+
+extension MapViewController: MapLocationViewDelegate {
+    
+    func mapLocationViewSelected(_ view: MapLocationView, viewModel: MapLocationViewModel) {
+        currentSelectedLocationView = view
+        self.viewModel.locationViewModelSelected(viewModel)
     }
 }
 

@@ -15,4 +15,6 @@ class Infrastructure {
                                                                     eventBus: eventBus)
     
     lazy var cancelLocationCreation: CancelLocationCreation = CancelLocationCreationDefault(eventBus: eventBus)
+    
+    lazy var editLocation: EditLocation = EditLocationDefault(repository: locationRepository, eventBus: eventBus)
 }

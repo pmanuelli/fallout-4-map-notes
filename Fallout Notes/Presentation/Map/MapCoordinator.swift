@@ -9,6 +9,7 @@ class MapCoordinator {
     private var mapViewController: MapViewController?
     
     private var locationCreationCoordinator: LocationCreationCoordinator?
+    private var locationEditionCoordinator: LocationEditionCoordinator?
     
     private let disposeBag = DisposeBag()
     
@@ -31,18 +32,24 @@ class MapCoordinator {
     
     private func observeViewModel(_ viewModel: MapViewModel) {
         viewModel.output.newLocationPinDrop
-            .subscribe(onNext: { [weak self] in self?.startLocationCreation(coordinates: $0) })
+            .withUnretained(self)
+            .subscribe(onNext: { coordinator, coordinates in coordinator.startLocationCreation(coordinates: coordinates) })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.locationSelection
+            .withUnretained(self)
+            .subscribe(onNext: { coordinator, location in coordinator.startLocationEdition(location: location) })
             .disposed(by: disposeBag)
     }
     
     private func startLocationCreation(coordinates: Coordinates) {
-
-        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController, locationCoordinates: coordinates)
-        locationCreationCoordinator?.start() { [weak self] in self?.onLocationSelectionCompleted() }
+        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController)
+        locationCreationCoordinator?.start(locationCoordinates: coordinates)
     }
     
-    private func onLocationSelectionCompleted() {
-    
+    private func startLocationEdition(location: Location) {
+        locationEditionCoordinator = LocationEditionCoordinator(navigationController: navigationController)
+        locationEditionCoordinator?.start(location: location)
     }
 }
 
