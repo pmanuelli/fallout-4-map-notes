@@ -88,7 +88,7 @@ class LocationCreationViewController: UIViewController {
         LocationIconDisappearAnimator.animate(mainView.iconImageView, origin: origin) {
             
             self.mainView.iconImageView.image = Icons.icon(for: locationType)
-            GreenBlurEffect.apply(on: self.mainView.iconImageView)
+            GreenBlurEffect.apply(to: self.mainView.iconImageView)
 
             LocationIconAppearAnimator.animate(self.mainView.iconImageView, origin: .center)
         }

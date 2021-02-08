@@ -2,18 +2,18 @@ import UIKit
 
 struct GreenBlurEffect {
     
-    static func apply(on imageView: UIImageView) {
+    static func apply(to imageView: UIImageView) {
         imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = Colors.greenDark
-        apply(on: imageView as UIView)
+        apply(to: imageView as UIView)
     }
     
-    static func apply(on label: UILabel) {
+    static func apply(to label: UILabel) {
         label.textColor = Colors.greenDark
-        apply(on: label as UIView)
+        apply(to: label as UIView)
     }
     
-    static private func apply(on view: UIView) {
+    static private func apply(to view: UIView) {
         view.clipsToBounds = false
         view.layerShadowColor = Colors.greenLight
         view.layerShadowRadius = 3

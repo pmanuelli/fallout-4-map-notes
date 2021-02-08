@@ -24,7 +24,7 @@ class MapLocationView: UIView {
         addGestureRecognizer(tapGestureRecognizer)
         
         iconImageViewWidthConstraint.constant = imageWidth
-        GreenBlurEffect.apply(on: nameLabel)
+        GreenBlurEffect.apply(to: nameLabel)
         
         bindViewModel(oldValue: nil, animated: false)
     }

@@ -23,7 +23,7 @@ class LocationIconTableViewCell: UITableViewCell {
         iconImageView.image = Icons.icon(for: viewModel.type)
         iconNameLabel.text = viewModel.name
         
-        GreenBlurEffect.apply(on: iconImageView)
+        GreenBlurEffect.apply(to: iconImageView)
         
         let backgroundIndex = (1...2).randomElement()!
         iconBackgroundImageView.image = UIImage(named: "icon_selection_background_\(backgroundIndex)")

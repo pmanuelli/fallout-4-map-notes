@@ -15,6 +15,7 @@
 		E921468C25C3857600CAF621 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921468B25C3857600CAF621 /* Icons.swift */; };
 		E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921468E25C392DB00CAF621 /* MapLocationView.swift */; };
 		E921469225C392F700CAF621 /* MapLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921469125C392F700CAF621 /* MapLocationView.xib */; };
+		E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9382F4F25D1F84500E25008 /* HUDImageView.swift */; };
 		E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45725C5A70F00ECD96E /* MapViewModel.swift */; };
 		E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */; };
 		E95CF3CD25C4A491001609ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3CC25C4A491001609ED /* Colors.swift */; };
@@ -80,6 +81,7 @@
 		E921468B25C3857600CAF621 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		E921468E25C392DB00CAF621 /* MapLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationView.swift; sourceTree = "<group>"; };
 		E921469125C392F700CAF621 /* MapLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapLocationView.xib; sourceTree = "<group>"; };
+		E9382F4F25D1F84500E25008 /* HUDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDImageView.swift; sourceTree = "<group>"; };
 		E955B45725C5A70F00ECD96E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		E95CF3CC25C4A491001609ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
 				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9C9A78925CDEAF700B67C42 /* HUDButton.swift */,
+				E9382F4F25D1F84500E25008 /* HUDImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E971E81625CA123000ABA436 /* Launch Screen */,
@@ -535,6 +538,7 @@
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
 				E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */,
+				E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */,
 				E9721B2225C8A8BF00882A3E /* GreenBlurImageView.swift in Sources */,
 				E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */,
 				E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */,
