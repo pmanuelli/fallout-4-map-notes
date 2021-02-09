@@ -7,6 +7,8 @@ class MapViewController: UIViewController {
     lazy var mainView = MapView.loadNib()
     private let viewModel: MapViewModel
     
+    private var locationViews = [MapLocationView]()
+    
     private lazy var mapTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(mapDidReceiveTap(_:)))
     
     private var currentDroppedPinLocation: CGPoint?
@@ -64,53 +66,70 @@ class MapViewController: UIViewController {
     
     private func bindViewModel() {
         
-        viewModel.output.newLocationAccept
+        viewModel.output.locationViewModels
             .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .withUnretained(self)
-            .subscribe(onNext: { controller, viewModel in controller.acceptNewLocation(viewModel: viewModel) })
+            .subscribe(onNext: { controller, viewModels in controller.locationViewModelsChanged(viewModels) })
             .disposed(by: disposeBag)
         
-        viewModel.output.newLocationCancel
+        viewModel.output.locationCreationCancel
             .delay(.milliseconds(500), scheduler: MainScheduler.instance)
             .withUnretained(self)
-            .subscribe(onNext: { controller, _ in controller.cancelNewLocation() })
-            .disposed(by: disposeBag)
-        
-        viewModel.output.locationEdit
-            .delay(.milliseconds(500), scheduler: MainScheduler.instance)
-            .withUnretained(self)
-            .subscribe(onNext: { controller, viewModel in controller.editCurrentSelectedLocation(viewModel: viewModel) })
+            .subscribe(onNext: { controller, _ in controller.locationCreationCancelled() })
             .disposed(by: disposeBag)
     }
-
-    private func acceptNewLocation(viewModel: MapLocationViewModel) {
+    
+    private func locationViewModelsChanged(_ viewModels: [MapLocationViewModel]) {
         
-        let view = MapLocationView(viewModel: viewModel, imageWidth: locationImageWidth)
-        view.delegate = self
-
-        LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
+        for (index, viewModel) in viewModels.enumerated() {
             
-            self.currentDroppedPinView?.removeFromSuperview()
-            self.currentDroppedPinView = nil
+            if let locationView = locationViews.element(at: index) {
+                locationView.viewModel = viewModel
+            }
+            else {
+                
+                if let droppedPin = currentDroppedPinView, let droppedPinLocation = currentDroppedPinLocation {
+                    
+                    currentDroppedPinView = nil
+                    currentDroppedPinLocation = nil
+                    
+                    LocationIconDisappearAnimator.animate(droppedPin, origin: .bottom) {
+                        
+                        droppedPin.removeFromSuperview()
 
-            self.addLocationViewAnimated(view, at: self.currentDroppedPinLocation!)
-            
-            self.disableAddLocationGesture()
-            self.animateCreateLocationButtonAppear()
+                        self.addLocationView(viewModel: viewModel, at: droppedPinLocation, animated: true)
+                        
+                        self.disableAddLocationGesture()
+                        self.animateCreateLocationButtonAppear()
+                    }
+                }
+                else {
+                    let location = convertToLocation(coordinates: viewModel.location.coordinates, in: mainView.mapImageView)
+                    addLocationView(viewModel: viewModel, at: location, animated: false)
+                }
+            }
         }
     }
     
-    private func addLocationViewAnimated(_ mapLocationView: MapLocationView, at location: CGPoint, completion: (() -> Void)? = nil) {
-        addLocationView(mapLocationView, at: location)
+    private func convertToLocation(coordinates: Coordinates, in view: UIView) -> CGPoint {
+        CGPoint(x: view.frame.width * CGFloat(coordinates.x), y: view.frame.height * CGFloat(coordinates.y))
+    }
+    
+    private func addLocationView(viewModel: MapLocationViewModel, at location: CGPoint, animated: Bool) {
         
-        LocationIconAppearAnimator.animate(mapLocationView, origin: .center, completion: completion)
+        let view = MapLocationView(viewModel: viewModel, imageWidth: self.locationImageWidth)
+        
+        view.addAsSubview(on: mainView.mapImageView, centeringIconAt: location)
+        view.delegate = self
+        
+        if animated {
+            LocationIconAppearAnimator.animate(view, origin: .center)
+        }
+        
+        locationViews.append(view)
     }
     
-    private func addLocationView(_ mapLocationView: MapLocationView, at location: CGPoint) {
-        mapLocationView.addAsSubview(on: mainView.mapImageView, centeringIconAt: location)
-    }
-    
-    private func cancelNewLocation() {
+    private func locationCreationCancelled() {
         
         LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
             
@@ -161,13 +180,7 @@ class MapViewController: UIViewController {
             self.mainView.createLocationButtonContainer.alpha = 0
         }
     }
-    
-    private func editCurrentSelectedLocation(viewModel: MapLocationViewModel) {
-        guard let currentSelectedLocationView = currentSelectedLocationView else { return }
         
-        currentSelectedLocationView.viewModel = viewModel
-    }
-    
 //    func captureNewLocationMapSnapshot() -> UIImage {
 //        
 //        let bounds = CGRect(x: 500, y: 0, width: 500, height: 500)
