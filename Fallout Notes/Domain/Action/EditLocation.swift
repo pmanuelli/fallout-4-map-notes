@@ -28,7 +28,7 @@ class EditLocationDefault: EditLocation {
                                 notes: data.notes,
                                 coordinates: data.coordinates)
         
-        repository.add(location)
+        repository.update(location)
         eventBus.send(event: LocationEditedEvent(location: location))
     }
 }

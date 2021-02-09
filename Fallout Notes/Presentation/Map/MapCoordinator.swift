@@ -19,7 +19,9 @@ class MapCoordinator {
     
     func start() {
         
-        let viewModel = MapViewModel(eventBus: Infrastructure.shared.eventBus)
+        let locations = Infrastructure.shared.locationRepository.readAll()
+        
+        let viewModel = MapViewModel(locations: locations, eventBus: Infrastructure.shared.eventBus)
         let viewController = MapViewController(viewModel: viewModel)
         mapViewModel = viewModel
         mapViewController = viewController

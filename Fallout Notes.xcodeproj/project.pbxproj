@@ -16,6 +16,7 @@
 		E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E921468E25C392DB00CAF621 /* MapLocationView.swift */; };
 		E921469225C392F700CAF621 /* MapLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921469125C392F700CAF621 /* MapLocationView.xib */; };
 		E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9382F4F25D1F84500E25008 /* HUDImageView.swift */; };
+		E9382F5525D236A900E25008 /* UserDefaultsLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */; };
 		E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45725C5A70F00ECD96E /* MapViewModel.swift */; };
 		E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */; };
 		E95CF3CD25C4A491001609ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3CC25C4A491001609ED /* Colors.swift */; };
@@ -82,6 +83,7 @@
 		E921468E25C392DB00CAF621 /* MapLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationView.swift; sourceTree = "<group>"; };
 		E921469125C392F700CAF621 /* MapLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapLocationView.xib; sourceTree = "<group>"; };
 		E9382F4F25D1F84500E25008 /* HUDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDImageView.swift; sourceTree = "<group>"; };
+		E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLocationRepository.swift; sourceTree = "<group>"; };
 		E955B45725C5A70F00ECD96E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		E95CF3CC25C4A491001609ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -165,6 +167,15 @@
 				0CFED0F8FF03F4C0082E6266 /* Pods-Fallout Notes.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E9382F5325D2369300E25008 /* LocationRepository */ = {
+			isa = PBXGroup;
+			children = (
+				E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */,
+				E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */,
+			);
+			path = LocationRepository;
 			sourceTree = "<group>";
 		};
 		E955B45525C4EE2400ECD96E /* Views */ = {
@@ -260,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				E9721B3A25C8F07300882A3E /* Infrastructure.swift */,
-				E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */,
+				E9382F5325D2369300E25008 /* LocationRepository */,
 				E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */,
 				E9721B4125C8F75500882A3E /* RxEventBus.swift */,
 			);
@@ -534,6 +545,7 @@
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
 				E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */,
 				E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */,
+				E9382F5525D236A900E25008 /* UserDefaultsLocationRepository.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,

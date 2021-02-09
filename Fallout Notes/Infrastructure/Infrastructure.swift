@@ -8,7 +8,9 @@ class Infrastructure {
     
     lazy var eventBus: EventBus = RxEventBus()
     lazy var locationIdGenerator: LocationIdGenerator = UUIDLocationIdGenerator()
-    lazy var locationRepository: LocationRepository = InMemoryLocationRepository()
+//    lazy var locationRepository: LocationRepository = InMemoryLocationRepository()
+    lazy var locationRepository: LocationRepository = UserDefaultsLocationRepository()
+
     
     lazy var createLocation: CreateLocation = CreateLocationDefault(repository: locationRepository,
                                                                     idGenerator: locationIdGenerator,

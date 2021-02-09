@@ -1,6 +1,6 @@
 protocol LocationRepository {
     
     func add(_ location: Location)
-    func read(_ locationId: LocationId) -> Location?
+    func readAll() -> [Location]
     func update(_ location: Location)
 }

@@ -1,4 +1,4 @@
-enum LocationType {
+enum LocationType: String {
     case building
     case dome
     case factory
