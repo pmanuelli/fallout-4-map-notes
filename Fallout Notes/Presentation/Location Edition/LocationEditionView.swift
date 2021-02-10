@@ -9,5 +9,9 @@ class LocationEditionView: UIView {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var notesTextView: UITextView!
     
-    override func awakeFromNib() { }
+    @IBOutlet var deleteLocationButton: UIButton!
+    
+    override func awakeFromNib() {
+                
+    }
 }

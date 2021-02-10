@@ -1,8 +1,8 @@
-typealias LocationId = String
-
 struct Location {
     
-    let id: LocationId
+    typealias Id = String
+
+    let id: Id
     let type: LocationType
     let name: String
     let notes: String

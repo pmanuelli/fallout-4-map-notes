@@ -6,12 +6,10 @@ struct UserDefaultsLocationRepository: LocationRepository {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-    func add(_ location: Location) {
+    func create(_ location: Location) {
         
-        var locations = readAll()
-        locations.append(location)
-        
-        userDefaults.set(encode(locations), forKey: "locations")
+        let locations = readAll() + [location]
+        storeLocations(locations)
     }
     
     func readAll() -> [Location] {
@@ -28,7 +26,13 @@ struct UserDefaultsLocationRepository: LocationRepository {
         
         locations[index] = location
         
-        userDefaults.set(encode(locations), forKey: "locations")
+        storeLocations(locations)
+    }
+    
+    func delete(_ locationId: Location.Id) {
+        
+        let locations = readAll().filter { $0.id != locationId}
+        storeLocations(locations)
     }
     
     private func encode(_ locations: [Location]) -> Data? {
@@ -38,6 +42,10 @@ struct UserDefaultsLocationRepository: LocationRepository {
     private func decode(_ data: Data) -> [Location] {
         guard let decoded = try? decoder.decode([LocationDTO].self, from: data) else { return [] }
         return decoded.compactMap { $0.toLocation() }
+    }
+    
+    private func storeLocations(_ locations: [Location]) {
+        userDefaults.set(encode(locations), forKey: "locations")
     }
 }
 

@@ -81,33 +81,51 @@ class MapViewController: UIViewController {
     
     private func locationViewModelsChanged(_ viewModels: [MapLocationViewModel]) {
         
-        for (index, viewModel) in viewModels.enumerated() {
+        removeLocationViewsWhoseViewModelsAreNotPresentIn(viewModels)
+                
+        for viewModel in viewModels {
             
-            if let locationView = locationViews.element(at: index) {
+            if let locationView = locationViews.first(where: { $0.viewModel.id == viewModel.id }) {
                 locationView.viewModel = viewModel
             }
             else {
-                
-                if let droppedPin = currentDroppedPinView, let droppedPinLocation = currentDroppedPinLocation {
-                    
-                    currentDroppedPinView = nil
-                    currentDroppedPinLocation = nil
-                    
-                    LocationIconDisappearAnimator.animate(droppedPin, origin: .bottom) {
-                        
-                        droppedPin.removeFromSuperview()
-
-                        self.addLocationView(viewModel: viewModel, at: droppedPinLocation, animated: true)
-                        
-                        self.disableAddLocationGesture()
-                        self.animateCreateLocationButtonAppear()
-                    }
-                }
-                else {
-                    let location = convertToLocation(coordinates: viewModel.location.coordinates, in: mainView.mapImageView)
-                    addLocationView(viewModel: viewModel, at: location, animated: false)
-                }
+                addLocationView(viewModel: viewModel)
             }
+        }
+    }
+    
+    private func removeLocationViewsWhoseViewModelsAreNotPresentIn(_ viewModels: [MapLocationViewModel]) {
+        
+        let viewModelIds = viewModels.map { $0.id }
+        let locationViewIndexesToRemove = locationViews.enumerated()
+            .filter { (offset, locationView) in !viewModelIds.contains(locationView.viewModel.id) }
+            .map { $0.offset }
+        
+        for index in locationViewIndexesToRemove {
+            removeLocationView(at: index)
+        }
+    }
+    
+    private func addLocationView(viewModel: MapLocationViewModel) {
+        
+        if let droppedPin = currentDroppedPinView, let droppedPinLocation = currentDroppedPinLocation {
+            
+            currentDroppedPinView = nil
+            currentDroppedPinLocation = nil
+            
+            LocationIconDisappearAnimator.animate(droppedPin, origin: .bottom) {
+                
+                droppedPin.removeFromSuperview()
+
+                self.addLocationView(viewModel: viewModel, at: droppedPinLocation, animated: true)
+                
+                self.disableAddLocationGesture()
+                self.animateCreateLocationButtonAppear()
+            }
+        }
+        else {
+            let location = convertToLocation(coordinates: viewModel.location.coordinates, in: mainView.mapImageView)
+            addLocationView(viewModel: viewModel, at: location, animated: false)
         }
     }
     
@@ -127,6 +145,16 @@ class MapViewController: UIViewController {
         }
         
         locationViews.append(view)
+    }
+    
+    private func removeLocationView(at index: Int) {
+        guard let locationView = locationViews.element(at: index) else { return }
+        
+        locationViews.remove(at: index)
+
+        LocationIconDisappearAnimator.animate(locationView, origin: .center) {
+            locationView.removeFromSuperview()
+        }
     }
     
     private func locationCreationCancelled() {
@@ -188,15 +216,6 @@ class MapViewController: UIViewController {
 //        
 //        return renderer.image { context in
 //            self.mainView.mapImageView.layer.render(in: context.cgContext)
-//        }
-//    }
-    
-    
-//    private func loadInitialLocations() {
-//
-//        for location in InGameLocationRepository().findAll() {
-//            let view = MapLocationView(image: Icons.icon(for: location.type), imageWidth: 50, name: location.name)
-//            addLocationView(view, at: location.coordinates)
 //        }
 //    }
 }

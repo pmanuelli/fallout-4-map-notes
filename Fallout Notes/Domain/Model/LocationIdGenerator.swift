@@ -1,4 +1,4 @@
 protocol LocationIdGenerator {
     
-    func generate() -> LocationId
+    func generate() -> Location.Id
 }

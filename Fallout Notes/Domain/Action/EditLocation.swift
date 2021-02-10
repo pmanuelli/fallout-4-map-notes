@@ -10,7 +10,7 @@ protocol EditLocation {
     func execute(data: EditLocationData)
 }
 
-class EditLocationDefault: EditLocation {
+struct EditLocationDefault: EditLocation {
     
     private let repository: LocationRepository
     private let eventBus: EventBusProducer

@@ -15,13 +15,17 @@ class LocationEditionCoordinator {
     
     init(navigationController: UINavigationController) {
         self.inheritedNavigationController = navigationController
+        self.navigationController.modalPresentationStyle = .overFullScreen
     }
         
     func start(location: Location, completion: (() -> Void)? = nil) {
         
         self.completion = completion
         
-        let viewModel = LocationEditionViewModel(location: location, editLocation: Infrastructure.shared.editLocation)
+        let viewModel = LocationEditionViewModel(location: location,
+                                                 editLocation: Infrastructure.shared.editLocation,
+                                                 deleteLocation: Infrastructure.shared.deleteLocation)
+        
         let viewController = LocationEditionViewController(viewModel: viewModel)
 
         observeViewModel(viewModel)
@@ -43,7 +47,7 @@ class LocationEditionCoordinator {
             .subscribe(onNext: { coordinator, _ in coordinator.stop() })
             .disposed(by: disposeBag)
         
-        viewModel.output.locationTypeIconTouch
+        viewModel.output.changeLocationTypeButtonTouch
             .withUnretained(self)
             .subscribe(onNext: { coordinator, _ in coordinator.startLocationIconSelection() })
             .disposed(by: disposeBag)

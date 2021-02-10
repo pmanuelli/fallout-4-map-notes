@@ -7,14 +7,14 @@ class LocationEditionViewModel {
         let doneButtonEnabled: Observable<Bool>
         let doneButtonTouch: Observable<Void>
         let cancelButtonTouch: Observable<Void>
-        let locationTypeIconTouch: Observable<Void>
+        let changeLocationTypeButtonTouch: Observable<Void>
         let locationType: Observable<LocationType>
     }
     
     lazy var output = Output(doneButtonEnabled: doneButtonEnabledSubject.asObservable(),
                              doneButtonTouch: doneButtonTouchSubject.asObservable(),
                              cancelButtonTouch: cancelButtonTouchSubject.asObservable(),
-                             locationTypeIconTouch: locationTypeIconTouchSubject.asObservable(),
+                             changeLocationTypeButtonTouch: changeLocationTypeButtonTouchSubject.asObservable(),
                              locationType: locationTypeSubject.asObservable())
     
     private(set) var coordinates: Coordinates
@@ -25,16 +25,18 @@ class LocationEditionViewModel {
     private let doneButtonEnabledSubject = ReplaySubject<Bool>.createUnbounded()
     private let doneButtonTouchSubject = PublishSubject<Void>()
     private let cancelButtonTouchSubject = PublishSubject<Void>()
-    private let locationTypeIconTouchSubject = PublishSubject<Void>()
+    private let changeLocationTypeButtonTouchSubject = PublishSubject<Void>()
     private let locationTypeSubject = PublishSubject<LocationType>()
     
     private let location: Location
     private let editLocation: EditLocation
+    private let deleteLocation: DeleteLocation
 
-    init(location: Location, editLocation: EditLocation) {
+    init(location: Location, editLocation: EditLocation, deleteLocation: DeleteLocation) {
         
         self.location = location
         self.editLocation = editLocation
+        self.deleteLocation = deleteLocation
         
         self.coordinates = location.coordinates
         self.type = location.type
@@ -45,8 +47,8 @@ class LocationEditionViewModel {
     }
     
     @objc
-    func locationTypeIconTouched() {
-        locationTypeIconTouchSubject.onNext(())
+    func changeLocationTypeButtonTouched() {
+        changeLocationTypeButtonTouchSubject.onNext(())
     }
     
     @objc
@@ -65,6 +67,12 @@ class LocationEditionViewModel {
                                     coordinates: coordinates)
         
         editLocation.execute(data: data)
+        doneButtonTouchSubject.onNext(())
+    }
+    
+    @objc
+    func deleteLocationButtonTouched() {
+        deleteLocation.execute(locationId: location.id)
         doneButtonTouchSubject.onNext(())
     }
     

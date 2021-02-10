@@ -29,16 +29,20 @@ class MapViewModel {
     
     init(locations: [Location], eventBus: EventBusConsumer) {
         
-        eventBus.observe()
-            .subscribe(onNext: { [weak self] (event: LocationCreatedEvent) in self?.onLocationCreated(location: event.location) })
+        eventBus.locationCreated
+            .subscribe(onNext: { [weak self] in self?.onLocationCreated(location: $0.location) })
             .disposed(by: disposeBag)
         
-        eventBus.observe()
-            .subscribe(onNext: { [weak self] (event: LocationEditedEvent) in self?.onLocationEdited(location: event.location) })
+        eventBus.locationEdited
+            .subscribe(onNext: { [weak self] in self?.onLocationEdited(location: $0.location) })
             .disposed(by: disposeBag)
         
-        eventBus.observe()
-            .subscribe(onNext: { [weak self] (event: LocationCreationCancelledEvent) in self?.onLocationCreationCancelled() })
+        eventBus.locationDeleted
+            .subscribe(onNext: { [weak self] in self?.onLocationDeleted(locationId: $0.locationId) })
+            .disposed(by: disposeBag)
+        
+        eventBus.locationCreationCancel
+            .subscribe(onNext: { [weak self] _ in self?.onLocationCreationCancelled() })
             .disposed(by: disposeBag)
                 
         locationViewModels = locations.map { MapLocationViewModel(location: $0) }
@@ -59,13 +63,26 @@ class MapViewModel {
     }
     
     private func onLocationEdited(location: Location) {
-        guard let index = locationViewModels.firstIndex(where: { $0.location.id == location.id }) else { return }
+        guard let index = locationViewModels.firstIndex(where: { $0.id == location.id }) else { return }
         
         locationViewModels[index] = MapLocationViewModel(location: location)
+        locationViewModelsSubject.onNext(locationViewModels)
+    }
+    
+    private func onLocationDeleted(locationId: Location.Id) {
+        locationViewModels = locationViewModels.filter { $0.id != locationId }
         locationViewModelsSubject.onNext(locationViewModels)
     }
     
     private func onLocationCreationCancelled() {
         locationCreationCancelSubject.onNext(())
     }
+}
+
+extension EventBusConsumer {
+    
+    var locationCreated: Observable<LocationCreatedEvent> { observe() }
+    var locationEdited: Observable<LocationEditedEvent> { observe() }
+    var locationDeleted: Observable<LocationDeletedEvent> { observe() }
+    var locationCreationCancel: Observable<LocationCreationCancelledEvent> { observe() }
 }

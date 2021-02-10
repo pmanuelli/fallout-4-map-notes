@@ -17,6 +17,7 @@
 		E921469225C392F700CAF621 /* MapLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E921469125C392F700CAF621 /* MapLocationView.xib */; };
 		E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9382F4F25D1F84500E25008 /* HUDImageView.swift */; };
 		E9382F5525D236A900E25008 /* UserDefaultsLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */; };
+		E938361025D34AA100E25008 /* DeleteLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938360F25D34AA100E25008 /* DeleteLocation.swift */; };
 		E955B45825C5A70F00ECD96E /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45725C5A70F00ECD96E /* MapViewModel.swift */; };
 		E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */; };
 		E95CF3CD25C4A491001609ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95CF3CC25C4A491001609ED /* Colors.swift */; };
@@ -47,7 +48,6 @@
 		E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B2B25C8D50000882A3E /* LocationRepository.swift */; };
 		E9721B2F25C8D5C000882A3E /* LocationIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B2E25C8D5C000882A3E /* LocationIdGenerator.swift */; };
 		E9721B3425C8EB5D00882A3E /* UUIDLocationIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */; };
-		E9721B3825C8EBBA00882A3E /* InMemoryLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */; };
 		E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B3A25C8F07300882A3E /* Infrastructure.swift */; };
 		E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4125C8F75500882A3E /* RxEventBus.swift */; };
 		E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B4525C8FAB100882A3E /* EventBus.swift */; };
@@ -84,6 +84,7 @@
 		E921469125C392F700CAF621 /* MapLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapLocationView.xib; sourceTree = "<group>"; };
 		E9382F4F25D1F84500E25008 /* HUDImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDImageView.swift; sourceTree = "<group>"; };
 		E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsLocationRepository.swift; sourceTree = "<group>"; };
+		E938360F25D34AA100E25008 /* DeleteLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocation.swift; sourceTree = "<group>"; };
 		E955B45725C5A70F00ECD96E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E955B45B25C5B26F00ECD96E /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		E95CF3CC25C4A491001609ED /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		E9721B2B25C8D50000882A3E /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		E9721B2E25C8D5C000882A3E /* LocationIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIdGenerator.swift; sourceTree = "<group>"; };
 		E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDLocationIdGenerator.swift; sourceTree = "<group>"; };
-		E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryLocationRepository.swift; sourceTree = "<group>"; };
 		E9721B3A25C8F07300882A3E /* Infrastructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastructure.swift; sourceTree = "<group>"; };
 		E9721B4125C8F75500882A3E /* RxEventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxEventBus.swift; sourceTree = "<group>"; };
 		E9721B4525C8FAB100882A3E /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 		E9382F5325D2369300E25008 /* LocationRepository */ = {
 			isa = PBXGroup;
 			children = (
-				E9721B3725C8EBB900882A3E /* InMemoryLocationRepository.swift */,
 				E9382F5425D236A900E25008 /* UserDefaultsLocationRepository.swift */,
 			);
 			path = LocationRepository;
@@ -263,6 +262,7 @@
 				E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */,
 				E9721B2725C8D47300882A3E /* CreateLocation.swift */,
 				E9C9A7B325CF19B900B67C42 /* EditLocation.swift */,
+				E938360F25D34AA100E25008 /* DeleteLocation.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -509,10 +509,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9721B2F25C8D5C000882A3E /* LocationIdGenerator.swift in Sources */,
+				E938361025D34AA100E25008 /* DeleteLocation.swift in Sources */,
 				E95CF3D725C4AC82001609ED /* MapDroppedPinView.swift in Sources */,
 				E95CF3E425C4CF97001609ED /* LocationIconSelectionViewController.swift in Sources */,
 				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
-				E9721B3825C8EBBA00882A3E /* InMemoryLocationRepository.swift in Sources */,
 				E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */,
 				E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */,
 				E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */,

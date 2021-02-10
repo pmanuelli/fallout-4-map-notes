@@ -29,6 +29,7 @@ class LocationEditionViewController: UIViewController {
         
         setupNavigationItemButtons()
         setupIconTouch()
+        setupDeleteLocationButtonTouch()
         
         bindLocationType()
         bindLocationName()
@@ -71,10 +72,10 @@ class LocationEditionViewController: UIViewController {
         
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: viewModel,
                                            action: #selector(LocationEditionViewModel.cancelButtonTouched))
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: viewModel,
+                        
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: viewModel,
                                          action: #selector(LocationEditionViewModel.doneButtonTouched))
-        
+                
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = doneButton
         
@@ -85,13 +86,20 @@ class LocationEditionViewController: UIViewController {
     
     private func setupIconTouch() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: viewModel,
-                                                          action: #selector(LocationEditionViewModel.locationTypeIconTouched))
+                                                          action: #selector(LocationEditionViewModel.changeLocationTypeButtonTouched))
         
         mainView.iconContainer.addGestureRecognizer(tapGestureRecognizer)
         
         mainView.changeIconButton.addTarget(viewModel,
-                                            action: #selector(LocationEditionViewModel.locationTypeIconTouched),
+                                            action: #selector(LocationEditionViewModel.changeLocationTypeButtonTouched),
                                             for: .touchUpInside)
+    }
+    
+    private func setupDeleteLocationButtonTouch() {
+        
+        mainView.deleteLocationButton.addTarget(viewModel,
+                                                action: #selector(LocationEditionViewModel.deleteLocationButtonTouched),
+                                                for: .touchUpInside)
     }
     
     private func locationTypeChanged(_ locationType: LocationType) {

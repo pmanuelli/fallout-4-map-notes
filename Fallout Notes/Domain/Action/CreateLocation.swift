@@ -29,7 +29,7 @@ struct CreateLocationDefault: CreateLocation {
                                 notes: data.notes,
                                 coordinates: data.coordinates)
         
-        repository.add(location)
+        repository.create(location)
         eventBus.send(event: LocationCreatedEvent(location: location))
     }
 }
