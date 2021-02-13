@@ -24,10 +24,11 @@ struct CreateLocationDefault: CreateLocation {
     func execute(data: CreateLocationData) {
     
         let location = Location(id: idGenerator.generate(),
+                                coordinates: data.coordinates,
                                 type: data.type,
                                 name: data.name,
                                 notes: data.notes,
-                                coordinates: data.coordinates)
+                                features: [])
         
         repository.create(location)
         eventBus.send(event: LocationCreatedEvent(location: location))

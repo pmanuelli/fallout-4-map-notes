@@ -261,8 +261,8 @@
 			children = (
 				E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */,
 				E9721B2725C8D47300882A3E /* CreateLocation.swift */,
-				E9C9A7B325CF19B900B67C42 /* EditLocation.swift */,
 				E938360F25D34AA100E25008 /* DeleteLocation.swift */,
+				E9C9A7B325CF19B900B67C42 /* EditLocation.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -271,9 +271,9 @@
 			isa = PBXGroup;
 			children = (
 				E9721B3A25C8F07300882A3E /* Infrastructure.swift */,
-				E9382F5325D2369300E25008 /* LocationRepository */,
-				E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */,
 				E9721B4125C8F75500882A3E /* RxEventBus.swift */,
+				E9721B3325C8EB5D00882A3E /* UUIDLocationIdGenerator.swift */,
+				E9382F5325D2369300E25008 /* LocationRepository */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";

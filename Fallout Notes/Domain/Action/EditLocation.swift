@@ -23,10 +23,11 @@ struct EditLocationDefault: EditLocation {
     func execute(data: EditLocationData) {
         
         let location = Location(id: data.location.id,
+                                coordinates: data.coordinates,
                                 type: data.type,
                                 name: data.name,
                                 notes: data.notes,
-                                coordinates: data.coordinates)
+                                features: [])
         
         repository.update(location)
         eventBus.send(event: LocationEditedEvent(location: location))

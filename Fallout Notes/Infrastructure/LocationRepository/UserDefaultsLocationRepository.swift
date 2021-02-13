@@ -71,10 +71,11 @@ private struct LocationDTO: Codable {
         guard let type = LocationType(rawValue: type) else { return nil }
         
         return Location(id: id,
+                        coordinates: Coordinates(x: coordinateX, y: coordinateY),
                         type: type,
                         name: name,
                         notes: notes,
-                        coordinates: Coordinates(x: coordinateX, y: coordinateY))
+                        features: [])
     }
 }
 
