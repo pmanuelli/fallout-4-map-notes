@@ -58,7 +58,7 @@ class LocationCreationViewController: UIViewController {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: viewModel,
                                            action: #selector(LocationCreationViewModel.cancelButtonTouched))
         
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: viewModel,
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: viewModel,
                                          action: #selector(LocationCreationViewModel.doneButtonTouched))
         
         navigationItem.leftBarButtonItem = cancelButton

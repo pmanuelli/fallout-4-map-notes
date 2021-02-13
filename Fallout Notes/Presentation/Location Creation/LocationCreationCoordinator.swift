@@ -15,6 +15,7 @@ class LocationCreationCoordinator {
     
     init(navigationController: UINavigationController) {
         self.inheritedNavigationController = navigationController
+        self.navigationController.modalPresentationStyle = .overFullScreen
     }
     
     func start(locationCoordinates: Coordinates, completion: (() -> Void)? = nil) {

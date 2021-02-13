@@ -2,6 +2,8 @@ struct LocationTypeNames {
 
     static func name(for locationType: LocationType) -> String {
         switch locationType {
+        case .bed:
+            return "Bed"
         case .building:
             return "Building"
         case .dome:

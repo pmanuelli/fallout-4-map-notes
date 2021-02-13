@@ -2,6 +2,7 @@ import UIKit
 
 struct Icons {
     
+    static var bed: UIImage { iconImage(named: "bed") }
     static var building: UIImage { iconImage(named: "building") }
     static var dome: UIImage { iconImage(named: "dome") }
     static var droppedPin: UIImage { iconImage(named: "dropped_pin" )}
@@ -23,6 +24,8 @@ struct Icons {
     
     static func icon(for locationType: LocationType) -> UIImage {
         switch locationType {
+        case .bed:
+            return Icons.bed
         case .building:
             return Icons.building
         case .dome:

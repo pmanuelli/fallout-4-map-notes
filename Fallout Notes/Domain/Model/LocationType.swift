@@ -1,4 +1,5 @@
 enum LocationType: String {
+    case bed
     case building
     case dome
     case factory
