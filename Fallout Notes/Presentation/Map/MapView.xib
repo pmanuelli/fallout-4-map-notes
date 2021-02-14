@@ -35,10 +35,10 @@
                     </constraints>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-MY-Q3M">
-                    <rect key="frame" x="132.5" y="818" width="149" height="34"/>
+                    <rect key="frame" x="117.5" y="818" width="179" height="34"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upf-U5-Hjv">
-                            <rect key="frame" x="0.0" y="2" width="149" height="30"/>
+                            <rect key="frame" x="0.0" y="2" width="179" height="30"/>
                             <color key="backgroundColor" red="0.24313725489999999" green="0.91764705879999997" blue="0.41960784309999999" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_left" translatesAutoresizingMaskIntoConstraints="NO" id="C58-lB-l91" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
@@ -49,14 +49,14 @@
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_right" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-51-Yas" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
-                            <rect key="frame" x="142" y="0.0" width="7" height="34"/>
+                            <rect key="frame" x="172" y="0.0" width="7" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="cIS-51-Yas" secondAttribute="height" multiplier="8:39" id="KpB-oy-sg3"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iND-5O-E6n" customClass="HUDButton" customModule="Fallout_Notes" customModuleProvider="target">
-                            <rect key="frame" x="11" y="0.0" width="127" height="34"/>
-                            <state key="normal" title="Create Location"/>
+                            <rect key="frame" x="11" y="0.0" width="157" height="34"/>
+                            <state key="normal" title="CREATE LOCATION"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                     <real key="value" value="25"/>

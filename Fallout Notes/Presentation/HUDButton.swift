@@ -24,7 +24,7 @@ class HUDButton: UIButton {
         setTitleColor(Colors.greenDark, for: .normal)
         setTitleShadowColor(.black, for: .normal)
         
-        titleLabel?.font = UIFont(name: "monofonto", size: fontSize)
+        titleLabel?.font = UIFont(name: "RobotoCondensed-Bold", size: fontSize)
         titleLabel?.textColor = Colors.greenDark
         titleLabel?.layerShadowOffset = CGSize(width: 1, height: 1)
         titleLabel?.layerShadowRadius = 0

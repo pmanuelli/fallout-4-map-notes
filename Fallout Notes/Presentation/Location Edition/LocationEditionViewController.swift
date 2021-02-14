@@ -6,8 +6,10 @@ class LocationEditionViewController: UIViewController {
     
     lazy var mainView = LocationEditionView.loadNib()
     private let viewModel: LocationEditionViewModel
-        
-    private var currentLocationType: LocationType?
+    
+    private var cellDequeues = [LocationEditionTableViewCellDequeue(identifier: IconAndNameTableViewCell.identifier),
+                                LocationEditionTableViewCellDequeue(identifier: NotesTableViewCell.identifier),
+                                LocationEditionTableViewCellDequeue(identifier: DeleteLocationTableViewCell.identifier)]
     
     private let disposeBag = DisposeBag()
     
@@ -25,47 +27,22 @@ class LocationEditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentLocationType = viewModel.type
-        
+        mainView.tableView.dataSource = self
+                
         setupNavigationItemButtons()
-        setupIconTouch()
-        setupDeleteLocationButtonTouch()
         
-        bindLocationType()
-        bindLocationName()
         bindLocationNotes()
     }
     
-    private func bindLocationType() {
-        
-        if let type = viewModel.type {
-            mainView.iconImageView.image = Icons.icon(for: type)
-        }
-        else {
-            mainView.iconImageView.image = Icons.droppedPin
-        }
-        
-        viewModel.output.locationType
-            .subscribe(onNext: { [weak self] in self?.locationTypeChanged($0) })
-            .disposed(by: disposeBag)
-    }
-    
-    private func bindLocationName() {
-        mainView.nameTextField.text = viewModel.name
-        
-        mainView.nameTextField.rx.text
-            .compactMap { $0 }
-            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationName($0) })
-            .disposed(by: disposeBag)
-    }
+
     
     private func bindLocationNotes() {
-        mainView.notesTextView.text = viewModel.notes
-        
-        mainView.notesTextView.rx.text
-            .compactMap { $0 }
-            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationNotes($0) })
-            .disposed(by: disposeBag)
+//        mainView.notesTextView.text = viewModel.notes
+//
+//        mainView.notesTextView.rx.text
+//            .compactMap { $0 }
+//            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationNotes($0) })
+//            .disposed(by: disposeBag)
     }
     
     private func setupNavigationItemButtons() {
@@ -83,36 +60,15 @@ class LocationEditionViewController: UIViewController {
             .subscribe(doneButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
-    
-    private func setupIconTouch() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: viewModel,
-                                                          action: #selector(LocationEditionViewModel.changeLocationTypeButtonTouched))
-        
-        mainView.iconContainer.addGestureRecognizer(tapGestureRecognizer)
-        
-        mainView.changeIconButton.addTarget(viewModel,
-                                            action: #selector(LocationEditionViewModel.changeLocationTypeButtonTouched),
-                                            for: .touchUpInside)
-    }
-    
-    private func setupDeleteLocationButtonTouch() {
-        
-        mainView.deleteLocationButton.addTarget(viewModel,
-                                                action: #selector(LocationEditionViewModel.deleteLocationButtonTouched),
-                                                for: .touchUpInside)
-    }
-    
-    private func locationTypeChanged(_ locationType: LocationType) {
-                
-        let origin: LocationIconDisappearAnimator.Origin = currentLocationType == nil ? .bottom : .center
-        currentLocationType = locationType
-        
-        LocationIconDisappearAnimator.animate(mainView.iconImageView, origin: origin) {
-            
-            self.mainView.iconImageView.image = Icons.icon(for: locationType)
-            GreenBlurEffect.apply(to: self.mainView.iconImageView)
+}
 
-            LocationIconAppearAnimator.animate(self.mainView.iconImageView, origin: .center)
-        }
+extension LocationEditionViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cellDequeues.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        cellDequeues[indexPath.row].tableView(tableView, cellForRowAt: indexPath, viewModel: viewModel)
     }
 }

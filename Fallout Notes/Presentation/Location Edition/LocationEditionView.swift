@@ -2,16 +2,12 @@ import UIKit
 
 class LocationEditionView: UIView {
 
-    @IBOutlet var iconContainer: UIView!
-    @IBOutlet var iconImageView: UIImageView!
-    @IBOutlet var changeIconButton: UIButton!
-    
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var notesTextView: UITextView!
-    
-    @IBOutlet var deleteLocationButton: UIButton!
+    @IBOutlet var tableView: UITableView!
     
     override func awakeFromNib() {
-                
+         
+        IconAndNameTableViewCell.register(on: tableView)
+        NotesTableViewCell.register(on: tableView)
+        DeleteLocationTableViewCell.register(on: tableView)
     }
 }

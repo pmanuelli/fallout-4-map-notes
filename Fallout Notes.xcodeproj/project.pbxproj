@@ -60,7 +60,23 @@
 		E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3425C0DA50006E76B4 /* SceneDelegate.swift */; };
 		E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */; };
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
-		E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */; };
+		E9B969BA25D8956800379266 /* IconAndNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969B825D8956800379266 /* IconAndNameTableViewCell.swift */; };
+		E9B969BB25D8956800379266 /* IconAndNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969B925D8956800379266 /* IconAndNameTableViewCell.xib */; };
+		E9B969C025D8A50300379266 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969BE25D8A50300379266 /* NotesTableViewCell.swift */; };
+		E9B969C125D8A50300379266 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */; };
+		E9B969C925D8A8F600379266 /* DeleteLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969C725D8A8F600379266 /* DeleteLocationTableViewCell.swift */; };
+		E9B969CA25D8A8F600379266 /* DeleteLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969C825D8A8F600379266 /* DeleteLocationTableViewCell.xib */; };
+		E9B969CD25D8CCB300379266 /* ShareTechMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969CC25D8CCB300379266 /* ShareTechMono-Regular.ttf */; };
+		E9B969D525D8CEE100379266 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969CF25D8CEE000379266 /* RobotoCondensed-Bold.ttf */; };
+		E9B969D625D8CEE100379266 /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969D025D8CEE000379266 /* RobotoCondensed-Light.ttf */; };
+		E9B969D725D8CEE100379266 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969D125D8CEE000379266 /* RobotoCondensed-LightItalic.ttf */; };
+		E9B969D825D8CEE100379266 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969D225D8CEE000379266 /* RobotoCondensed-Italic.ttf */; };
+		E9B969D925D8CEE100379266 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969D325D8CEE000379266 /* RobotoCondensed-Regular.ttf */; };
+		E9B969DA25D8CEE100379266 /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9B969D425D8CEE000379266 /* RobotoCondensed-BoldItalic.ttf */; };
+		E9B969DD25D8DD1400379266 /* AutoRegistrableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */; };
+		E9B969E025D8E1FA00379266 /* LocationEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */; };
+		E9B969E325D8E22000379266 /* LocationEditionTableViewCellDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */; };
+		E9BF3AB925CB6FAA00A2B6BA /* Monofonto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* Monofonto-Regular.ttf */; };
 		E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A78925CDEAF700B67C42 /* HUDButton.swift */; };
 		E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */; };
 		E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */; };
@@ -129,7 +145,23 @@
 		E9B09F3425C0DA50006E76B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E9B09F3625C0DA50006E76B4 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monofonto.ttf; sourceTree = "<group>"; };
+		E9B969B825D8956800379266 /* IconAndNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconAndNameTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969B925D8956800379266 /* IconAndNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconAndNameTableViewCell.xib; sourceTree = "<group>"; };
+		E9B969BE25D8A50300379266 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
+		E9B969C725D8A8F600379266 /* DeleteLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteLocationTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969C825D8A8F600379266 /* DeleteLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteLocationTableViewCell.xib; sourceTree = "<group>"; };
+		E9B969CC25D8CCB300379266 /* ShareTechMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShareTechMono-Regular.ttf"; sourceTree = "<group>"; };
+		E9B969CF25D8CEE000379266 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		E9B969D025D8CEE000379266 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		E9B969D125D8CEE000379266 /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		E9B969D225D8CEE000379266 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		E9B969D325D8CEE000379266 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		E9B969D425D8CEE000379266 /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRegistrableTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCellDequeue.swift; sourceTree = "<group>"; };
+		E9BF3AB825CB6FAA00A2B6BA /* Monofonto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Monofonto-Regular.ttf"; sourceTree = "<group>"; };
 		E9C9A78925CDEAF700B67C42 /* HUDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDButton.swift; sourceTree = "<group>"; };
 		E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionViewController.swift; sourceTree = "<group>"; };
 		E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionView.swift; sourceTree = "<group>"; };
@@ -354,6 +386,22 @@
 			path = "Fallout Notes";
 			sourceTree = "<group>";
 		};
+		E9B969B725D8953D00379266 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */,
+				E9B969C725D8A8F600379266 /* DeleteLocationTableViewCell.swift */,
+				E9B969C825D8A8F600379266 /* DeleteLocationTableViewCell.xib */,
+				E9B969B825D8956800379266 /* IconAndNameTableViewCell.swift */,
+				E9B969B925D8956800379266 /* IconAndNameTableViewCell.xib */,
+				E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */,
+				E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */,
+				E9B969BE25D8A50300379266 /* NotesTableViewCell.swift */,
+				E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
 		E9BF3AB625CB6F8300A2B6BA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +415,14 @@
 		E9BF3AB725CB6F9700A2B6BA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E9BF3AB825CB6FAA00A2B6BA /* monofonto.ttf */,
+				E9B969CF25D8CEE000379266 /* RobotoCondensed-Bold.ttf */,
+				E9B969D425D8CEE000379266 /* RobotoCondensed-BoldItalic.ttf */,
+				E9B969D225D8CEE000379266 /* RobotoCondensed-Italic.ttf */,
+				E9B969D025D8CEE000379266 /* RobotoCondensed-Light.ttf */,
+				E9B969D125D8CEE000379266 /* RobotoCondensed-LightItalic.ttf */,
+				E9B969D325D8CEE000379266 /* RobotoCondensed-Regular.ttf */,
+				E9BF3AB825CB6FAA00A2B6BA /* Monofonto-Regular.ttf */,
+				E9B969CC25D8CCB300379266 /* ShareTechMono-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -375,6 +430,7 @@
 		E9C9A7A325CE09DC00B67C42 /* Location Edition */ = {
 			isa = PBXGroup;
 			children = (
+				E9B969B725D8953D00379266 /* Table Cells */,
 				E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */,
 				E9C9A7A525CE09DC00B67C42 /* LocationEditionView.swift */,
 				E9C9A7A625CE09DC00B67C42 /* LocationEditionView.xib */,
@@ -444,17 +500,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9B969D725D8CEE100379266 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				E9AAA45E25C4A252007F66F1 /* Colors.xcassets in Resources */,
 				E9721B1E25C8A74400882A3E /* FakeLaunchScreenView.xib in Resources */,
 				E9C9A7AB25CE09DC00B67C42 /* LocationEditionView.xib in Resources */,
-				E9BF3AB925CB6FAA00A2B6BA /* monofonto.ttf in Resources */,
+				E9BF3AB925CB6FAA00A2B6BA /* Monofonto-Regular.ttf in Resources */,
+				E9B969CD25D8CCB300379266 /* ShareTechMono-Regular.ttf in Resources */,
 				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */,
+				E9B969BB25D8956800379266 /* IconAndNameTableViewCell.xib in Resources */,
+				E9B969D925D8CEE100379266 /* RobotoCondensed-Regular.ttf in Resources */,
+				E9B969D825D8CEE100379266 /* RobotoCondensed-Italic.ttf in Resources */,
 				E9B09F1525C0D687006E76B4 /* Assets.xcassets in Resources */,
 				E919BE9025C4DEFC00D59805 /* LocationIconTableViewCell.xib in Resources */,
+				E9B969D625D8CEE100379266 /* RobotoCondensed-Light.ttf in Resources */,
+				E9B969C125D8A50300379266 /* NotesTableViewCell.xib in Resources */,
 				E921469225C392F700CAF621 /* MapLocationView.xib in Resources */,
 				E95CF3D425C4AC13001609ED /* MapDroppedPinView.xib in Resources */,
+				E9B969D525D8CEE100379266 /* RobotoCondensed-Bold.ttf in Resources */,
+				E9B969DA25D8CEE100379266 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				E95CF3E525C4CF97001609ED /* LocationIconSelectionView.xib in Resources */,
+				E9B969CA25D8A8F600379266 /* DeleteLocationTableViewCell.xib in Resources */,
 				E97E316B25C0FCE600AED8F6 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,24 +583,30 @@
 				E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */,
 				E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */,
 				E9C9A7AC25CE09DC00B67C42 /* LocationEditionViewModel.swift in Sources */,
+				E9B969C925D8A8F600379266 /* DeleteLocationTableViewCell.swift in Sources */,
 				E95CF3DC25C4C875001609ED /* Location.swift in Sources */,
 				E919BE8A25C4DC4F00D59805 /* LocationIconSelectionViewModel.swift in Sources */,
+				E9B969E325D8E22000379266 /* LocationEditionTableViewCellDequeue.swift in Sources */,
 				E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */,
 				E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
 				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */,
 				E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */,
+				E9B969C025D8A50300379266 /* NotesTableViewCell.swift in Sources */,
 				E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */,
 				E9721B2C25C8D50000882A3E /* LocationRepository.swift in Sources */,
 				E95CF3CD25C4A491001609ED /* Colors.swift in Sources */,
 				E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */,
 				E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */,
+				E9B969DD25D8DD1400379266 /* AutoRegistrableTableViewCell.swift in Sources */,
 				E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
 				E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */,
+				E9B969BA25D8956800379266 /* IconAndNameTableViewCell.swift in Sources */,
 				E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */,
 				E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */,
+				E9B969E025D8E1FA00379266 /* LocationEditionTableViewCell.swift in Sources */,
 				E9721B3425C8EB5D00882A3E /* UUIDLocationIdGenerator.swift in Sources */,
 				E95CF3D025C4A756001609ED /* GreenBlurEffect.swift in Sources */,
 				E9721B2825C8D47300882A3E /* CreateLocation.swift in Sources */,

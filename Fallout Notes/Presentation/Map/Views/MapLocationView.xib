@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="monofonto.ttf">
-            <string>Monofonto-Regular</string>
+        <array key="RobotoCondensed-Bold.ttf">
+            <string>RobotoCondensed-Bold</string>
         </array>
     </customFonts>
     <objects>
@@ -34,7 +34,7 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vault 111" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="15V-Yh-GJM">
                     <rect key="frame" x="0.0" y="50" width="100" height="30"/>
-                    <fontDescription key="fontDescription" name="Monofonto-Regular" family="Monofonto" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="RobotoCondensed-Bold" family="Roboto Condensed" pointSize="15"/>
                     <color key="textColor" name="green_dark"/>
                     <nil key="highlightedColor"/>
                 </label>

@@ -24,7 +24,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>monofonto.ttf</string>
+		<string>Monofonto-Regular.ttf</string>
+		<string>ShareTechMono-Regular.ttf</string>
+		<string>RobotoCondensed-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
