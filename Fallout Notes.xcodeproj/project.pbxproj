@@ -76,6 +76,8 @@
 		E9B969DD25D8DD1400379266 /* AutoRegistrableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */; };
 		E9B969E025D8E1FA00379266 /* LocationEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */; };
 		E9B969E325D8E22000379266 /* LocationEditionTableViewCellDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */; };
+		E9B969E725D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */; };
+		E9B969E825D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */; };
 		E9BF3AB925CB6FAA00A2B6BA /* Monofonto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9BF3AB825CB6FAA00A2B6BA /* Monofonto-Regular.ttf */; };
 		E9C9A78A25CDEAF700B67C42 /* HUDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A78925CDEAF700B67C42 /* HUDButton.swift */; };
 		E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */; };
@@ -161,6 +163,8 @@
 		E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRegistrableTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCellDequeue.swift; sourceTree = "<group>"; };
+		E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorWorkbenchTableViewCell.swift; sourceTree = "<group>"; };
+		E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArmorWorkbenchTableViewCell.xib; sourceTree = "<group>"; };
 		E9BF3AB825CB6FAA00A2B6BA /* Monofonto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Monofonto-Regular.ttf"; sourceTree = "<group>"; };
 		E9C9A78925CDEAF700B67C42 /* HUDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDButton.swift; sourceTree = "<group>"; };
 		E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */,
 				E9B969BE25D8A50300379266 /* NotesTableViewCell.swift */,
 				E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */,
+				E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */,
+				E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				E919BE9025C4DEFC00D59805 /* LocationIconTableViewCell.xib in Resources */,
 				E9B969D625D8CEE100379266 /* RobotoCondensed-Light.ttf in Resources */,
 				E9B969C125D8A50300379266 /* NotesTableViewCell.xib in Resources */,
+				E9B969E825D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib in Resources */,
 				E921469225C392F700CAF621 /* MapLocationView.xib in Resources */,
 				E95CF3D425C4AC13001609ED /* MapDroppedPinView.xib in Resources */,
 				E9B969D525D8CEE100379266 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -615,6 +622,7 @@
 				E9721B4A25C8FAD600882A3E /* Event.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
+				E9B969E725D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift in Sources */,
 				E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */,
 				E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */,
 				E9382F5525D236A900E25008 /* UserDefaultsLocationRepository.swift in Sources */,

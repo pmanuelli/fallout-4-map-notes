@@ -7,9 +7,9 @@ class LocationEditionViewController: UIViewController {
     lazy var mainView = LocationEditionView.loadNib()
     private let viewModel: LocationEditionViewModel
     
-    private var cellDequeues = [LocationEditionTableViewCellDequeue(identifier: IconAndNameTableViewCell.identifier),
-                                LocationEditionTableViewCellDequeue(identifier: NotesTableViewCell.identifier),
-                                LocationEditionTableViewCellDequeue(identifier: DeleteLocationTableViewCell.identifier)]
+    private var cellDequeues: [[LocationEditionTableViewCellDequeue]] = [[.init(identifier: IconAndNameTableViewCell.identifier), .init(identifier: NotesTableViewCell.identifier)],
+                                                                         [.init(identifier: ArmorWorkbenchTableViewCell.identifier)],
+                                                                         [.init(identifier: DeleteLocationTableViewCell.identifier)]]
     
     private let disposeBag = DisposeBag()
     
@@ -51,11 +51,15 @@ class LocationEditionViewController: UIViewController {
 
 extension LocationEditionViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         cellDequeues.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cellDequeues[section].count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        cellDequeues[indexPath.row].tableView(tableView, cellForRowAt: indexPath, viewModel: viewModel)
+        cellDequeues[indexPath.section][indexPath.row].tableView(tableView, cellForRowAt: indexPath, viewModel: viewModel)
     }
 }

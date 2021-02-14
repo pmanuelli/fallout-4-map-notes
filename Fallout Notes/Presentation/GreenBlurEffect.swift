@@ -13,11 +13,23 @@ struct GreenBlurEffect {
         apply(to: label as UIView)
     }
     
-    static private func apply(to view: UIView) {
+    static func apply(to switch: UISwitch) {
+        `switch`.onTintColor = Colors.greenDark
+        apply(to: `switch` as UIView)
+    }
+    
+    static func apply(to view: UIView) {
         view.clipsToBounds = false
         view.layerShadowColor = Colors.greenLight
         view.layerShadowRadius = 3
         view.layerShadowOpacity = 0.75
+        view.layerShadowOffset = .zero
+    }
+    
+    static func remove(from view: UIView) {
+        view.layerShadowColor = nil
+        view.layerShadowRadius = 0
+        view.layerShadowOpacity = 0
         view.layerShadowOffset = .zero
     }
 }

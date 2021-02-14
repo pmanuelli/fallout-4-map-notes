@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,28 +14,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-aE-xjQ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mZe-aE-xjQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mZe-aE-xjQ" secondAttribute="trailing" id="1AC-Ym-jg4"/>
                 <constraint firstItem="mZe-aE-xjQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SeG-LI-3rt"/>
-                <constraint firstItem="mZe-aE-xjQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="TRE-Eo-Gxb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mZe-aE-xjQ" secondAttribute="bottom" id="eK3-f6-Pcv"/>
+                <constraint firstItem="mZe-aE-xjQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TRE-Eo-Gxb"/>
+                <constraint firstAttribute="bottom" secondItem="mZe-aE-xjQ" secondAttribute="bottom" id="eK3-f6-Pcv"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
             <connections>
                 <outlet property="tableView" destination="mZe-aE-xjQ" id="Rsa-AW-9th"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
