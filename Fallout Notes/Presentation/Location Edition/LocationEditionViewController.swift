@@ -30,19 +30,6 @@ class LocationEditionViewController: UIViewController {
         mainView.tableView.dataSource = self
                 
         setupNavigationItemButtons()
-        
-        bindLocationNotes()
-    }
-    
-
-    
-    private func bindLocationNotes() {
-//        mainView.notesTextView.text = viewModel.notes
-//
-//        mainView.notesTextView.rx.text
-//            .compactMap { $0 }
-//            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationNotes($0) })
-//            .disposed(by: disposeBag)
     }
     
     private func setupNavigationItemButtons() {
