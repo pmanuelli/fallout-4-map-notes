@@ -31,7 +31,7 @@
                                 <constraint firstAttribute="height" constant="200" id="lzJ-YU-Pwx"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor"/>
-                            <fontDescription key="fontDescription" name="ShareTechMono-Regular" family="Share Tech Mono" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="ShareTechMono-Regular" family="Share Tech Mono" pointSize="20"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qht-33-qSx" customClass="TableViewCellSeparationView" customModule="Fallout_Notes" customModuleProvider="target">
