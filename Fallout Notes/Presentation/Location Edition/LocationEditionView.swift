@@ -6,9 +6,10 @@ class LocationEditionView: UIView {
     
     override func awakeFromNib() {
         
-        IconAndNameTableViewCell.register(on: tableView)
+        IconTableViewCell.register(on: tableView)
+        NameTableViewCell.register(on: tableView)
         NotesTableViewCell.register(on: tableView)
-        DeleteLocationTableViewCell.register(on: tableView)
         ArmorWorkbenchTableViewCell.register(on: tableView)
+        DeleteLocationTableViewCell.register(on: tableView)
     }
 }

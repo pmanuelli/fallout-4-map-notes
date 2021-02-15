@@ -7,7 +7,7 @@ struct LocationIconDisappearAnimator {
         case bottom
     }
     
-    static func animate(_ view: UIView, origin: Origin = .center, completion: (() -> Void)?) {
+    static func animate(_ view: UIView, origin: Origin = .center, scaling: Bool = true, completion: (() -> Void)?) {
         
         let frame = view.frame
         
@@ -21,7 +21,7 @@ struct LocationIconDisappearAnimator {
         view.frame = frame
                         
         let animations = {
-            view.transform = .scale(0.01)
+            if scaling { view.transform = .scale(0.01) }
             view.alpha = 0
         }
         

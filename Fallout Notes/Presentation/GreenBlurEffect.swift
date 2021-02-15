@@ -18,6 +18,18 @@ struct GreenBlurEffect {
         apply(to: `switch` as UIView)
     }
     
+    static func apply(to textField: UITextField) {
+        textField.textColor = Colors.greenDark
+        textField.tintColor = Colors.greenDark
+        apply(to: textField as UIView)
+    }
+    
+    static func apply(to textView: UITextView) {
+        textView.textColor = Colors.greenDark
+        textView.tintColor = Colors.greenDark
+        apply(to: textView as UIView)
+    }
+    
     static func apply(to view: UIView) {
         view.clipsToBounds = false
         view.layerShadowColor = Colors.greenLight

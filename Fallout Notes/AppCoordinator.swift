@@ -10,6 +10,7 @@ class AppCoordinator {
     init(windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController
+        window.overrideUserInterfaceStyle = .dark
         window.makeKeyAndVisible()
     }
     

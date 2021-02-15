@@ -1,6 +1,11 @@
 import RxSwift
 import RxCocoa
 
+protocol TextEditor {
+    func editShortText(_ text: String, completion: @escaping (String) -> Void)
+    func editLongText(_ text: String, completion: @escaping (String) -> Void)
+}
+
 class LocationEditionViewModel {
         
     struct Output {
@@ -8,14 +13,16 @@ class LocationEditionViewModel {
         let doneButtonTouch: Observable<Void>
         let cancelButtonTouch: Observable<Void>
         let changeLocationTypeButtonTouch: Observable<Void>
-        let locationType: Observable<LocationType>
+        let type: Observable<LocationType>
+        let name: Observable<String>
     }
     
     lazy var output = Output(doneButtonEnabled: doneButtonEnabledSubject.asObservable(),
                              doneButtonTouch: doneButtonTouchSubject.asObservable(),
                              cancelButtonTouch: cancelButtonTouchSubject.asObservable(),
                              changeLocationTypeButtonTouch: changeLocationTypeButtonTouchSubject.asObservable(),
-                             locationType: locationTypeSubject.asObservable())
+                             type: typeSubject.asObservable(),
+                             name: nameSubject.asObservable())
     
     private(set) var coordinates: Coordinates
     private(set) var type: LocationType?
@@ -26,11 +33,14 @@ class LocationEditionViewModel {
     private let doneButtonTouchSubject = PublishSubject<Void>()
     private let cancelButtonTouchSubject = PublishSubject<Void>()
     private let changeLocationTypeButtonTouchSubject = PublishSubject<Void>()
-    private let locationTypeSubject = PublishSubject<LocationType>()
-    
+    private let typeSubject = PublishSubject<LocationType>()
+    private let nameSubject = PublishSubject<String>()
+        
     private let location: Location
     private let editLocation: EditLocation
     private let deleteLocation: DeleteLocation
+    
+    var textEditor: TextEditor?
 
     init(location: Location, editLocation: EditLocation, deleteLocation: DeleteLocation) {
         
@@ -71,6 +81,24 @@ class LocationEditionViewModel {
     }
     
     @objc
+    func nameCellTouched() {
+        
+        textEditor?.editShortText(name ?? "", completion: { [weak self] in
+            self?.name = $0
+            self?.nameSubject.onNext($0)
+            self?.updateDoneButtonEnabled()
+        })
+    }
+    
+    @objc
+    func notesCellTouched() {
+        
+        textEditor?.editLongText(notes, completion: { [weak self] in
+            self?.notes = $0
+        })
+    }
+    
+    @objc
     func deleteLocationButtonTouched() {
         deleteLocation.execute(locationId: location.id)
         doneButtonTouchSubject.onNext(())
@@ -78,15 +106,10 @@ class LocationEditionViewModel {
     
     func changeLocationType(_ type: LocationType) {
         self.type = type
-        locationTypeSubject.onNext(type)
+        typeSubject.onNext(type)
         updateDoneButtonEnabled()
     }
-    
-    func updateLocationName(_ name: String) {
-        self.name = name
-        updateDoneButtonEnabled()
-    }
-    
+        
     func updateLocationNotes(_ notes: String) {
         self.notes = notes
         updateDoneButtonEnabled()

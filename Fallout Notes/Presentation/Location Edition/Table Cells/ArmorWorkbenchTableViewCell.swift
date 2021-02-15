@@ -9,7 +9,6 @@ class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        selectionStyle = .none
         accessoryView = switchView
     }
     
@@ -32,6 +31,8 @@ class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell
         switchView.tintColor = color
         switchView.clipsToBounds = true
         switchView.cornerRadius = switchView.bounds.height / 2.0
+        
+        selectionStyle = .none
     }
     
     @objc private func switchValueChanged() {

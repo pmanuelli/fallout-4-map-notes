@@ -37,6 +37,8 @@ class LocationEditionCoordinator {
             
     private func observeViewModel(_ viewModel: LocationEditionViewModel) {
         
+        viewModel.textEditor = self
+        
         viewModel.output.doneButtonTouch
             .withUnretained(self)
             .subscribe(onNext: { coordinator, data in coordinator.stop() })
@@ -51,6 +53,8 @@ class LocationEditionCoordinator {
             .withUnretained(self)
             .subscribe(onNext: { coordinator, _ in coordinator.startLocationIconSelection() })
             .disposed(by: disposeBag)
+        
+        
     }
     
     private func stop() {
@@ -82,5 +86,30 @@ class LocationEditionCoordinator {
         perform(after: 0.5) {
             self.locationEditionViewModel?.changeLocationType(type)
         }
+    }
+}
+
+extension LocationEditionCoordinator: TextEditor {
+    
+    func editShortText(_ text: String, completion: @escaping (String) -> Void) {
+                
+        let controller = TextFieldInputViewController(text: text)
+        controller.completion = { [weak self] in self?.onTextEditorViewControllerCompleted(text: $0, editCompletion: completion) }
+        
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func editLongText(_ text: String, completion: @escaping (String) -> Void) {
+                
+        let controller = TextViewInputViewController(text: text)
+        controller.completion = { [weak self] in self?.onTextEditorViewControllerCompleted(text: $0, editCompletion: completion) }
+        
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    private func onTextEditorViewControllerCompleted(text: String, editCompletion: @escaping (String) -> Void) {
+        
+        editCompletion(text)
+        navigationController.popViewController(animated: true)
     }
 }

@@ -2,24 +2,30 @@ import UIKit
 import RxSwift
 
 class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, LocationEditionTableViewCell {
-
-    @IBOutlet var notesTextView: UITextView!
     
     private var disposeBag = DisposeBag()
     
-    var viewModel: LocationEditionViewModel! {
-        didSet { bindViewModel() }
+    var viewModel: LocationEditionViewModel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupAccessoryView()
+        setupTapGestureRecognizer()
     }
-        
-    private func bindViewModel() {
-        
-        notesTextView.text = viewModel.notes
-        
-        disposeBag = DisposeBag()
-        notesTextView.rx.text
-            .compactMap { $0 }
-            .subscribe(onNext: { [weak self] in self?.viewModel.updateLocationNotes($0) })
-            .disposed(by: disposeBag)
+    
+    private func setupAccessoryView() {
+        accessoryView = DisclosureIndicatorImageViewFactory.create()
+    }
+    
+    private func setupTapGestureRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        contentView.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc
+    private func cellTapped() {
+        viewModel.notesCellTouched()
     }
 }
 

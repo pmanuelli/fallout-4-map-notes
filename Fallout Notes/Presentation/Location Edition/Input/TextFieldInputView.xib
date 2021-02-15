@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ShareTechMono-Regular.ttf">
+            <string>ShareTechMono-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="TextFieldInputView" customModule="Fallout_Notes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saZ-gM-lFZ">
+                    <rect key="frame" x="0.0" y="79" width="414" height="44"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80c-yL-wrP">
+                            <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                            <fontDescription key="fontDescription" name="ShareTechMono-Regular" family="Share Tech Mono" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-Gg-ubS" customClass="TableViewCellSeparationView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-if-UUs" customClass="TableViewCellSeparationView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="table_cell_background"/>
+                    <constraints>
+                        <constraint firstItem="Iwe-Gg-ubS" firstAttribute="leading" secondItem="saZ-gM-lFZ" secondAttribute="leading" id="3fU-DE-Gqp"/>
+                        <constraint firstAttribute="height" constant="44" id="BxT-b1-Rkh"/>
+                        <constraint firstAttribute="bottom" secondItem="0uH-if-UUs" secondAttribute="bottom" id="G23-8f-BYi"/>
+                        <constraint firstAttribute="trailing" secondItem="0uH-if-UUs" secondAttribute="trailing" id="LBJ-Po-nRm"/>
+                        <constraint firstItem="Iwe-Gg-ubS" firstAttribute="top" secondItem="saZ-gM-lFZ" secondAttribute="top" id="Snp-mB-Lrg"/>
+                        <constraint firstAttribute="trailing" secondItem="Iwe-Gg-ubS" secondAttribute="trailing" id="WeJ-hz-oZF"/>
+                        <constraint firstAttribute="bottom" secondItem="80c-yL-wrP" secondAttribute="bottom" id="bgg-kK-eEf"/>
+                        <constraint firstItem="80c-yL-wrP" firstAttribute="top" secondItem="saZ-gM-lFZ" secondAttribute="top" id="c9c-eC-OgJ"/>
+                        <constraint firstItem="0uH-if-UUs" firstAttribute="leading" secondItem="saZ-gM-lFZ" secondAttribute="leading" id="f1W-cL-vTL"/>
+                        <constraint firstItem="80c-yL-wrP" firstAttribute="leading" secondItem="saZ-gM-lFZ" secondAttribute="leadingMargin" constant="8" id="kxd-fk-qmF"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="80c-yL-wrP" secondAttribute="trailing" constant="8" id="ncb-e8-i5A"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="saZ-gM-lFZ" secondAttribute="trailing" id="Ylf-gw-cfu"/>
+                <constraint firstItem="saZ-gM-lFZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="35" id="laD-eU-neC"/>
+                <constraint firstItem="saZ-gM-lFZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ttd-L1-DZz"/>
+            </constraints>
+            <connections>
+                <outlet property="textField" destination="80c-yL-wrP" id="RYf-AT-HkZ"/>
+            </connections>
+            <point key="canvasLocation" x="-87" y="83"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="table_cell_background">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

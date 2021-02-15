@@ -12,6 +12,11 @@ class GreenBlurImageView: UIImageView {
         setup()
     }
     
+    override init(image: UIImage?) {
+        super.init(image: image)
+        setup()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()

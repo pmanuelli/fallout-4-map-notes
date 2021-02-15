@@ -7,7 +7,9 @@ class LocationEditionViewController: UIViewController {
     lazy var mainView = LocationEditionView.loadNib()
     private let viewModel: LocationEditionViewModel
     
-    private var cellDequeues: [[LocationEditionTableViewCellDequeue]] = [[.init(identifier: IconAndNameTableViewCell.identifier), .init(identifier: NotesTableViewCell.identifier)],
+    private var cellDequeues: [[LocationEditionTableViewCellDequeue]] = [[.init(identifier: IconTableViewCell.identifier),
+                                                                          .init(identifier: NameTableViewCell.identifier),
+                                                                          .init(identifier: NotesTableViewCell.identifier)],
                                                                          [.init(identifier: ArmorWorkbenchTableViewCell.identifier)],
                                                                          [.init(identifier: DeleteLocationTableViewCell.identifier)]]
     
