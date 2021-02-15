@@ -3,15 +3,22 @@ import RxSwift
 
 class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, LocationEditionTableViewCell {
     
-    private var disposeBag = DisposeBag()
+    var viewModel: LocationEditionViewModel! {
+        didSet { bindViewModel() }
+    }
     
-    var viewModel: LocationEditionViewModel!
+    private var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupDetailLabel()
         setupAccessoryView()
         setupTapGestureRecognizer()
+    }
+    
+    private func setupDetailLabel() {
+        GreenBlurEffect.apply(to: detailTextLabel!)
     }
     
     private func setupAccessoryView() {
@@ -26,6 +33,24 @@ class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Locatio
     @objc
     private func cellTapped() {
         viewModel.notesCellTouched()
+    }
+    
+    private func bindViewModel() {
+        
+        notesChanged(viewModel.notes)
+        
+        disposeBag = DisposeBag()
+        viewModel.output.notes
+            .subscribe(onNext: { [weak self] in self?.notesChanged($0)})
+            .disposed(by: disposeBag)
+    }
+    
+    private func notesChanged(_ notes: String) {
+        
+        let maxLength = 20
+        let trimmedNotes = notes.count > maxLength ? notes.prefix(maxLength - 3).appending("...") : notes
+        
+        detailTextLabel?.text = trimmedNotes
     }
 }
 

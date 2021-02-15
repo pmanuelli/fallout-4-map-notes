@@ -15,6 +15,7 @@ class LocationEditionViewModel {
         let changeLocationTypeButtonTouch: Observable<Void>
         let type: Observable<LocationType>
         let name: Observable<String>
+        let notes: Observable<String>
     }
     
     lazy var output = Output(doneButtonEnabled: doneButtonEnabledSubject.asObservable(),
@@ -22,7 +23,8 @@ class LocationEditionViewModel {
                              cancelButtonTouch: cancelButtonTouchSubject.asObservable(),
                              changeLocationTypeButtonTouch: changeLocationTypeButtonTouchSubject.asObservable(),
                              type: typeSubject.asObservable(),
-                             name: nameSubject.asObservable())
+                             name: nameSubject.asObservable(),
+                             notes: notesSubject.asObservable())
     
     private(set) var coordinates: Coordinates
     private(set) var type: LocationType?
@@ -35,6 +37,7 @@ class LocationEditionViewModel {
     private let changeLocationTypeButtonTouchSubject = PublishSubject<Void>()
     private let typeSubject = PublishSubject<LocationType>()
     private let nameSubject = PublishSubject<String>()
+    private let notesSubject = PublishSubject<String>()
         
     private let location: Location
     private let editLocation: EditLocation
@@ -95,6 +98,7 @@ class LocationEditionViewModel {
         
         textEditor?.editLongText(notes, completion: { [weak self] in
             self?.notes = $0
+            self?.notesSubject.onNext($0)
         })
     }
     
