@@ -10,6 +10,7 @@ struct Icons {
     static var farm: UIImage { iconImage(named: "farm") }
     static var fillingStation: UIImage { iconImage(named: "filling_station") }
     static var junkyard: UIImage { iconImage(named: "junkyard") }
+    static var lowRise: UIImage { iconImage(named: "low_rise") }
     static var military: UIImage { iconImage(named: "military") }
     static var monument: UIImage { iconImage(named: "monument") }
     static var pondLake: UIImage { iconImage(named: "pond_lake") }
@@ -38,6 +39,8 @@ struct Icons {
             return Icons.fillingStation
         case .junkyard:
             return Icons.junkyard
+        case .lowRise:
+            return Icons.lowRise
         case .military:
             return Icons.military
         case .monument:

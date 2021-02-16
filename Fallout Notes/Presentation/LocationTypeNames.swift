@@ -16,6 +16,8 @@ struct LocationTypeNames {
             return "Filling Station"
         case .junkyard:
             return "Junk Yard"
+        case .lowRise:
+            return "Low Rise"
         case .military:
             return "Military"
         case .monument:

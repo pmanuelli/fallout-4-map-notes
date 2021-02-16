@@ -6,6 +6,7 @@ enum LocationType: String {
     case farm
     case fillingStation
     case junkyard
+    case lowRise
     case military
     case monument
     case pondLake
