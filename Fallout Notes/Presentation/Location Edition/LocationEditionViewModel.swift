@@ -1,7 +1,7 @@
 import RxSwift
 import RxCocoa
 
-protocol TextEditor {
+protocol TextEditor: AnyObject {
     func editShortText(_ text: String, completion: @escaping (String) -> Void)
     func editLongText(_ text: String, completion: @escaping (String) -> Void)
 }
@@ -45,7 +45,7 @@ class LocationEditionViewModel {
     private let editLocation: EditLocation
     private let deleteLocation: DeleteLocation
     
-    var textEditor: TextEditor?
+    weak var textEditor: TextEditor?
 
     init(location: Location, editLocation: EditLocation, deleteLocation: DeleteLocation) {
         
@@ -61,10 +61,6 @@ class LocationEditionViewModel {
         self.hasWeaponWorkbench = location.features.contains(.weaponWorkbench)
 
         updateDoneButtonEnabled()
-    }
-    
-    deinit {
-        print("LocationEditionViewModel::deinit")
     }
         
     @objc

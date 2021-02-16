@@ -46,12 +46,16 @@ class MapCoordinator {
     
     private func startLocationCreation(coordinates: Coordinates) {
         locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController)
-        locationCreationCoordinator?.start(locationCoordinates: coordinates)
+        locationCreationCoordinator?.start(locationCoordinates: coordinates) { [weak self] in
+            self?.locationCreationCoordinator = nil
+        }
     }
     
     private func startLocationEdition(location: Location) {
         locationEditionCoordinator = LocationEditionCoordinator(navigationController: navigationController)
-        locationEditionCoordinator?.start(location: location)
+        locationEditionCoordinator?.start(location: location) { [weak self] in
+            self?.locationEditionCoordinator = nil
+        }
     }
 }
 

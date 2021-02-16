@@ -8,7 +8,6 @@ class LocationEditionCoordinator {
     
     private let navigationController = UINavigationController()
     private var locationEditionViewModel: LocationEditionViewModel?
-        
     private var completion: (() -> Void)?
         
     private let disposeBag = DisposeBag()
@@ -53,8 +52,6 @@ class LocationEditionCoordinator {
             .withUnretained(self)
             .subscribe(onNext: { coordinator, _ in coordinator.startLocationIconSelection() })
             .disposed(by: disposeBag)
-        
-        
     }
     
     private func stop() {

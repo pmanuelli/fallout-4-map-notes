@@ -31,13 +31,13 @@ class LocationEditionViewController: UIViewController {
     }
     
     private func setupNavigationItemButtons() {
-        
+
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: viewModel,
                                            action: #selector(LocationEditionViewModel.cancelButtonTouched))
-                        
+
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: viewModel,
                                          action: #selector(LocationEditionViewModel.doneButtonTouched))
-                
+
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = doneButton
         
@@ -50,7 +50,7 @@ class LocationEditionViewController: UIViewController {
 extension LocationEditionViewController: UITableViewDataSource {
     
     private func createCellDequeues() -> [[LocationEditionTableViewCellDequeue]] {
-
+        
         let armorWorkbenchViewModel = SwitchTableViewCellViewModel(title: "Armor Workbench",
                                                                    initialValue: viewModel.hasArmorWorkbench,
                                                                    onValueChanged: viewModel.armorWorkbenchToggleChanged(enabled:))
