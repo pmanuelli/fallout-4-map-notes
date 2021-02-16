@@ -10,18 +10,20 @@ class IconTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Location
     var viewModel: LocationEditionViewModel! {
         didSet { bindViewModel() }
     }
-        
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        setupCellHeight()
         setupAccessoryView()
         setupTapGestureRecognizer()
     }
     
-    private func setupAccessoryView() {
-        let customAccessoryView = createAccessoryView()
-        accessoryView = customAccessoryView
-        heightAnchor.constraint(equalToConstant: customAccessoryView.bounds.height + 16).isActive = true
+    private func setupCellHeight() {
+        
+        let heightConstraint = heightAnchor.constraint(equalToConstant: iconImageView.bounds.height + 16)
+        heightConstraint.priority = UILayoutPriority.defaultHigh
+        heightConstraint.isActive = true
     }
     
     private func setupTapGestureRecognizer() {
@@ -29,14 +31,19 @@ class IconTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Location
         addGestureRecognizer(tapRecognizer)
     }
     
+    private func setupAccessoryView() {
+        accessoryView = createAccessoryView()
+    }
+    
     private func createAccessoryView() -> UIView {
         
+        let horizontalSpacing = CGFloat(8)
         let disclosureIndicator = DisclosureIndicatorImageViewFactory.create()
-        let disclosureIndicatorX = iconImageView.bounds.width + 4
+        let disclosureIndicatorX = iconImageView.bounds.width + horizontalSpacing
         let disclosureIndicatorY = (iconImageView.bounds.height - disclosureIndicator.bounds.height) / 2
         disclosureIndicator.frame.origin = CGPoint(x: disclosureIndicatorX, y: disclosureIndicatorY)
 
-        let viewWidth = iconImageView.bounds.width + 4 + disclosureIndicator.bounds.width
+        let viewWidth = iconImageView.bounds.width + horizontalSpacing + disclosureIndicator.bounds.width
         let viewHeight = iconImageView.bounds.height
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight))
