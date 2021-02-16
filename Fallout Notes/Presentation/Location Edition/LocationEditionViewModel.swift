@@ -30,6 +30,7 @@ class LocationEditionViewModel {
     private(set) var type: LocationType?
     private(set) var name: String?
     private(set) var notes: String
+    private(set) var hasArmorWorkbench: Bool
     
     private let doneButtonEnabledSubject = ReplaySubject<Bool>.createUnbounded()
     private let doneButtonTouchSubject = PublishSubject<Void>()
@@ -55,15 +56,11 @@ class LocationEditionViewModel {
         self.type = location.type
         self.name = location.name
         self.notes = location.notes
+        self.hasArmorWorkbench = location.features.contains(.armorWorkbench)
 
         updateDoneButtonEnabled()
     }
-    
-    @objc
-    func changeLocationTypeButtonTouched() {
-        changeLocationTypeButtonTouchSubject.onNext(())
-    }
-    
+        
     @objc
     func cancelButtonTouched() {
         cancelButtonTouchSubject.onNext(())
@@ -73,17 +70,24 @@ class LocationEditionViewModel {
     func doneButtonTouched() {
         guard let type = type, let name = name else { return }
         
+        var features = [Location.Feature]()
+        if hasArmorWorkbench { features.append(.armorWorkbench) }
+        
         let data = EditLocationData(location: location,
+                                    coordinates: coordinates,
                                     type: type,
                                     name: name,
                                     notes: notes,
-                                    coordinates: coordinates)
+                                    features: features)
         
         editLocation.execute(data: data)
         doneButtonTouchSubject.onNext(())
     }
     
-    @objc
+    func iconCellTouched() {
+        changeLocationTypeButtonTouchSubject.onNext(())
+    }
+    
     func nameCellTouched() {
         
         textEditor?.editShortText(name ?? "", completion: { [weak self] in
@@ -93,7 +97,6 @@ class LocationEditionViewModel {
         })
     }
     
-    @objc
     func notesCellTouched() {
         
         textEditor?.editLongText(notes, completion: { [weak self] in
@@ -102,7 +105,10 @@ class LocationEditionViewModel {
         })
     }
     
-    @objc
+    func armorWorkbenchToggleChanged(enabled: Bool) {
+        hasArmorWorkbench = enabled
+    }
+    
     func deleteLocationButtonTouched() {
         deleteLocation.execute(locationId: location.id)
         doneButtonTouchSubject.onNext(())
@@ -111,11 +117,6 @@ class LocationEditionViewModel {
     func changeLocationType(_ type: LocationType) {
         self.type = type
         typeSubject.onNext(type)
-        updateDoneButtonEnabled()
-    }
-        
-    func updateLocationNotes(_ notes: String) {
-        self.notes = notes
         updateDoneButtonEnabled()
     }
     

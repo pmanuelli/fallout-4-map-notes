@@ -14,10 +14,3 @@ struct Coordinates {
     let x: Double
     let y: Double
 }
-
-enum Feature {
-    
-    case armorWorkbench
-    case weaponWorkbench
-    case powerArmorStation
-}

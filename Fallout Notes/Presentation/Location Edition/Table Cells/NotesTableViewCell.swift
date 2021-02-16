@@ -47,7 +47,7 @@ class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Locatio
     
     private func notesChanged(_ notes: String) {
         
-        let maxLength = 20
+        let maxLength = 25
         let trimmedNotes = notes.count > maxLength ? notes.prefix(maxLength - 3).appending("...") : notes
         
         detailTextLabel?.text = trimmedNotes

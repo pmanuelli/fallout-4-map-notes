@@ -52,19 +52,21 @@ struct UserDefaultsLocationRepository: LocationRepository {
 private struct LocationDTO: Codable {
     
     let id: String
+    let coordinateX: Double
+    let coordinateY: Double
     let type: String
     let name: String
     let notes: String
-    let coordinateX: Double
-    let coordinateY: Double
-    
+    let features: [String]?
+
     static func fromLocation(_ location: Location) -> LocationDTO {
         LocationDTO(id: location.id,
+                    coordinateX: location.coordinates.x,
+                    coordinateY: location.coordinates.y,
                     type: location.type.rawValue,
                     name: location.name,
                     notes: location.notes,
-                    coordinateX: location.coordinates.x,
-                    coordinateY: location.coordinates.y)
+                    features: location.features.map { $0.rawValue })
     }
     
     func toLocation() -> Location? {
@@ -75,8 +77,9 @@ private struct LocationDTO: Codable {
                         type: type,
                         name: name,
                         notes: notes,
-                        features: [])
+                        features: (features ?? []).compactMap { Location.Feature(rawValue: $0) })
     }
 }
 
 extension LocationType: Codable { }
+extension Location.Feature: Codable { }

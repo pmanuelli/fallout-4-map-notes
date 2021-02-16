@@ -1,9 +1,10 @@
 struct EditLocationData {
     let location: Location
+    let coordinates: Coordinates
     let type: LocationType
     let name: String
     let notes: String
-    let coordinates: Coordinates
+    let features: [Location.Feature]
 }
 
 protocol EditLocation {
@@ -27,7 +28,7 @@ struct EditLocationDefault: EditLocation {
                                 type: data.type,
                                 name: data.name,
                                 notes: data.notes,
-                                features: [])
+                                features: data.features)
         
         repository.update(location)
         eventBus.send(event: LocationEditedEvent(location: location))

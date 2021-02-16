@@ -62,6 +62,7 @@
 		E9B09F3D25C0DA50006E76B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */; };
 		E9B7292025DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */; };
 		E9B7292325DA320A0009570C /* TableViewCellSeparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7292225DA320A0009570C /* TableViewCellSeparationView.swift */; };
+		E9B7292F25DB31E70009570C /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7292E25DB31E70009570C /* Feature.swift */; };
 		E9B969BA25D8956800379266 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969B825D8956800379266 /* IconTableViewCell.swift */; };
 		E9B969BB25D8956800379266 /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969B925D8956800379266 /* IconTableViewCell.xib */; };
 		E9B969C025D8A50300379266 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969BE25D8A50300379266 /* NameTableViewCell.swift */; };
@@ -159,6 +160,7 @@
 		E9B09F3825C0DA50006E76B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureIndicatorImageViewFactory.swift; sourceTree = "<group>"; };
 		E9B7292225DA320A0009570C /* TableViewCellSeparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSeparationView.swift; sourceTree = "<group>"; };
+		E9B7292E25DB31E70009570C /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		E9B969B825D8956800379266 /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969B925D8956800379266 /* IconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
 		E9B969BE25D8A50300379266 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				E9721B4825C8FAB800882A3E /* Event Bus */,
 				E95CF3DB25C4C875001609ED /* Location.swift */,
+				E9B7292E25DB31E70009570C /* Feature.swift */,
 				E9721B2E25C8D5C000882A3E /* LocationIdGenerator.swift */,
 				E9721B2B25C8D50000882A3E /* LocationRepository.swift */,
 				E95CF3DF25C4C8BF001609ED /* LocationType.swift */,
@@ -418,6 +421,7 @@
 				E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */,
 				E9B969C725D8A8F600379266 /* DeleteLocationTableViewCell.swift */,
 				E9B969C825D8A8F600379266 /* DeleteLocationTableViewCell.xib */,
+				E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */,
 				E9B969B825D8956800379266 /* IconTableViewCell.swift */,
 				E9B969B925D8956800379266 /* IconTableViewCell.xib */,
 				E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */,
@@ -426,7 +430,6 @@
 				E9B96A0625DA031400379266 /* NameTableViewCell.xib */,
 				E9B96A0325DA031200379266 /* NotesTableViewCell.swift */,
 				E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */,
-				E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				E9B969F325D9D42000379266 /* TextFieldInputView.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
 				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
+				E9B7292F25DB31E70009570C /* Feature.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
 				E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */,
 				E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */,

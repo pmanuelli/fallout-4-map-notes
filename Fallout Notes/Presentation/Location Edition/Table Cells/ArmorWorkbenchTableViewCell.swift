@@ -2,14 +2,16 @@ import UIKit
 
 class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, LocationEditionTableViewCell {
    
-    var viewModel: LocationEditionViewModel!
+    var viewModel: LocationEditionViewModel! {
+        didSet { bindViewModel() }
+    }
     
-    private lazy var switchView = createSwitchView()
-    
+    private var switchView: UISwitch { accessoryView as! UISwitch }
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        accessoryView = switchView
+        accessoryView = createSwitchView()
     }
     
     private func createSwitchView() -> UISwitch {
@@ -17,12 +19,12 @@ class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell
         let switchView = UISwitch()
         switchView.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         
-        setupSwitchViewOffState(switchView)
+        setupOffState(on: switchView)
     
         return switchView
     }
     
-    private func setupSwitchViewOffState(_ switchView: UISwitch) {
+    private func setupOffState(on switchView: UISwitch) {
         
         let color = UIColor.darkGray
         switchView.backgroundColor = color
@@ -31,13 +33,20 @@ class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell
         switchView.cornerRadius = switchView.bounds.height / 2.0
     }
     
+    private func bindViewModel() {
+        switchView.isOn = viewModel.hasArmorWorkbench
+        updateSwitchDesign()
+    }
+    
     @objc private func switchValueChanged() {
         
-        if switchView.isOn {
-            GreenBlurEffect.apply(to: switchView)
-        }
-        else {
-            GreenBlurEffect.remove(from: switchView)
-        }
+        updateSwitchDesign()
+        viewModel.armorWorkbenchToggleChanged(enabled: switchView.isOn)
+    }
+    
+    private func updateSwitchDesign() {
+        
+        if switchView.isOn { GreenBlurEffect.apply(to: switchView) }
+        else { GreenBlurEffect.remove(from: switchView) }
     }
 }

@@ -48,7 +48,7 @@ class IconTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Location
     }
     
     @objc private func cellTapped() {
-        viewModel.changeLocationTypeButtonTouched()
+        viewModel.iconCellTouched()
     }
     
     private func bindViewModel() {
