@@ -1,8 +1,8 @@
 import UIKit
 
-class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, LocationEditionTableViewCell {
+class SwitchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell {
    
-    var viewModel: LocationEditionViewModel! {
+    var viewModel: SwitchTableViewCellViewModel! {
         didSet { bindViewModel() }
     }
     
@@ -16,32 +16,29 @@ class ArmorWorkbenchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell
     
     private func createSwitchView() -> UISwitch {
         
+        let color = UIColor.darkGray
+        
         let switchView = UISwitch()
         switchView.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
-        
-        setupOffState(on: switchView)
-    
-        return switchView
-    }
-    
-    private func setupOffState(on switchView: UISwitch) {
-        
-        let color = UIColor.darkGray
         switchView.backgroundColor = color
         switchView.tintColor = color
         switchView.clipsToBounds = true
         switchView.cornerRadius = switchView.bounds.height / 2.0
+    
+        return switchView
     }
     
     private func bindViewModel() {
-        switchView.isOn = viewModel.hasArmorWorkbench
+        
+        textLabel?.text = viewModel.title
+        switchView.isOn = viewModel.initialValue
         updateSwitchDesign()
     }
     
     @objc private func switchValueChanged() {
-        
+
+        viewModel.cellValueChanged(enabled: switchView.isOn)
         updateSwitchDesign()
-        viewModel.armorWorkbenchToggleChanged(enabled: switchView.isOn)
     }
     
     private func updateSwitchDesign() {

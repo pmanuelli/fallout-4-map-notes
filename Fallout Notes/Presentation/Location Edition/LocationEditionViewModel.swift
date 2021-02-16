@@ -31,7 +31,8 @@ class LocationEditionViewModel {
     private(set) var name: String?
     private(set) var notes: String
     private(set) var hasArmorWorkbench: Bool
-    
+    private(set) var hasWeaponWorkbench: Bool
+
     private let doneButtonEnabledSubject = ReplaySubject<Bool>.createUnbounded()
     private let doneButtonTouchSubject = PublishSubject<Void>()
     private let cancelButtonTouchSubject = PublishSubject<Void>()
@@ -57,8 +58,13 @@ class LocationEditionViewModel {
         self.name = location.name
         self.notes = location.notes
         self.hasArmorWorkbench = location.features.contains(.armorWorkbench)
+        self.hasWeaponWorkbench = location.features.contains(.weaponWorkbench)
 
         updateDoneButtonEnabled()
+    }
+    
+    deinit {
+        print("LocationEditionViewModel::deinit")
     }
         
     @objc
@@ -72,6 +78,7 @@ class LocationEditionViewModel {
         
         var features = [Location.Feature]()
         if hasArmorWorkbench { features.append(.armorWorkbench) }
+        if hasWeaponWorkbench { features.append(.weaponWorkbench) }
         
         let data = EditLocationData(location: location,
                                     coordinates: coordinates,
@@ -107,6 +114,10 @@ class LocationEditionViewModel {
     
     func armorWorkbenchToggleChanged(enabled: Bool) {
         hasArmorWorkbench = enabled
+    }
+    
+    func weaponWorkbenchToggleChanged(enabled: Bool) {
+        hasWeaponWorkbench = enabled
     }
     
     func deleteLocationButtonTouched() {

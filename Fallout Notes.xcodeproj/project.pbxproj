@@ -63,6 +63,9 @@
 		E9B7292025DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */; };
 		E9B7292325DA320A0009570C /* TableViewCellSeparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7292225DA320A0009570C /* TableViewCellSeparationView.swift */; };
 		E9B7292F25DB31E70009570C /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7292E25DB31E70009570C /* Feature.swift */; };
+		E9B7293E25DC1A0C0009570C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7293D25DC1A0C0009570C /* SwitchTableViewCell.swift */; };
+		E9B7294225DC1A420009570C /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B7294125DC1A250009570C /* SwitchTableViewCell.xib */; };
+		E9B7294625DC1F780009570C /* SwitchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7294525DC1F780009570C /* SwitchTableViewCellViewModel.swift */; };
 		E9B969BA25D8956800379266 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969B825D8956800379266 /* IconTableViewCell.swift */; };
 		E9B969BB25D8956800379266 /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969B925D8956800379266 /* IconTableViewCell.xib */; };
 		E9B969C025D8A50300379266 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969BE25D8A50300379266 /* NameTableViewCell.swift */; };
@@ -79,8 +82,6 @@
 		E9B969DD25D8DD1400379266 /* AutoRegistrableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */; };
 		E9B969E025D8E1FA00379266 /* LocationEditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */; };
 		E9B969E325D8E22000379266 /* LocationEditionTableViewCellDequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */; };
-		E9B969E725D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */; };
-		E9B969E825D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */; };
 		E9B969EE25D9D20B00379266 /* TextFieldInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969EC25D9D20B00379266 /* TextFieldInputViewController.swift */; };
 		E9B969EF25D9D20B00379266 /* TextViewInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969ED25D9D20B00379266 /* TextViewInputView.xib */; };
 		E9B969F325D9D42000379266 /* TextFieldInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969F225D9D42000379266 /* TextFieldInputView.swift */; };
@@ -161,6 +162,9 @@
 		E9B7291F25DA294D0009570C /* DisclosureIndicatorImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureIndicatorImageViewFactory.swift; sourceTree = "<group>"; };
 		E9B7292225DA320A0009570C /* TableViewCellSeparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSeparationView.swift; sourceTree = "<group>"; };
 		E9B7292E25DB31E70009570C /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		E9B7293D25DC1A0C0009570C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		E9B7294125DC1A250009570C /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		E9B7294525DC1F780009570C /* SwitchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		E9B969B825D8956800379266 /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969B925D8956800379266 /* IconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
 		E9B969BE25D8A50300379266 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
@@ -177,8 +181,6 @@
 		E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRegistrableTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969DF25D8E1FA00379266 /* LocationEditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969E225D8E22000379266 /* LocationEditionTableViewCellDequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionTableViewCellDequeue.swift; sourceTree = "<group>"; };
-		E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmorWorkbenchTableViewCell.swift; sourceTree = "<group>"; };
-		E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArmorWorkbenchTableViewCell.xib; sourceTree = "<group>"; };
 		E9B969EC25D9D20B00379266 /* TextFieldInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInputViewController.swift; sourceTree = "<group>"; };
 		E9B969ED25D9D20B00379266 /* TextViewInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewInputView.xib; sourceTree = "<group>"; };
 		E9B969F225D9D42000379266 /* TextFieldInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInputView.swift; sourceTree = "<group>"; };
@@ -416,8 +418,6 @@
 		E9B969B725D8953D00379266 /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E9B969E525D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift */,
-				E9B969E625D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib */,
 				E9B969DC25D8DD1400379266 /* AutoRegistrableTableViewCell.swift */,
 				E9B969C725D8A8F600379266 /* DeleteLocationTableViewCell.swift */,
 				E9B969C825D8A8F600379266 /* DeleteLocationTableViewCell.xib */,
@@ -430,6 +430,9 @@
 				E9B96A0625DA031400379266 /* NameTableViewCell.xib */,
 				E9B96A0325DA031200379266 /* NotesTableViewCell.swift */,
 				E9B969BF25D8A50300379266 /* NotesTableViewCell.xib */,
+				E9B7293D25DC1A0C0009570C /* SwitchTableViewCell.swift */,
+				E9B7294125DC1A250009570C /* SwitchTableViewCell.xib */,
+				E9B7294525DC1F780009570C /* SwitchTableViewCellViewModel.swift */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -562,7 +565,7 @@
 				E919BE9025C4DEFC00D59805 /* LocationIconTableViewCell.xib in Resources */,
 				E9B969D625D8CEE100379266 /* RobotoCondensed-Light.ttf in Resources */,
 				E9B969C125D8A50300379266 /* NotesTableViewCell.xib in Resources */,
-				E9B969E825D8EA1700379266 /* ArmorWorkbenchTableViewCell.xib in Resources */,
+				E9B7294225DC1A420009570C /* SwitchTableViewCell.xib in Resources */,
 				E921469225C392F700CAF621 /* MapLocationView.xib in Resources */,
 				E95CF3D425C4AC13001609ED /* MapDroppedPinView.xib in Resources */,
 				E9B969D525D8CEE100379266 /* RobotoCondensed-Bold.ttf in Resources */,
@@ -668,8 +671,9 @@
 				E919BE9325C4DF1D00D59805 /* LocationIconTableViewCellViewModel.swift in Sources */,
 				E9721B4A25C8FAD600882A3E /* Event.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
+				E9B7293E25DC1A0C0009570C /* SwitchTableViewCell.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
-				E9B969E725D8EA1700379266 /* ArmorWorkbenchTableViewCell.swift in Sources */,
+				E9B7294625DC1F780009570C /* SwitchTableViewCellViewModel.swift in Sources */,
 				E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */,
 				E9B96A0425DA031200379266 /* NotesTableViewCell.swift in Sources */,
 				E9721B4625C8FAB100882A3E /* EventBus.swift in Sources */,
