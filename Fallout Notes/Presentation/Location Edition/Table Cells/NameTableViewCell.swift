@@ -31,20 +31,25 @@ class NameTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Location
     }
     
     private func bindViewModel() {
-        guard let label = detailTextLabel else { return }
-        
-        label.text = viewModel.name
+                
+        nameChanged(viewModel.name)
         
         disposeBag = DisposeBag()
-        
         viewModel.output.name
-            .bind(to: label.rx.text)
+            .subscribe(onNext: { [weak self] in self?.nameChanged($0) })
             .disposed(by: disposeBag)
     }
     
     @objc
     private func cellTapped() {
         viewModel.nameCellTouched()
+    }
+    
+    private func nameChanged(_ name: String) {
+        guard let label = detailTextLabel else { return }
+
+        // If the text set is empty then the following values does not appear, even if they are non empty
+        label.text = name.isEmpty ? " " : name
     }
 }
 

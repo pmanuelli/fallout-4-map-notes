@@ -58,12 +58,19 @@ extension LocationEditionViewController: UITableViewDataSource {
         let weaponWorkbenchViewModel = SwitchTableViewCellViewModel(title: "Weapon Workbench", initialValue: viewModel.hasWeaponWorkbench,
                                                                     onValueChanged: viewModel.weaponWorkbenchToggleChanged(enabled:))
 
-        return [[.init(identifier: IconTableViewCell.identifier, locationEditionViewModel: viewModel),
-                 .init(identifier: NameTableViewCell.identifier, locationEditionViewModel: viewModel),
-                 .init(identifier: NotesTableViewCell.identifier, locationEditionViewModel: viewModel)],
-                [.init(identifier: SwitchTableViewCell.identifier, switchTableCellViewModel: armorWorkbenchViewModel),
-                 .init(identifier: SwitchTableViewCell.identifier, switchTableCellViewModel: weaponWorkbenchViewModel)],
-                [.init(identifier: DeleteLocationTableViewCell.identifier, locationEditionViewModel: viewModel)]]
+        var dequeues: [[LocationEditionTableViewCellDequeue]] = [
+            [.init(identifier: IconTableViewCell.identifier, locationEditionViewModel: viewModel),
+             .init(identifier: NameTableViewCell.identifier, locationEditionViewModel: viewModel),
+             .init(identifier: NotesTableViewCell.identifier, locationEditionViewModel: viewModel)],
+            [.init(identifier: SwitchTableViewCell.identifier, switchTableCellViewModel: armorWorkbenchViewModel),
+             .init(identifier: SwitchTableViewCell.identifier, switchTableCellViewModel: weaponWorkbenchViewModel)]
+        ]
+        
+        if viewModel.showDeleteButton {
+            dequeues.append([.init(identifier: DeleteLocationTableViewCell.identifier, locationEditionViewModel: viewModel)])
+        }
+        
+        return dequeues
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -26,12 +26,13 @@ class LocationEditionViewModel {
                              name: nameSubject.asObservable(),
                              notes: notesSubject.asObservable())
     
-    private(set) var coordinates: Coordinates
     private(set) var type: LocationType?
-    private(set) var name: String?
+    private(set) var name: String
     private(set) var notes: String
     private(set) var hasArmorWorkbench: Bool
     private(set) var hasWeaponWorkbench: Bool
+    
+    private(set) var showDeleteButton: Bool
 
     private let doneButtonEnabledSubject = ReplaySubject<Bool>.createUnbounded()
     private let doneButtonTouchSubject = PublishSubject<Void>()
@@ -41,49 +42,40 @@ class LocationEditionViewModel {
     private let nameSubject = PublishSubject<String>()
     private let notesSubject = PublishSubject<String>()
         
-    private let location: Location
-    private let editLocation: EditLocation
-    private let deleteLocation: DeleteLocation
-    
     weak var textEditor: TextEditor?
-
-    init(location: Location, editLocation: EditLocation, deleteLocation: DeleteLocation) {
+    
+    private let behavior: LocationEditionViewModelBehavior
+    
+    init(behavior: LocationEditionViewModelBehavior) {
         
-        self.location = location
-        self.editLocation = editLocation
-        self.deleteLocation = deleteLocation
+        self.behavior = behavior
         
-        self.coordinates = location.coordinates
-        self.type = location.type
-        self.name = location.name
-        self.notes = location.notes
-        self.hasArmorWorkbench = location.features.contains(.armorWorkbench)
-        self.hasWeaponWorkbench = location.features.contains(.weaponWorkbench)
+        self.type = behavior.initialType
+        self.name = behavior.initialName
+        self.notes = behavior.initialNotes
+        self.hasArmorWorkbench = behavior.initialFeatures.contains(.armorWorkbench)
+        self.hasWeaponWorkbench = behavior.initialFeatures.contains(.weaponWorkbench)
+        
+        self.showDeleteButton = behavior.hasDeleteAction
 
         updateDoneButtonEnabled()
     }
         
     @objc
     func cancelButtonTouched() {
+        behavior.cancelButtonTouched()
         cancelButtonTouchSubject.onNext(())
     }
     
     @objc
     func doneButtonTouched() {
-        guard let type = type, let name = name else { return }
+        guard let type = type else { return }
         
         var features = [Location.Feature]()
         if hasArmorWorkbench { features.append(.armorWorkbench) }
         if hasWeaponWorkbench { features.append(.weaponWorkbench) }
         
-        let data = EditLocationData(location: location,
-                                    coordinates: coordinates,
-                                    type: type,
-                                    name: name,
-                                    notes: notes,
-                                    features: features)
-        
-        editLocation.execute(data: data)
+        behavior.doneButtonTouched(type: type, name: name, notes: notes, features: features)
         doneButtonTouchSubject.onNext(())
     }
     
@@ -93,7 +85,7 @@ class LocationEditionViewModel {
     
     func nameCellTouched() {
         
-        textEditor?.editShortText(name ?? "", completion: { [weak self] in
+        textEditor?.editShortText(name, completion: { [weak self] in
             self?.name = $0
             self?.nameSubject.onNext($0)
             self?.updateDoneButtonEnabled()
@@ -117,7 +109,7 @@ class LocationEditionViewModel {
     }
     
     func deleteLocationButtonTouched() {
-        deleteLocation.execute(locationId: location.id)
+        behavior.deleteButtonTouched()
         doneButtonTouchSubject.onNext(())
     }
     
@@ -128,11 +120,6 @@ class LocationEditionViewModel {
     }
     
     private func updateDoneButtonEnabled() {
-        guard let _ = type, let name = name else {
-            doneButtonEnabledSubject.onNext(false)
-            return
-        }
-        
-        doneButtonEnabledSubject.onNext(!name.isEmpty)
+        doneButtonEnabledSubject.onNext(type != nil && !name.isEmpty)
     }
 }

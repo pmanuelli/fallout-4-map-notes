@@ -60,7 +60,7 @@ class IconTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Location
     
     private func bindViewModel() {
         
-        iconImageView.image = viewModel.type.let { Icons.icon(for: $0) } else: { Icons.droppedPin }
+        iconImageView.image = viewModel.type.let { Icons.icon(for: $0) } else: { nil }
 
         disposeBag = DisposeBag()
         

@@ -16,15 +16,30 @@ class LocationEditionCoordinator {
         self.inheritedNavigationController = navigationController
         self.navigationController.modalPresentationStyle = .overFullScreen
     }
+    
+    func start(coordinates: Coordinates, completion: (() -> Void)? = nil) {
+                
+        let behavior = CreateLocationBehavior(coordinates: coordinates,
+                                              createLocation: Infrastructure.shared.createLocation,
+                                              cancelLocationCreation: Infrastructure.shared.cancelLocationCreation)
         
+        startEditLocation(behavior: behavior, completion: completion)
+    }
+    
     func start(location: Location, completion: (() -> Void)? = nil) {
+        
+        let behavior = EditLocationBehavior(location: location,
+                                            editLocation: Infrastructure.shared.editLocation,
+                                            deleteLocation: Infrastructure.shared.deleteLocation)
+        
+        startEditLocation(behavior: behavior, completion: completion)
+    }
+    
+    private func startEditLocation(behavior: LocationEditionViewModelBehavior, completion: (() -> Void)?) {
         
         self.completion = completion
         
-        let viewModel = LocationEditionViewModel(location: location,
-                                                 editLocation: Infrastructure.shared.editLocation,
-                                                 deleteLocation: Infrastructure.shared.deleteLocation)
-        
+        let viewModel = LocationEditionViewModel(behavior: behavior)
         let viewController = LocationEditionViewController(viewModel: viewModel)
 
         observeViewModel(viewModel)

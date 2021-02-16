@@ -36,7 +36,7 @@ class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Locatio
     }
     
     private func bindViewModel() {
-        
+
         notesChanged(viewModel.notes)
         
         disposeBag = DisposeBag()
@@ -46,11 +46,12 @@ class NotesTableViewCell: UITableViewCell, AutoRegistrableTableViewCell, Locatio
     }
     
     private func notesChanged(_ notes: String) {
-        
+                
         let maxLength = 25
         let trimmedNotes = notes.count > maxLength ? notes.prefix(maxLength - 3).appending("...") : notes
         
-        detailTextLabel?.text = trimmedNotes
+        // If the text set is empty then the following values does not appear, even if they are non empty
+        detailTextLabel?.text = trimmedNotes.isEmpty ? " " : trimmedNotes
     }
 }
 

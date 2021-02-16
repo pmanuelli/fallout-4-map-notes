@@ -6,9 +6,6 @@ class MapCoordinator {
     private let navigationController: UINavigationController
     
     private var mapViewModel: MapViewModel?
-    private var mapViewController: MapViewController?
-    
-    private var locationCreationCoordinator: LocationCreationCoordinator?
     private var locationEditionCoordinator: LocationEditionCoordinator?
     
     private let disposeBag = DisposeBag()
@@ -24,7 +21,6 @@ class MapCoordinator {
         let viewModel = MapViewModel(locations: locations, eventBus: Infrastructure.shared.eventBus)
         let viewController = MapViewController(viewModel: viewModel)
         mapViewModel = viewModel
-        mapViewController = viewController
         
         observeViewModel(viewModel)
 
@@ -45,9 +41,9 @@ class MapCoordinator {
     }
     
     private func startLocationCreation(coordinates: Coordinates) {
-        locationCreationCoordinator = LocationCreationCoordinator(navigationController: navigationController)
-        locationCreationCoordinator?.start(locationCoordinates: coordinates) { [weak self] in
-            self?.locationCreationCoordinator = nil
+        locationEditionCoordinator = LocationEditionCoordinator(navigationController: navigationController)
+        locationEditionCoordinator?.start(coordinates: coordinates) { [weak self] in
+            self?.locationEditionCoordinator = nil
         }
     }
     

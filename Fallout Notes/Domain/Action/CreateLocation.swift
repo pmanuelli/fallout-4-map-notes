@@ -1,8 +1,9 @@
 struct CreateLocationData {
+    let coordinates: Coordinates
     let type: LocationType
     let name: String
     let notes: String
-    let coordinates: Coordinates
+    let features: [Location.Feature]
 }
 
 protocol CreateLocation {
@@ -28,7 +29,7 @@ struct CreateLocationDefault: CreateLocation {
                                 type: data.type,
                                 name: data.name,
                                 notes: data.notes,
-                                features: [])
+                                features: data.features)
         
         repository.create(location)
         eventBus.send(event: LocationCreatedEvent(location: location))

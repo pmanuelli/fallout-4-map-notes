@@ -32,13 +32,8 @@
 		E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E971E81325CA113200ABA436 /* LaunchScreen.storyboard */; };
 		E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */; };
 		E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E81E25CA1CE900ABA436 /* MapLocationViewModel.swift */; };
-		E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */; };
-		E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216B025C5FE3B00882A3E /* LocationCreationView.swift */; };
-		E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E97216B425C5FE8F00882A3E /* LocationCreationView.xib */; };
-		E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */; };
 		E97216BF25C6247D00882A3E /* LocationIconAppearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */; };
 		E97217D225C6256300882A3E /* LocationIconDisappearAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */; };
-		E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */; };
 		E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97217DA25C77CB800882A3E /* LocationTypeNames.swift */; };
 		E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */; };
 		E9721B1B25C8A6E200882A3E /* FakeLaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */; };
@@ -66,6 +61,7 @@
 		E9B7293E25DC1A0C0009570C /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7293D25DC1A0C0009570C /* SwitchTableViewCell.swift */; };
 		E9B7294225DC1A420009570C /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B7294125DC1A250009570C /* SwitchTableViewCell.xib */; };
 		E9B7294625DC1F780009570C /* SwitchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7294525DC1F780009570C /* SwitchTableViewCellViewModel.swift */; };
+		E9B7294C25DC6B030009570C /* LocationEditionViewModelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7294B25DC6B030009570C /* LocationEditionViewModelBehavior.swift */; };
 		E9B969BA25D8956800379266 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969B825D8956800379266 /* IconTableViewCell.swift */; };
 		E9B969BB25D8956800379266 /* IconTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B969B925D8956800379266 /* IconTableViewCell.xib */; };
 		E9B969C025D8A50300379266 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B969BE25D8A50300379266 /* NameTableViewCell.swift */; };
@@ -129,13 +125,8 @@
 		E971E81325CA113200ABA436 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E971E81A25CA163300ABA436 /* CancelLocationCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelLocationCreation.swift; sourceTree = "<group>"; };
 		E971E81E25CA1CE900ABA436 /* MapLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationViewModel.swift; sourceTree = "<group>"; };
-		E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewController.swift; sourceTree = "<group>"; };
-		E97216B025C5FE3B00882A3E /* LocationCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationView.swift; sourceTree = "<group>"; };
-		E97216B425C5FE8F00882A3E /* LocationCreationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCreationView.xib; sourceTree = "<group>"; };
-		E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationCoordinator.swift; sourceTree = "<group>"; };
 		E97216BE25C6247D00882A3E /* LocationIconAppearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconAppearAnimator.swift; sourceTree = "<group>"; };
 		E97217D125C6256300882A3E /* LocationIconDisappearAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationIconDisappearAnimator.swift; sourceTree = "<group>"; };
-		E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCreationViewModel.swift; sourceTree = "<group>"; };
 		E97217DA25C77CB800882A3E /* LocationTypeNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTypeNames.swift; sourceTree = "<group>"; };
 		E9721B1725C8A6D000882A3E /* FakeLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		E9721B1A25C8A6E200882A3E /* FakeLaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchScreenView.swift; sourceTree = "<group>"; };
@@ -165,6 +156,7 @@
 		E9B7293D25DC1A0C0009570C /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		E9B7294125DC1A250009570C /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		E9B7294525DC1F780009570C /* SwitchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		E9B7294B25DC6B030009570C /* LocationEditionViewModelBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEditionViewModelBehavior.swift; sourceTree = "<group>"; };
 		E9B969B825D8956800379266 /* IconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
 		E9B969B925D8956800379266 /* IconTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconTableViewCell.xib; sourceTree = "<group>"; };
 		E9B969BE25D8A50300379266 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
@@ -292,18 +284,6 @@
 			path = "Launch Screen";
 			sourceTree = "<group>";
 		};
-		E97216AB25C5FD7E00882A3E /* Location Creation */ = {
-			isa = PBXGroup;
-			children = (
-				E97216BA25C6180A00882A3E /* LocationCreationCoordinator.swift */,
-				E97216B025C5FE3B00882A3E /* LocationCreationView.swift */,
-				E97216B425C5FE8F00882A3E /* LocationCreationView.xib */,
-				E97216AC25C5FDC400882A3E /* LocationCreationViewController.swift */,
-				E97217D625C659ED00882A3E /* LocationCreationViewModel.swift */,
-			);
-			path = "Location Creation";
-			sourceTree = "<group>";
-		};
 		E9721B2525C8D45900882A3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +354,6 @@
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
 				E971E81625CA123000ABA436 /* Launch Screen */,
-				E97216AB25C5FD7E00882A3E /* Location Creation */,
 				E9C9A7A325CE09DC00B67C42 /* Location Edition */,
 				E95CF3E725C4CFA0001609ED /* Location Icon Selection */,
 				E97E317025C0FCFE00AED8F6 /* Map */,
@@ -486,6 +465,7 @@
 				E9C9A7A625CE09DC00B67C42 /* LocationEditionView.xib */,
 				E9C9A7A425CE09DC00B67C42 /* LocationEditionViewController.swift */,
 				E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */,
+				E9B7294B25DC6B030009570C /* LocationEditionViewModelBehavior.swift */,
 			);
 			path = "Location Edition";
 			sourceTree = "<group>";
@@ -556,7 +536,6 @@
 				E9C9A7AB25CE09DC00B67C42 /* LocationEditionView.xib in Resources */,
 				E9BF3AB925CB6FAA00A2B6BA /* Monofonto-Regular.ttf in Resources */,
 				E9B969CD25D8CCB300379266 /* ShareTechMono-Regular.ttf in Resources */,
-				E97216B525C5FE8F00882A3E /* LocationCreationView.xib in Resources */,
 				E971E81425CA113200ABA436 /* LaunchScreen.storyboard in Resources */,
 				E9B969BB25D8956800379266 /* IconTableViewCell.xib in Resources */,
 				E9B969D925D8CEE100379266 /* RobotoCondensed-Regular.ttf in Resources */,
@@ -633,7 +612,6 @@
 				E938361025D34AA100E25008 /* DeleteLocation.swift in Sources */,
 				E95CF3D725C4AC82001609ED /* MapDroppedPinView.swift in Sources */,
 				E95CF3E425C4CF97001609ED /* LocationIconSelectionViewController.swift in Sources */,
-				E97216BB25C6180A00882A3E /* LocationCreationCoordinator.swift in Sources */,
 				E9721B1825C8A6D000882A3E /* FakeLaunchScreenViewController.swift in Sources */,
 				E9C9A7AA25CE09DC00B67C42 /* LocationEditionView.swift in Sources */,
 				E9721B3B25C8F07300882A3E /* Infrastructure.swift in Sources */,
@@ -646,7 +624,6 @@
 				E9C9A7A925CE09DC00B67C42 /* LocationEditionViewController.swift in Sources */,
 				E9B969FC25D9EB2C00379266 /* TextViewInputView.swift in Sources */,
 				E97217DB25C77CB800882A3E /* LocationTypeNames.swift in Sources */,
-				E97216B125C5FE3B00882A3E /* LocationCreationView.swift in Sources */,
 				E971E81B25CA163300ABA436 /* CancelLocationCreation.swift in Sources */,
 				E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */,
 				E9B969C025D8A50300379266 /* NameTableViewCell.swift in Sources */,
@@ -658,6 +635,7 @@
 				E9B969DD25D8DD1400379266 /* AutoRegistrableTableViewCell.swift in Sources */,
 				E971E81F25CA1CE900ABA436 /* MapLocationViewModel.swift in Sources */,
 				E95CF3E025C4C8BF001609ED /* LocationType.swift in Sources */,
+				E9B7294C25DC6B030009570C /* LocationEditionViewModelBehavior.swift in Sources */,
 				E97E316E25C0FCFA00AED8F6 /* MapView.swift in Sources */,
 				E9B969BA25D8956800379266 /* IconTableViewCell.swift in Sources */,
 				E955B45C25C5B26F00ECD96E /* MapCoordinator.swift in Sources */,
@@ -680,14 +658,12 @@
 				E9382F5525D236A900E25008 /* UserDefaultsLocationRepository.swift in Sources */,
 				E9B969F325D9D42000379266 /* TextFieldInputView.swift in Sources */,
 				E921468F25C392DB00CAF621 /* MapLocationView.swift in Sources */,
-				E97217D725C659ED00882A3E /* LocationCreationViewModel.swift in Sources */,
 				E9B7292F25DB31E70009570C /* Feature.swift in Sources */,
 				E9B09F3B25C0DA50006E76B4 /* AppCoordinator.swift in Sources */,
 				E97E316A25C0FCE600AED8F6 /* MapViewController.swift in Sources */,
 				E9382F5025D1F84500E25008 /* HUDImageView.swift in Sources */,
 				E9B969EE25D9D20B00379266 /* TextFieldInputViewController.swift in Sources */,
 				E9721B2225C8A8BF00882A3E /* GreenBlurImageView.swift in Sources */,
-				E97216AD25C5FDC400882A3E /* LocationCreationViewController.swift in Sources */,
 				E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */,
 				E919BE8F25C4DEFC00D59805 /* LocationIconTableViewCell.swift in Sources */,
 				E9B969F825D9EB1D00379266 /* TextViewInputViewController.swift in Sources */,
