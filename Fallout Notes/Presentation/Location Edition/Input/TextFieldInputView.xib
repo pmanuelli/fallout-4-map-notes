@@ -26,7 +26,7 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="80c-yL-wrP">
                             <rect key="frame" x="16" y="0.0" width="382" height="44"/>
                             <fontDescription key="fontDescription" name="ShareTechMono-Regular" family="Share Tech Mono" pointSize="20"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textField>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwe-Gg-ubS" customClass="TableViewCellSeparationView" customModule="Fallout_Notes" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
