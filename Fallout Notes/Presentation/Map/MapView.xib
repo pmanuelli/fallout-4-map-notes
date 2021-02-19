@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,28 +34,65 @@
                         <constraint firstItem="b7h-Mm-qm3" firstAttribute="leading" secondItem="tOu-WM-5b5" secondAttribute="leading" id="yoo-RW-Xpb"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SED-BF-ng7">
+                    <rect key="frame" x="20" y="64" width="270.5" height="69"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="250" image="menu_right" translatesAutoresizingMaskIntoConstraints="NO" id="xEl-6l-GPW" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="262.5" y="0.0" width="8" height="69"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="250" image="menu_left" translatesAutoresizingMaskIntoConstraints="NO" id="uXT-QD-AK9" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="8" height="69"/>
+                            <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Tap on the map to add a new location." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0P-eW-DTB" customClass="HUDLabel" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="60" y="8" width="198.5" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="vault_boy_head" translatesAutoresizingMaskIntoConstraints="NO" id="m4t-oY-cBG" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="12" y="8" width="40" height="53"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.91764705879999997" blue="0.41960784309999999" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="b0P-eW-DTB" firstAttribute="leading" secondItem="m4t-oY-cBG" secondAttribute="trailing" constant="8" id="2AI-hD-wbP"/>
+                        <constraint firstItem="m4t-oY-cBG" firstAttribute="top" secondItem="SED-BF-ng7" secondAttribute="top" constant="8" id="7Kc-dC-4ux"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="9IT-yz-Yag"/>
+                        <constraint firstItem="m4t-oY-cBG" firstAttribute="leading" secondItem="uXT-QD-AK9" secondAttribute="trailing" constant="4" id="ECo-e7-4Ja"/>
+                        <constraint firstAttribute="bottom" secondItem="uXT-QD-AK9" secondAttribute="bottom" id="FJJ-L9-EDO"/>
+                        <constraint firstAttribute="bottom" secondItem="xEl-6l-GPW" secondAttribute="bottom" id="Ol9-OR-kNC"/>
+                        <constraint firstItem="xEl-6l-GPW" firstAttribute="top" secondItem="SED-BF-ng7" secondAttribute="top" id="UDp-mz-cmm"/>
+                        <constraint firstItem="uXT-QD-AK9" firstAttribute="top" secondItem="SED-BF-ng7" secondAttribute="top" id="Wwi-vz-Kml"/>
+                        <constraint firstItem="uXT-QD-AK9" firstAttribute="leading" secondItem="SED-BF-ng7" secondAttribute="leading" id="XfI-oZ-vQg"/>
+                        <constraint firstItem="b0P-eW-DTB" firstAttribute="top" secondItem="SED-BF-ng7" secondAttribute="top" constant="8" id="cGN-Yy-63O"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="b0P-eW-DTB" secondAttribute="bottom" constant="8" id="i9e-Px-dfB"/>
+                        <constraint firstAttribute="trailing" secondItem="xEl-6l-GPW" secondAttribute="trailing" id="ldc-ND-goa"/>
+                        <constraint firstItem="xEl-6l-GPW" firstAttribute="leading" secondItem="b0P-eW-DTB" secondAttribute="trailing" constant="4" id="qCW-zp-t2A"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m4t-oY-cBG" secondAttribute="bottom" constant="8" id="tdV-9T-1IZ"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-MY-Q3M">
-                    <rect key="frame" x="117.5" y="818" width="179" height="34"/>
+                    <rect key="frame" x="116.5" y="818" width="181" height="34"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upf-U5-Hjv">
-                            <rect key="frame" x="0.0" y="2" width="179" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="181" height="34"/>
                             <color key="backgroundColor" red="0.24313725489999999" green="0.91764705879999997" blue="0.41960784309999999" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_left" translatesAutoresizingMaskIntoConstraints="NO" id="C58-lB-l91" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="7" height="34"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" image="menu_left" translatesAutoresizingMaskIntoConstraints="NO" id="C58-lB-l91" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="8" height="34"/>
                             <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="C58-lB-l91" secondAttribute="height" multiplier="8:39" id="eNl-rB-TXv"/>
-                            </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="250" image="menu_right" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-51-Yas" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
-                            <rect key="frame" x="172" y="0.0" width="7" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="cIS-51-Yas" secondAttribute="height" multiplier="8:39" id="KpB-oy-sg3"/>
-                            </constraints>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" image="menu_right" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-51-Yas" customClass="HUDImageView" customModule="Fallout_Notes" customModuleProvider="target">
+                            <rect key="frame" x="173" y="0.0" width="8" height="34"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iND-5O-E6n" customClass="HUDButton" customModule="Fallout_Notes" customModuleProvider="target">
-                            <rect key="frame" x="11" y="0.0" width="157" height="34"/>
+                            <rect key="frame" x="12" y="0.0" width="157" height="34"/>
                             <state key="normal" title="CREATE LOCATION"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -70,14 +107,15 @@
                         <constraint firstAttribute="bottom" secondItem="C58-lB-l91" secondAttribute="bottom" id="7NB-H3-e2c"/>
                         <constraint firstItem="cIS-51-Yas" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="DJv-qu-Xop"/>
                         <constraint firstItem="iND-5O-E6n" firstAttribute="leading" secondItem="C58-lB-l91" secondAttribute="trailing" constant="4" id="HyM-MT-0Dq"/>
+                        <constraint firstItem="Upf-U5-Hjv" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="W9n-qA-tqi"/>
                         <constraint firstAttribute="bottom" secondItem="cIS-51-Yas" secondAttribute="bottom" id="ZNj-cn-Ijg"/>
                         <constraint firstItem="C58-lB-l91" firstAttribute="leading" secondItem="tzF-MY-Q3M" secondAttribute="leading" id="Zno-ab-RsV"/>
-                        <constraint firstItem="Upf-U5-Hjv" firstAttribute="height" secondItem="tzF-MY-Q3M" secondAttribute="height" multiplier="0.87" id="bGq-T2-y3o"/>
-                        <constraint firstItem="Upf-U5-Hjv" firstAttribute="centerY" secondItem="tzF-MY-Q3M" secondAttribute="centerY" id="k2d-4c-gJ1"/>
+                        <constraint firstItem="Upf-U5-Hjv" firstAttribute="height" secondItem="tzF-MY-Q3M" secondAttribute="height" id="bGq-T2-y3o"/>
                         <constraint firstAttribute="bottom" secondItem="iND-5O-E6n" secondAttribute="bottom" id="keg-G0-vPT"/>
                         <constraint firstItem="C58-lB-l91" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="mFg-d1-qir"/>
                         <constraint firstAttribute="trailing" secondItem="Upf-U5-Hjv" secondAttribute="trailing" id="pmq-ji-ZQE"/>
                         <constraint firstItem="cIS-51-Yas" firstAttribute="leading" secondItem="iND-5O-E6n" secondAttribute="trailing" constant="4" id="rpN-lI-qQ9"/>
+                        <constraint firstAttribute="bottom" secondItem="Upf-U5-Hjv" secondAttribute="bottom" id="t8S-JF-QmN"/>
                         <constraint firstItem="iND-5O-E6n" firstAttribute="top" secondItem="tzF-MY-Q3M" secondAttribute="top" id="xb1-DH-NX9"/>
                         <constraint firstItem="Upf-U5-Hjv" firstAttribute="leading" secondItem="tzF-MY-Q3M" secondAttribute="leading" id="yTk-fc-Tyo"/>
                     </constraints>
@@ -86,16 +124,19 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="SED-BF-ng7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="38b-8v-0wa"/>
                 <constraint firstAttribute="bottom" secondItem="tOu-WM-5b5" secondAttribute="bottom" id="4u3-Zu-fyl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tzF-MY-Q3M" secondAttribute="bottom" constant="10" id="SeX-Mb-QSp"/>
                 <constraint firstItem="tzF-MY-Q3M" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T5l-AF-TSM"/>
                 <constraint firstItem="tOu-WM-5b5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TAm-QE-ExO"/>
                 <constraint firstAttribute="trailing" secondItem="tOu-WM-5b5" secondAttribute="trailing" id="Yln-4D-R02"/>
                 <constraint firstItem="tOu-WM-5b5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="l4v-CQ-98I"/>
+                <constraint firstItem="SED-BF-ng7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="vvG-JD-c28"/>
             </constraints>
             <connections>
                 <outlet property="createLocationButton" destination="iND-5O-E6n" id="ddO-g3-DZL"/>
                 <outlet property="createLocationButtonContainer" destination="tzF-MY-Q3M" id="baI-F9-Iym"/>
+                <outlet property="createLocationMessageContainer" destination="SED-BF-ng7" id="u0O-JK-hen"/>
                 <outlet property="mapImageView" destination="b7h-Mm-qm3" id="kQl-nL-24P"/>
                 <outlet property="scrollView" destination="tOu-WM-5b5" id="xBk-ln-suk"/>
             </connections>
@@ -104,7 +145,8 @@
     </objects>
     <resources>
         <image name="base_map" width="2048" height="2048"/>
-        <image name="menu_left" width="128" height="624"/>
-        <image name="menu_right" width="128" height="624"/>
+        <image name="menu_left" width="8" height="8"/>
+        <image name="menu_right" width="8" height="8"/>
+        <image name="vault_boy_head" width="40" height="52.5"/>
     </resources>
 </document>

@@ -119,8 +119,9 @@ class MapViewController: UIViewController {
 
                 self.addLocationView(viewModel: viewModel, at: droppedPinLocation, animated: true)
                 
+                // TODO: Trigger this behavior with the view model
                 self.disableAddLocationGesture()
-                self.animateCreateLocationButtonAppear()
+                self.mainView.showCreateLocationButton()
             }
         }
         else {
@@ -164,8 +165,9 @@ class MapViewController: UIViewController {
             self.currentDroppedPinView?.removeFromSuperview()
             self.currentDroppedPinView = nil
             
+            // TODO: Trigger this behavior with the view model
             self.disableAddLocationGesture()
-            self.animateCreateLocationButtonAppear()
+            self.mainView.showCreateLocationButton()
         }
     }
     
@@ -194,30 +196,11 @@ class MapViewController: UIViewController {
     @objc
     private func createLocationButtonTouched() {
         enableAddLocationGesture()
-        animateCreateLocationButtonDisappear()
-    }
-    
-    private func animateCreateLocationButtonAppear() {
-        UIView.animate(withDuration: 0.2) {
-            self.mainView.createLocationButtonContainer.alpha = 1
-        }
-    }
-    
-    private func animateCreateLocationButtonDisappear() {
-        UIView.animate(withDuration: 0.2) {
-            self.mainView.createLocationButtonContainer.alpha = 0
-        }
-    }
         
-//    func captureNewLocationMapSnapshot() -> UIImage {
-//        
-//        let bounds = CGRect(x: 500, y: 0, width: 500, height: 500)
-//        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-//        
-//        return renderer.image { context in
-//            self.mainView.mapImageView.layer.render(in: context.cgContext)
-//        }
-//    }
+        // TODO: Trigger this behavior with the view model
+        mainView.hideCreateLocationButton()
+        mainView.showBrieflyCreateLocationMessageAnimated()
+    }
 }
 
 extension MapViewController: UIScrollViewDelegate {

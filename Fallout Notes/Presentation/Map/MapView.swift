@@ -6,6 +6,7 @@ class MapView: UIView {
     @IBOutlet var mapImageView: UIImageView!
     @IBOutlet var createLocationButton: UIButton!
     @IBOutlet var createLocationButtonContainer: UIView!
+    @IBOutlet var createLocationMessageContainer: UIView!
     
     override func awakeFromNib() {
         
@@ -13,5 +14,30 @@ class MapView: UIView {
         scrollView.maximumZoomScale = 3
         
         mapImageView.isUserInteractionEnabled = true
+        createLocationMessageContainer.alpha = 0
+    }
+    
+    func showCreateLocationButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.createLocationButtonContainer.alpha = 1
+        }
+    }
+    
+    func hideCreateLocationButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.createLocationButtonContainer.alpha = 0
+        }
+    }
+    
+    func showBrieflyCreateLocationMessageAnimated() {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.createLocationMessageContainer.alpha = 1
+        } completion: { _ in
+            
+            UIView.animate(withDuration: 0.5, delay: 5) {
+                self.createLocationMessageContainer.alpha = 0
+            }
+        }
     }
 }

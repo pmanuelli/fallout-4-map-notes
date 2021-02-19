@@ -95,6 +95,7 @@
 		E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */; };
 		E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7B325CF19B900B67C42 /* EditLocation.swift */; };
 		E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */; };
+		E9DE510925DF2BEF002A9AD3 /* HUDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE510825DF2BEF002A9AD3 /* HUDLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,7 @@
 		E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionCoordinator.swift; sourceTree = "<group>"; };
 		E9C9A7B325CF19B900B67C42 /* EditLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocation.swift; sourceTree = "<group>"; };
 		E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurLabel.swift; sourceTree = "<group>"; };
+		E9DE510825DF2BEF002A9AD3 /* HUDLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 				E9721B2125C8A8BF00882A3E /* GreenBlurImageView.swift */,
 				E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */,
 				E9C9A78925CDEAF700B67C42 /* HUDButton.swift */,
+				E9DE510825DF2BEF002A9AD3 /* HUDLabel.swift */,
 				E9382F4F25D1F84500E25008 /* HUDImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
@@ -651,6 +654,7 @@
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E9B7293E25DC1A0C0009570C /* SwitchTableViewCell.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
+				E9DE510925DF2BEF002A9AD3 /* HUDLabel.swift in Sources */,
 				E9B7294625DC1F780009570C /* SwitchTableViewCellViewModel.swift in Sources */,
 				E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */,
 				E9B96A0425DA031200379266 /* NotesTableViewCell.swift in Sources */,
