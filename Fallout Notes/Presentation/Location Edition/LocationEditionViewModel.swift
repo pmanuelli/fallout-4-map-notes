@@ -6,6 +6,10 @@ protocol TextEditor: AnyObject {
     func editLongText(_ text: String, completion: @escaping (String) -> Void)
 }
 
+protocol ActionConfirmator: AnyObject {
+    func requestConfirmation(message: String, acceptMessage: String, cancelMessage: String, completion: @escaping (Bool) -> Void)
+}
+
 class LocationEditionViewModel {
         
     struct Output {
@@ -43,6 +47,7 @@ class LocationEditionViewModel {
     private let notesSubject = PublishSubject<String>()
         
     weak var textEditor: TextEditor?
+    weak var actionConfirmator: ActionConfirmator?
     
     private let behavior: LocationEditionViewModelBehavior
     
@@ -109,8 +114,16 @@ class LocationEditionViewModel {
     }
     
     func deleteLocationButtonTouched() {
-        behavior.deleteButtonTouched()
-        doneButtonTouchSubject.onNext(())
+        
+        actionConfirmator?.requestConfirmation(message: "Are you sure you want to delete this location?",
+                                               acceptMessage: "Yes. Delete location",
+                                               cancelMessage: "No. Go back") { confirmed in
+            
+            if confirmed {
+                self.behavior.deleteButtonTouched()
+                self.doneButtonTouchSubject.onNext(())
+            }
+        }
     }
     
     func changeLocationType(_ type: LocationType) {

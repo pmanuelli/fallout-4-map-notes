@@ -52,6 +52,7 @@ class LocationEditionCoordinator {
     private func observeViewModel(_ viewModel: LocationEditionViewModel) {
         
         viewModel.textEditor = self
+        viewModel.actionConfirmator = self
         
         viewModel.output.doneButtonTouch
             .withUnretained(self)
@@ -123,5 +124,31 @@ extension LocationEditionCoordinator: TextEditor {
         
         editCompletion(text)
         navigationController.popViewController(animated: true)
+    }
+}
+
+extension LocationEditionCoordinator: ActionConfirmator {
+    
+    func requestConfirmation(message: String, acceptMessage: String, cancelMessage: String, completion: @escaping (Bool) -> Void) {
+        
+        let acceptAction = AlertViewController.Action(title: acceptMessage) {
+            
+            self.navigationController.dismiss(animated: true) {
+                completion(true)
+            }
+        }
+        
+        let cancelAction = AlertViewController.Action(title: cancelMessage) {
+            self.navigationController.dismiss(animated: true) {
+                completion(false)
+            }
+        }
+        
+        let controller = AlertViewController(message: message, actions: [acceptAction, cancelAction])
+        
+        controller.modalPresentationStyle = .overFullScreen
+        controller.modalTransitionStyle = .crossDissolve
+        
+        navigationController.present(controller, animated: true)
     }
 }

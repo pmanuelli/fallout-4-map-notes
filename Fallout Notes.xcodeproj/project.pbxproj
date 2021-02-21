@@ -94,6 +94,9 @@
 		E9C9A7AC25CE09DC00B67C42 /* LocationEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */; };
 		E9C9A7AD25CE09DC00B67C42 /* LocationEditionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */; };
 		E9C9A7B425CF19B900B67C42 /* EditLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A7B325CF19B900B67C42 /* EditLocation.swift */; };
+		E9CC62F725E20ED20073088A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC62F525E20ED20073088A /* AlertViewController.swift */; };
+		E9CC62F825E20ED20073088A /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CC62F625E20ED20073088A /* AlertView.xib */; };
+		E9CC62FC25E2101B0073088A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC62FB25E2101B0073088A /* AlertView.swift */; };
 		E9DBB15225CB84F2006BB7CB /* GreenBlurLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */; };
 		E9DE510925DF2BEF002A9AD3 /* HUDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE510825DF2BEF002A9AD3 /* HUDLabel.swift */; };
 /* End PBXBuildFile section */
@@ -190,6 +193,9 @@
 		E9C9A7A725CE09DC00B67C42 /* LocationEditionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionViewModel.swift; sourceTree = "<group>"; };
 		E9C9A7A825CE09DC00B67C42 /* LocationEditionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationEditionCoordinator.swift; sourceTree = "<group>"; };
 		E9C9A7B325CF19B900B67C42 /* EditLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocation.swift; sourceTree = "<group>"; };
+		E9CC62F525E20ED20073088A /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		E9CC62F625E20ED20073088A /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		E9CC62FB25E2101B0073088A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		E9DBB15125CB84F2006BB7CB /* GreenBlurLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenBlurLabel.swift; sourceTree = "<group>"; };
 		E9DE510825DF2BEF002A9AD3 /* HUDLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,6 +362,7 @@
 				E9382F4F25D1F84500E25008 /* HUDImageView.swift */,
 				E921468B25C3857600CAF621 /* Icons.swift */,
 				E97217DA25C77CB800882A3E /* LocationTypeNames.swift */,
+				E9CC62F425E20E950073088A /* Alert View */,
 				E971E81625CA123000ABA436 /* Launch Screen */,
 				E9C9A7A325CE09DC00B67C42 /* Location Edition */,
 				E95CF3E725C4CFA0001609ED /* Location Icon Selection */,
@@ -473,6 +480,16 @@
 			path = "Location Edition";
 			sourceTree = "<group>";
 		};
+		E9CC62F425E20E950073088A /* Alert View */ = {
+			isa = PBXGroup;
+			children = (
+				E9CC62F525E20ED20073088A /* AlertViewController.swift */,
+				E9CC62FB25E2101B0073088A /* AlertView.swift */,
+				E9CC62F625E20ED20073088A /* AlertView.xib */,
+			);
+			path = "Alert View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,6 +569,7 @@
 				E95CF3D425C4AC13001609ED /* MapDroppedPinView.xib in Resources */,
 				E9B969D525D8CEE100379266 /* RobotoCondensed-Bold.ttf in Resources */,
 				E9B96A0925DA058400379266 /* NameTableViewCell.xib in Resources */,
+				E9CC62F825E20ED20073088A /* AlertView.xib in Resources */,
 				E9B969DA25D8CEE100379266 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				E9B96A0B25DA062100379266 /* TextFieldInputView.xib in Resources */,
 				E9B969EF25D9D20B00379266 /* TextViewInputView.xib in Resources */,
@@ -653,6 +671,7 @@
 				E9721B4A25C8FAD600882A3E /* Event.swift in Sources */,
 				E921468C25C3857600CAF621 /* Icons.swift in Sources */,
 				E9B7293E25DC1A0C0009570C /* SwitchTableViewCell.swift in Sources */,
+				E9CC62F725E20ED20073088A /* AlertViewController.swift in Sources */,
 				E9721B4225C8F75500882A3E /* RxEventBus.swift in Sources */,
 				E9DE510925DF2BEF002A9AD3 /* HUDLabel.swift in Sources */,
 				E9B7294625DC1F780009570C /* SwitchTableViewCellViewModel.swift in Sources */,
@@ -669,6 +688,7 @@
 				E9B969EE25D9D20B00379266 /* TextFieldInputViewController.swift in Sources */,
 				E9721B2225C8A8BF00882A3E /* GreenBlurImageView.swift in Sources */,
 				E9B09F3925C0DA50006E76B4 /* SceneDelegate.swift in Sources */,
+				E9CC62FC25E2101B0073088A /* AlertView.swift in Sources */,
 				E919BE8F25C4DEFC00D59805 /* LocationIconTableViewCell.swift in Sources */,
 				E9B969F825D9EB1D00379266 /* TextViewInputViewController.swift in Sources */,
 				E9721B1B25C8A6E200882A3E /* FakeLaunchScreenView.swift in Sources */,
