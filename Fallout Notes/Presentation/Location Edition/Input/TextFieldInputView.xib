@@ -56,9 +56,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="saZ-gM-lFZ" secondAttribute="trailing" id="Ylf-gw-cfu"/>
+                <constraint firstAttribute="trailing" secondItem="saZ-gM-lFZ" secondAttribute="trailing" id="Ylf-gw-cfu"/>
                 <constraint firstItem="saZ-gM-lFZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="35" id="laD-eU-neC"/>
-                <constraint firstItem="saZ-gM-lFZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ttd-L1-DZz"/>
+                <constraint firstItem="saZ-gM-lFZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ttd-L1-DZz"/>
             </constraints>
             <connections>
                 <outlet property="textField" destination="80c-yL-wrP" id="RYf-AT-HkZ"/>

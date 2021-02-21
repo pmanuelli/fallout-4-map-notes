@@ -24,8 +24,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A4z-dH-Qh0" secondAttribute="trailing" id="0Aa-Kn-Ul6"/>
-                <constraint firstItem="A4z-dH-Qh0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2lX-G9-Ps1"/>
+                <constraint firstAttribute="trailing" secondItem="A4z-dH-Qh0" secondAttribute="trailing" id="0Aa-Kn-Ul6"/>
+                <constraint firstItem="A4z-dH-Qh0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2lX-G9-Ps1"/>
                 <constraint firstItem="A4z-dH-Qh0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OFM-19-Slc"/>
                 <constraint firstAttribute="bottom" secondItem="A4z-dH-Qh0" secondAttribute="bottom" id="aVZ-xA-CuW"/>
             </constraints>
