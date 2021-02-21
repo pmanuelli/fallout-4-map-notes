@@ -11,6 +11,7 @@ class SwitchTableViewCell: UITableViewCell, AutoRegistrableTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionStyle = .none
         accessoryView = createSwitchView()
     }
     
