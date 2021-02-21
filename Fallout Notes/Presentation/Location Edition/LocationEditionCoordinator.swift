@@ -129,16 +129,16 @@ extension LocationEditionCoordinator: TextEditor {
 
 extension LocationEditionCoordinator: ActionConfirmator {
     
-    func requestConfirmation(message: String, acceptMessage: String, cancelMessage: String, completion: @escaping (Bool) -> Void) {
+    func requestConfirmation(message: String, acceptMessage: String, acceptIsDestructive: Bool, cancelMessage: String, completion: @escaping (Bool) -> Void) {
         
-        let acceptAction = AlertViewController.Action(title: acceptMessage) {
+        let acceptAction = AlertViewController.Action(title: acceptMessage, isDestructive: acceptIsDestructive) {
             
             self.navigationController.dismiss(animated: true) {
                 completion(true)
             }
         }
         
-        let cancelAction = AlertViewController.Action(title: cancelMessage) {
+        let cancelAction = AlertViewController.Action(title: cancelMessage, isDestructive: false) {
             self.navigationController.dismiss(animated: true) {
                 completion(false)
             }

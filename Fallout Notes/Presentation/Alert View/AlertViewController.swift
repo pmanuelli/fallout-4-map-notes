@@ -4,6 +4,7 @@ class AlertViewController: UIViewController {
 
     struct Action {
         let title: String
+        let isDestructive: Bool
         let handler: () -> Void
     }
     
@@ -47,37 +48,18 @@ class AlertViewController: UIViewController {
         
         let button = HUDButton(type: .custom)
         button.setTitle(action.title, for: .normal)
+        button.fontSize = 20
+        button.setupDefaultStyleForHighlightedState()
+        
+        if action.isDestructive {
+            button.setTitleColor(.red, for: .normal)
+        }
         
         button.addTarget(self, action: #selector(actionButtonTouchedUpInside(_:)), for: .touchUpInside)
-        button.addTarget(self, action: #selector(setButtonAsTouched(_:)), for: .touchDown)
-        button.addTarget(self, action: #selector(setButtonAsNotTouched(_:)), for: .touchDragOutside)
-        button.addTarget(self, action: #selector(setButtonAsTouched(_:)), for: .touchDragInside)
         
         return button
     }
-    
-    @objc
-    private func setButtonAsTouched(_ button: UIButton) {
-        button.backgroundColor = Colors.greenDark
-        button.setTitleColor(.black, for: .normal)
-        button.setTitleShadowColor(.clear, for: .normal)
-        button.titleLabel?.layerShadowRadius = 0
-        button.titleLabel?.layerShadowOpacity = 0
-    }
-    
-    @objc
-    private func setButtonAsNotTouched(_ button: UIButton) {
-        
-        button.setTitleColor(Colors.greenDark, for: .normal)
-        button.setTitleShadowColor(.black, for: .normal)
-        button.backgroundColor = .clear
-        
-        button.titleLabel?.textColor = Colors.greenDark
-        button.titleLabel?.layerShadowOffset = CGSize(width: 1, height: 1)
-        button.titleLabel?.layerShadowRadius = 0
-        button.titleLabel?.layerShadowOpacity = 1
-    }
-        
+            
     @objc
     private func actionButtonTouchedUpInside(_ button: UIButton) {
                 
