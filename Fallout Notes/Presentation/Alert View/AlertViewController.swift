@@ -52,7 +52,7 @@ class AlertViewController: UIViewController {
         button.setupDefaultStyleForHighlightedState()
         
         if action.isDestructive {
-            button.setTitleColor(.red, for: .normal)
+            button.setTitleColor(Colors.destructiveAction, for: .normal)
         }
         
         button.addTarget(self, action: #selector(actionButtonTouchedUpInside(_:)), for: .touchUpInside)

@@ -51,6 +51,9 @@ class HUDButton: UIButton {
         titleLabel?.layerShadowRadius = 0
         
         setupDefaultStyleForNormalState()
+        
+        setTitleColor(Colors.greenDark.withAlphaComponent(0.66), for: .highlighted)
+        setTitleShadowColor(UIColor.black.withAlphaComponent(0.66), for: .highlighted)
     }
     
     func setupDefaultStyleForNormalState() {

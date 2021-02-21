@@ -26,10 +26,10 @@
       "resizing" : {
         "cap-insets" : {
           "bottom" : 10,
-          "top" : 7
+          "top" : 10
         },
         "center" : {
-          "height" : 4,
+          "height" : 1,
           "mode" : "tile"
         },
         "mode" : "3-part-vertical"
