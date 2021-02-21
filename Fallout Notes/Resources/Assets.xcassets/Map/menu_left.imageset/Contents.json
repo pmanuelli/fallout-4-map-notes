@@ -1,19 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "menu_left@1x.png",
       "idiom" : "universal",
-      "resizing" : {
-        "cap-insets" : {
-          "bottom" : 5,
-          "top" : 5
-        },
-        "center" : {
-          "height" : 1,
-          "mode" : "tile"
-        },
-        "mode" : "3-part-vertical"
-      },
       "scale" : "1x"
     },
     {
@@ -38,10 +26,10 @@
       "resizing" : {
         "cap-insets" : {
           "bottom" : 10,
-          "top" : 10
+          "top" : 7
         },
         "center" : {
-          "height" : 1,
+          "height" : 4,
           "mode" : "tile"
         },
         "mode" : "3-part-vertical"

@@ -29,13 +29,13 @@ class MapView: UIView {
         }
     }
     
-    func showBrieflyCreateLocationMessageAnimated() {
+    func showAndHideCreateLocationMessageAnimated() {
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.2) {
             self.createLocationMessageContainer.alpha = 1
         } completion: { _ in
             
-            UIView.animate(withDuration: 0.5, delay: 5) {
+            UIView.animate(withDuration: 0.2, delay: 5) {
                 self.createLocationMessageContainer.alpha = 0
             }
         }

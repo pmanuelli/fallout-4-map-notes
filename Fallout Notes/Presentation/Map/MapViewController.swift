@@ -199,7 +199,7 @@ class MapViewController: UIViewController {
         
         // TODO: Trigger this behavior with the view model
         mainView.hideCreateLocationButton()
-        mainView.showBrieflyCreateLocationMessageAnimated()
+        mainView.showAndHideCreateLocationMessageAnimated()
     }
 }
 
