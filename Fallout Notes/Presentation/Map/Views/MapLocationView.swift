@@ -7,25 +7,24 @@ class MapLocationView: UIView {
     var viewModel: MapLocationViewModel {
         didSet { bindViewModel(oldValue: oldValue, animated: true) }
     }
-    
+        
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var iconImageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var touchButton: UIButton!
     
-    private lazy var tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didReceiveTap))
-
     init(viewModel: MapLocationViewModel, imageWidth: CGFloat) {
         self.viewModel = viewModel
 
         super.init(frame: .zero)
 
         addNibAsSubview()
-        translatesAutoresizingMaskIntoConstraints = false
-        addGestureRecognizer(tapGestureRecognizer)
-        
+    
         iconImageViewWidthConstraint.constant = imageWidth
-        GreenBlurEffect.apply(to: nameLabel)
+        translatesAutoresizingMaskIntoConstraints = false
         
+        setupButtonTouches()
+                
         bindViewModel(oldValue: nil, animated: false)
     }
     
@@ -39,6 +38,16 @@ class MapLocationView: UIView {
             iconImageView.centerXAnchor.constraint(equalTo: view.leftAnchor, constant: point.x),
             iconImageView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: point.y)
         ])
+    }
+    
+    private func setupButtonTouches() {
+        
+        touchButton.addTarget(self, action: #selector(scaleDownAnimated), for: .touchDown)
+        touchButton.addTarget(self, action: #selector(scaleDownAnimated), for: .touchDragEnter)
+        touchButton.addTarget(self, action: #selector(scaleUpAnimated), for: .touchDragExit)
+        touchButton.addTarget(self, action: #selector(scaleUpAnimated), for: .touchUpOutside)
+        touchButton.addTarget(self, action: #selector(scaleUpAnimated), for: .touchUpInside)
+        touchButton.addTarget(self, action: #selector(viewTouchedUpInside), for: .touchUpInside)
     }
         
     private func bindViewModel(oldValue: MapLocationViewModel?, animated: Bool) {
@@ -89,9 +98,19 @@ class MapLocationView: UIView {
             nameLabel.text = name
         }
     }
+                
+    @objc
+    private func scaleDownAnimated() {
+        UIView.animate(withDuration: 0.2) { self.transform = .scale(0.8) }
+    }
     
     @objc
-    private func didReceiveTap() {
+    private func scaleUpAnimated() {
+        UIView.animate(withDuration: 0.2) { self.transform = .identity }
+    }
+        
+    @objc
+    private func viewTouchedUpInside() {
         delegate?.mapLocationViewSelected(self, viewModel: viewModel)
     }
 }
