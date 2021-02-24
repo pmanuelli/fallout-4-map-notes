@@ -15,7 +15,7 @@ struct LocationIconAppearAnimator {
         view.alpha = 0
         
         let animations = {
-            view.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
+            view.transform = .identity
             view.alpha = 1
         }
         

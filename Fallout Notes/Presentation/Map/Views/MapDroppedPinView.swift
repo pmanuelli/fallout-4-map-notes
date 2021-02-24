@@ -20,11 +20,13 @@ class MapDroppedPinView: UIView {
     func addAsSubview(on view: UIView, above point: CGPoint) {
         
         view.addSubview(self)
-
+       
         NSLayoutConstraint.activate([
             droppedPinImageView.centerXAnchor.constraint(equalTo: view.leftAnchor, constant: point.x),
-            droppedPinImageView.centerYAnchor.constraint(equalTo: view.topAnchor, constant: point.y)
+            droppedPinImageView.bottomAnchor.constraint(equalTo: view.topAnchor, constant: point.y)
         ])
+        
+        view.layoutIfNeeded()
     }
     
     private func setupIconImageView(width: CGFloat) {
