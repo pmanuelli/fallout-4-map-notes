@@ -28,6 +28,7 @@ struct LocationIconDisappearAnimator {
         UIView.animate(withDuration: 0.2, animations: animations,
                        completion: { _ in
                         
+                        view.transform = .identity
                         completion?() })
     }
 }

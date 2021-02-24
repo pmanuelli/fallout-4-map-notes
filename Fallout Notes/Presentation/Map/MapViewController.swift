@@ -141,6 +141,8 @@ class MapViewController: UIViewController {
         view.addAsSubview(on: mainView.mapImageView, centeringIconAt: location)
         view.delegate = self
         
+        applyCurrentZoomScale(to: view)
+        
         if animated {
             LocationIconAppearAnimator.animate(view, origin: .center)
         }
@@ -201,12 +203,23 @@ class MapViewController: UIViewController {
         mainView.hideCreateLocationButton()
         mainView.showAndHideCreateLocationMessageAnimated()
     }
+    
+    private func applyCurrentZoomScale(to view: UIView) {
+        view.transform = .scale(1/mainView.scrollView.zoomScale)
+    }
 }
 
 extension MapViewController: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         mainView.mapImageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        
+        for locationView in locationViews {
+            applyCurrentZoomScale(to: locationView)
+        }
     }
 }
 

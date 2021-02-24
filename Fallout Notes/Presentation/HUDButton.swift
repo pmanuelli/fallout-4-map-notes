@@ -52,8 +52,8 @@ class HUDButton: UIButton {
         
         setupDefaultStyleForNormalState()
         
-        setTitleColor(Colors.greenDark.withAlphaComponent(0.66), for: .highlighted)
-        setTitleShadowColor(UIColor.black.withAlphaComponent(0.66), for: .highlighted)
+        setTitleColor(Colors.greenDark.withAlphaComponent(0.5), for: .highlighted)
+        setTitleShadowColor(UIColor.black.withAlphaComponent(0.5), for: .highlighted)
     }
     
     func setupDefaultStyleForNormalState() {

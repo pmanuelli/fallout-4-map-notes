@@ -11,11 +11,13 @@ struct LocationIconAppearAnimator {
         
         setViewAnchorPoint(view, origin: origin)
         
+        let originalTransform = view.transform
+        
         view.transform = .scale(0.01)
         view.alpha = 0
         
         let animations = {
-            view.transform = .identity
+            view.transform = originalTransform
             view.alpha = 1
         }
         
@@ -26,9 +28,7 @@ struct LocationIconAppearAnimator {
     }
     
     private static func setViewAnchorPoint(_ view: UIView, origin: Origin) {
-        
-        view.transform = .identity
-        
+                
         let frame = view.frame
         
         switch origin {

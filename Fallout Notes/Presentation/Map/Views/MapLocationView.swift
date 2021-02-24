@@ -101,12 +101,12 @@ class MapLocationView: UIView {
                 
     @objc
     private func scaleDownAnimated() {
-        UIView.animate(withDuration: 0.2) { self.transform = .scale(0.8) }
+        UIView.animate(withDuration: 0.2) { self.alpha = 0.5 }
     }
     
     @objc
     private func scaleUpAnimated() {
-        UIView.animate(withDuration: 0.2) { self.transform = .identity }
+        UIView.animate(withDuration: 0.2) { self.alpha = 1 }
     }
         
     @objc
