@@ -7,7 +7,7 @@ protocol TextEditor: AnyObject {
 }
 
 protocol ActionConfirmator: AnyObject {
-    func requestConfirmation(message: String, acceptMessage: String, acceptIsDestructive: Bool, cancelMessage: String, completion: @escaping (Bool) -> Void)
+    func requestConfirmation(message: String, acceptMessage: String, isAcceptDestructive: Bool, cancelMessage: String, completion: @escaping (Bool) -> Void)
 }
 
 class LocationEditionViewModel {
@@ -117,7 +117,7 @@ class LocationEditionViewModel {
         
         actionConfirmator?.requestConfirmation(message: "Are you sure you want to delete this location?",
                                                acceptMessage: "Yes. Delete location",
-                                               acceptIsDestructive: true,
+                                               isAcceptDestructive: true,
                                                cancelMessage: "No. Go back") { confirmed in
             
             if confirmed {

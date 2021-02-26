@@ -1,6 +1,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import iOSExtensions
 
 class LocationEditionCoordinator {
     
@@ -14,7 +15,8 @@ class LocationEditionCoordinator {
     
     init(navigationController: UINavigationController) {
         self.inheritedNavigationController = navigationController
-        self.navigationController.modalPresentationStyle = .overFullScreen
+        self.navigationController.modalPresentationStyle = UserInterfaceIdiom.isRunningOnIPhone ? .overFullScreen : .pageSheet
+        self.navigationController.isModalInPresentation = true
     }
     
     func start(coordinates: Coordinates, completion: (() -> Void)? = nil) {
@@ -129,9 +131,9 @@ extension LocationEditionCoordinator: TextEditor {
 
 extension LocationEditionCoordinator: ActionConfirmator {
     
-    func requestConfirmation(message: String, acceptMessage: String, acceptIsDestructive: Bool, cancelMessage: String, completion: @escaping (Bool) -> Void) {
+    func requestConfirmation(message: String, acceptMessage: String, isAcceptDestructive: Bool, cancelMessage: String, completion: @escaping (Bool) -> Void) {
         
-        let acceptAction = AlertViewController.Action(title: acceptMessage, isDestructive: acceptIsDestructive) {
+        let acceptAction = AlertViewController.Action(title: acceptMessage, isDestructive: isAcceptDestructive) {
             
             self.navigationController.dismiss(animated: true) {
                 completion(true)
