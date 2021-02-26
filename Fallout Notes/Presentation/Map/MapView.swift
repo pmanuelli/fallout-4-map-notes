@@ -2,18 +2,21 @@ import UIKit
 
 class MapView: UIView {
     
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var mapScrollView: UIScrollView!
     @IBOutlet var mapImageView: UIImageView!
     @IBOutlet var createLocationButton: UIButton!
     @IBOutlet var createLocationButtonContainer: UIView!
     @IBOutlet var createLocationMessageContainer: UIView!
     
+    var mapZoomScale: CGFloat { mapScrollView.zoomScale }
+    
     override func awakeFromNib() {
         
-        scrollView.minimumZoomScale = 0.5
-        scrollView.maximumZoomScale = 3
+        mapScrollView.minimumZoomScale = 0.5
+        mapScrollView.maximumZoomScale = 3
         
         mapImageView.isUserInteractionEnabled = true
+        
         createLocationMessageContainer.alpha = 0
     }
     

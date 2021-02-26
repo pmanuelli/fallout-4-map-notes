@@ -28,16 +28,26 @@ struct LocationIconAppearAnimator {
     }
     
     private static func setViewAnchorPoint(_ view: UIView, origin: Origin) {
-                
-        let frame = view.frame
-        
+
         switch origin {
         case .center:
-            view.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            view.setLayerAnchorPoint(CGPoint(x: 0.5, y: 0.5))
         case .bottom:
-            view.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
+            view.setLayerAnchorPoint(CGPoint(x: 0.5, y: 1))
         }
-        
-        view.frame = frame
+    }
+}
+
+extension UIView {
+    
+    var layerAnchorPoint: CGPoint {
+        get { layer.anchorPoint }
+        set { setLayerAnchorPoint(newValue) }
+    }
+    
+    func setLayerAnchorPoint(_ value: CGPoint) {
+        let frame = self.frame
+        layer.anchorPoint = value
+        self.frame = frame
     }
 }

@@ -29,6 +29,19 @@ class MapDroppedPinView: UIView {
         view.layoutIfNeeded()
     }
     
+    func applyZoomScale(_ scale: CGFloat) {
+        setLayerAnchorPoint(CGPoint(x: 0.5, y: 1))
+        transform = .scale(1/scale)
+    }
+    
+    func animateAppear(completion: @escaping () -> Void) {
+        LocationIconAppearAnimator.animate(droppedPinImageView, origin: .bottom, completion: completion)
+    }
+    
+    func animateDisappear(completion: @escaping () -> Void) {
+        LocationIconDisappearAnimator.animate(droppedPinImageView, origin: .bottom, completion: completion)
+    }
+    
     private func setupIconImageView(width: CGFloat) {
         droppedPinImageView.image = Icons.droppedPin
         droppedPinImageViewWidthConstraint.constant = width        

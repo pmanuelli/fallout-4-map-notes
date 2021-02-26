@@ -9,16 +9,7 @@ struct LocationIconDisappearAnimator {
     
     static func animate(_ view: UIView, origin: Origin = .center, scaling: Bool = true, completion: (() -> Void)?) {
         
-        let frame = view.frame
-        
-        switch origin {
-        case .center:
-            view.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        case .bottom:
-            view.layer.anchorPoint = CGPoint(x: 0.5, y: 1)
-        }
-        
-        view.frame = frame
+        setViewAnchorPoint(view, origin: origin)
                         
         let animations = {
             if scaling { view.transform = .scale(0.01) }
@@ -30,5 +21,15 @@ struct LocationIconDisappearAnimator {
                         
                         view.transform = .identity
                         completion?() })
+    }
+    
+    private static func setViewAnchorPoint(_ view: UIView, origin: Origin) {
+
+        switch origin {
+        case .center:
+            view.setLayerAnchorPoint(CGPoint(x: 0.5, y: 0.5))
+        case .bottom:
+            view.setLayerAnchorPoint(CGPoint(x: 0.5, y: 1))
+        }
     }
 }

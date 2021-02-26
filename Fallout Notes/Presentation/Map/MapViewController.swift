@@ -44,12 +44,12 @@ class MapViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let y = mainView.scrollView.contentOffset.y
-        mainView.scrollView.setContentOffset(CGPoint(x: 250, y: y), animated: false)
+        let y = mainView.mapScrollView.contentOffset.y
+        mainView.mapScrollView.setContentOffset(CGPoint(x: 250, y: y), animated: false)
     }
     
     private func setupScrollView() {
-        mainView.scrollView.delegate = self
+        mainView.mapScrollView.delegate = self
     }
     
     private func enableAddLocationGesture() {
@@ -113,7 +113,7 @@ class MapViewController: UIViewController {
             currentDroppedPinView = nil
             currentDroppedPinLocation = nil
             
-            LocationIconDisappearAnimator.animate(droppedPin, origin: .bottom) {
+            droppedPin.animateDisappear {
                 
                 droppedPin.removeFromSuperview()
 
@@ -161,11 +161,13 @@ class MapViewController: UIViewController {
     }
     
     private func locationCreationCancelled() {
+        guard let droppedPinView = currentDroppedPinView else { return }
         
-        LocationIconDisappearAnimator.animate(currentDroppedPinView!, origin: .bottom) {
+        currentDroppedPinView = nil
+        
+        droppedPinView.animateDisappear {
             
-            self.currentDroppedPinView?.removeFromSuperview()
-            self.currentDroppedPinView = nil
+            droppedPinView.removeFromSuperview()
             
             // TODO: Trigger this behavior using the view model
             self.disableAddLocationGesture()
@@ -181,13 +183,13 @@ class MapViewController: UIViewController {
                 
         let droppedPinView = MapDroppedPinView(imageWidth: 50)
         droppedPinView.addAsSubview(on: mainView.mapImageView, above: location)
+        droppedPinView.applyZoomScale(mainView.mapZoomScale)
+        droppedPinView.animateAppear {
+            self.viewModel.newLocationPinDropped(coordinates: coordinates)
+        }
         
         currentDroppedPinView = droppedPinView
         currentDroppedPinLocation = location
-
-        LocationIconAppearAnimator.animate(droppedPinView, origin: .bottom) {
-            self.viewModel.newLocationPinDropped(coordinates: coordinates)
-        }
     }
     
     private func convertToCoordinates(location: CGPoint, in view: UIView) -> Coordinates {
@@ -205,7 +207,7 @@ class MapViewController: UIViewController {
     }
     
     private func applyCurrentZoomScale(to view: UIView) {
-        view.transform = .scale(1/mainView.scrollView.zoomScale)
+        view.transform = .scale(1/mainView.mapScrollView.zoomScale)
     }
 }
 
